@@ -179,7 +179,7 @@ section{padding:76px 0}
 .ip-caption{text-align:center;color:var(--ink-soft);font-size:13.5px;margin:16px auto 0;max-width:300px}
 
 /* Example app frame — presented as a phone */
-.appframe{position:relative;background:#0a0f0d;color:#14211c;border-radius:54px;padding:11px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px rgba(255,255,255,.09);max-width:400px;width:100%;margin:0 auto;text-align:left;aspect-ratio:9/19.5}
+.appframe{position:relative;background:#0a0f0d;color:#14211c;border-radius:54px;padding:11px;box-shadow:0 30px 60px rgba(0,0,0,.45),inset 0 0 0 2px rgba(255,255,255,.09);max-width:400px;width:100%;margin:0 auto;text-align:left;aspect-ratio:9/18.5}
 .appframe::before{content:"";position:absolute;right:-2.5px;top:176px;width:3px;height:88px;border-radius:2px;background:#232a26}
 .appframe::after{content:"";position:absolute;left:-2.5px;top:150px;width:3px;height:54px;border-radius:2px;background:#232a26;box-shadow:0 72px 0 #232a26}
 .af-screen{position:relative;background:#fff;border-radius:44px;overflow:hidden;height:100%;display:flex;flex-direction:column}
@@ -483,8 +483,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     </a>
     <nav class="nav-links" aria-label="Site pages">
       <a href="#/home" data-route="home">Home</a>
-      <a href="#/example" data-route="example">Example App</a>
       <a href="#/how" data-route="how">How It Works</a>
+      <a href="#/example" data-route="example">Example App</a>
       <a href="#/faq" data-route="faq">FAQ</a>
     </nav>
     <a class="btn nav-cta" href="#/quote" data-route="quote">Start Building</a>
@@ -858,13 +858,40 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     </div>
   </section>
 
+  <!-- HOW IT WORKS -->
+  <section id="how" style="padding-top:0" data-view="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">How it works</span>
+        <h2>Three steps between you and a real tournament app</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Tell us about your event</h3>
+          <p>Fill out the form on the Start Building page — where you're playing, how many players, your formats, your dates. You'll get a reply with any follow-up questions and the details for your build. The price is $15 per person, everything included — and once your group reaches 24 players, the math stops: $360 flat, no matter how many more you bring.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>We build your app from scratch</h3>
+          <p>There's no template to squeeze into. We start from scratch and build an app around how your exact golf weekend or tournament works — your courses, tee boxes, handicaps, teams, and match schedule. You review the pairings and boards before the trip — every number stays adjustable, and if a screen you want isn't in the standard set, just say so: custom boards, stats, and screens are part of the build, not an upgrade.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Your group just plays</h3>
+          <p>One link for the whole crew. Scores go in from the cart, boards update live, and the winners are settled before the last group reaches the clubhouse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURE BREAKDOWN -->
-  <section style="padding-top:0" data-view="example">
+  <section style="padding-top:0" data-view="how">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">Feature by feature</span>
         <h2>Every screen in the example — and any screen you can describe</h2>
-        <p>The Fellas app above is one build. Below is what each of its sections does, with the screens it actually runs — and under every one, how yours could be different. None of this is a fixed menu: it's proof of range.</p>
+        <p>The example app is one build. Below is what each of its sections does, with the screens it actually runs — and under every one, how yours could be different. None of this is a fixed menu: it's proof of range.</p>
       </div>
       <div class="feature-grid">
 
@@ -1052,7 +1079,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
   </section>
 
   <!-- CUSTOM BAND -->
-  <section style="padding-top:0" data-view="example">
+  <section style="padding-top:0" data-view="how">
     <div class="wrap">
       <div class="custom-band">
         <span class="tag" style="color:#ffb59d">Made however you'd like</span>
@@ -1066,33 +1093,6 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <span class="custom-ask">+ whatever yours is</span>
         </div>
         <a class="btn" href="#/quote">Start Building</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how" style="padding-top:0" data-view="how">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="tag">How it works</span>
-        <h2>Three steps between you and a real tournament app</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="num">01</span>
-          <h3>Tell us about your event</h3>
-          <p>Fill out the form on the Start Building page — where you're playing, how many players, your formats, your dates. You'll get a reply with any follow-up questions and the details for your build. The price is $15 per person, everything included — and groups of 24 or more pay a flat $360 total.</p>
-        </div>
-        <div class="step">
-          <span class="num">02</span>
-          <h3>We build your app from scratch</h3>
-          <p>There's no template to squeeze into. We start from scratch and build an app around how your exact golf weekend or tournament works — your courses, tee boxes, handicaps, teams, and match schedule. You review the pairings and boards before the trip — every number stays adjustable, and if a screen you want isn't in the standard set, just say so: custom boards, stats, and screens are part of the build, not an upgrade.</p>
-        </div>
-        <div class="step">
-          <span class="num">03</span>
-          <h3>Your group just plays</h3>
-          <p>One link for the whole crew. Scores go in from the cart, boards update live, and the winners are settled before the last group reaches the clubhouse.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -1251,7 +1251,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Full Admin</b> — pairings, score fixes, and result exports</span></li>
             <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>A promo video for your event</b> — a trailer like the Fellas Invitational's, cut to get the group chat buzzing</span></li>
           </ul>
-          <p class="price-split">Bringing <b>24 or more players</b>? The per-person math stops there — it's a <b>flat $360 total</b>, no matter how big the field gets.</p>
+          <p class="price-split"><b>24 or more players?</b> The math stops — <b>$360 flat</b>, no matter how many more you bring.</p>
           <a class="btn" href="#/quote">Start Building</a>
         </div>
         <div class="price-side">
@@ -1294,7 +1294,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         </details>
         <details>
           <summary>What does it cost?</summary>
-          <p>$15 per person — and everything is included: the full custom app (your event's branding, the live leaderboard with the Projected board, match play, Stableford and low net boards, a Calcutta if your group wants one, a spectator link, and full Admin) plus a promo video for your event. No add-ons, no upsells, no subscription, nothing to cancel. Groups of 24 or more pay a flat $360 total instead of the per-person math. Terms are simple: a 50% deposit starts the build, and the balance is due the day before your event.</p>
+          <p>$15 per person — and once your group reaches 24 players, the math stops: $360 flat, no matter how many more you bring. Everything is included: the full custom app (your event's branding, the live leaderboard with the Projected board, match play, Stableford and low net boards, a Calcutta if your group wants one, a spectator link, and full Admin) plus a promo video for your event. No add-ons, no upsells, no subscription, nothing to cancel. Terms are simple: a 50% deposit starts the build, and the balance is due the day before your event.</p>
         </details>
         <details>
           <summary>Who runs the scoring during the trip?</summary>
@@ -1330,7 +1330,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <div>
           <span class="tag">Start Building</span>
           <h2>Tell us about your event</h2>
-          <p style="color:var(--ink-soft);font-size:16.5px">A tournament, an outing, a fundraiser, or just a golf weekend with your crew — whatever you're running, fill this out and you'll get a reply with follow-up questions and the details for your build — the price is $15 per person with everything included, or a flat $360 for groups of 24 or more. And if there's a screen, board, or rule your event needs that you haven't seen anywhere on this site, put it in the notes: custom requests are the whole point. No obligation, no mailing list — just a conversation about your event.</p>
+          <p style="color:var(--ink-soft);font-size:16.5px">A tournament, an outing, a fundraiser, or just a golf weekend with your crew — whatever you're running, fill this out and you'll get a reply with follow-up questions and the details for your build — the price is $15 per person with everything included — and once your group reaches 24 players, the math stops: $360 flat, no matter how many more you bring. And if there's a screen, board, or rule your event needs that you haven't seen anywhere on this site, put it in the notes: custom requests are the whole point. No obligation, no mailing list — just a conversation about your event.</p>
           <p class="contact-line">Prefer email? Reach out directly at<br><a href="mailto:FTMOORE17@gmail.com">FTMOORE17@gmail.com</a></p>
           <ul class="tick-list">
             <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Tournaments, outings &amp; golf weekends of any kind and size</span></li>
