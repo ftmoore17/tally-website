@@ -232,6 +232,7 @@ section{padding:76px 0}
 .hc-arrow:hover{border-color:#0c3b2e}
 .sc-status{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#0c3b2e;border-radius:12px;padding:10px 14px;margin-top:12px}
 .sc-status-label{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#bcd2c6;white-space:nowrap}
+.sc-status .pill{white-space:nowrap;flex:0 0 auto}
 .sc-save{display:block;width:100%;margin-top:16px;background:var(--green);color:#fff;border:0;border-radius:999px;padding:13px;font:700 15px "DM Sans",sans-serif;cursor:pointer}
 .sc-save.saved{background:#1e7a4d}
 .calc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:6px}
@@ -250,7 +251,7 @@ section{padding:76px 0}
 .match-picker button{flex:1 1 0;min-width:0;border:0;border-radius:999px;padding:7px 2px;font:600 12.5px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;cursor:pointer;white-space:nowrap}
 .match-picker button.active{background:var(--green);color:#fff}
 .hc-line{text-align:center;font-family:"DM Mono",monospace;font-size:12.5px;color:#45554e;margin-top:2px;white-space:nowrap}
-@media(max-width:560px){.hc-line{white-space:normal}}
+@media(max-width:560px){.hc-line{font-size:11px;letter-spacing:-.02em}}
 .sc-who{min-width:0;display:flex;align-items:center;gap:9px}
 .sc-team-bar{flex:0 0 5px;width:5px;height:28px;border-radius:3px}
 .sc-name{font-weight:600;white-space:nowrap;display:inline-flex;align-items:flex-start;padding-right:4px}
@@ -335,6 +336,31 @@ section{padding:76px 0}
 .value p{color:var(--ink-soft);font-size:16.5px;margin:12px 0 0}
 .value-facts{display:grid;gap:12px;font-size:16px}
 .value-facts>span{display:flex;gap:11px;align-items:flex-start}
+
+/* Pricing */
+.price-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:stretch}
+@media(max-width:860px){.price-grid{grid-template-columns:1fr}}
+.price-main{background:var(--green-deep);color:#eef4f0;border-radius:26px;padding:38px;display:flex;flex-direction:column}
+@media(max-width:860px){.price-main{padding:28px 22px}}
+.price-fig{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.price-amt{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(56px,7vw,76px);line-height:1;letter-spacing:-.02em}
+.price-per{font-size:17px;color:#bcd2c6;font-weight:600}
+.price-lede{color:#bcd2c6;font-size:16.5px;margin:16px 0 0}
+.price-main .tick-list{margin-top:18px}
+.price-main .tick-list li{color:#eef4f0}
+.price-main .tick-mark .v{stroke:#8fd0b6}
+.price-split{margin:22px 0 0;font-size:16.5px;color:#bcd2c6}
+.price-split b{color:#fff}
+.price-main .btn{margin-top:24px;align-self:flex-start}
+.price-side{display:grid;gap:18px;align-content:start}
+.price-addon{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.price-addon .pa-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.price-addon h3{font-size:19px}
+.price-addon .pa-price{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:22px;color:var(--accent);white-space:nowrap}
+.price-addon p{margin:6px 0 0;color:var(--ink-soft);font-size:15px}
+.price-terms{background:var(--surface-2);border-radius:var(--radius);padding:22px 24px;font-size:15.5px}
+.price-terms b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:17px;margin-bottom:5px}
+.price-terms p{margin:0;color:var(--ink-soft)}
 
 /* Demo */
 .demo{background:var(--green-deep);color:#eef4f0;border-radius:26px;padding:38px;display:grid;grid-template-columns:1fr;gap:28px}
@@ -440,6 +466,9 @@ form .btn{grid-column:1/-1;justify-content:center;font-size:16px;padding:15px}
   .pair-vs .vs{font-size:10px}
   .pair-card{padding:12px 10px}
   .pair-side .team-dot{margin-right:5px}
+  .sc-status{padding:10px 12px;gap:8px}
+  .sc-status-label{font-size:10.5px;letter-spacing:.05em}
+  .sc-status .pill{font-size:11px;padding:4px 8px}
 }
 
 footer{border-top:1px solid var(--line);padding:36px 0 44px;color:var(--ink-soft);font-size:14.5px}
@@ -483,7 +512,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         </div>
         <div class="hero-points">
           <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Lives on your home screen</b> — save it like an app, no download</span></div>
-          <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Very affordable</b> — priced to fit a real budget</span></div>
+          <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Flat $450 per event</b> — under $19 a player for a 24-player field</span></div>
           <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Made however you'd like</b> — built for your group, not a generic template</span></div>
           <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Made for any golf weekend or tournament</b> — if it's played, Tally can score it</span></div>
         </div>
@@ -693,7 +722,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <div class="hc-hole" id="sc-hole">Hole 12</div>
               <button type="button" class="hc-arrow" id="hole-next" aria-label="Next hole">›</button>
             </div>
-            <div class="hc-line" id="sc-line">Dye Course · Par 4 · SI 5 · 388 yds</div>
+            <div class="hc-line" id="sc-line">Dye Course · Par 4 · SI 15 · 388 yds</div>
             <div class="sc-status"><span class="sc-status-label">Match status</span><span class="pill hot" id="sc-status-pill">Orange 1 UP · Thru 12</span></div>
             <h5 class="af-sub" id="sc-enter">Enter scores — Hole 12</h5>
             <div id="scorers"></div>
@@ -864,8 +893,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             </div>
             <div class="scorer" style="border-bottom:0">
               <div class="sc-who"><span class="sc-team-bar" style="background:#7a1f2b"></span><span class="sc-name">D. Cole<sup class="sc-total">17</sup></span></div>
-              <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">6</span><span class="fm-b">+</span></span></span>
-              <span class="sc-net-slot"><span class="lbl">Net</span><span class="val">6</span></span>
+              <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">6<span class="hole-dot"></span></span><span class="fm-b">+</span></span></span>
+              <span class="sc-net-slot"><span class="lbl">Net</span><span class="val">5</span></span>
             </div>
           </div>
           <h3>Live scoring</h3>
@@ -1057,7 +1086,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <div class="step">
           <span class="num">01</span>
           <h3>Tell us about your event</h3>
-          <p>Fill out the form on the Start Building page — where you're playing, how many players, your formats, your dates. You'll get a reply with any follow-up questions and a price for your build.</p>
+          <p>Fill out the form on the Start Building page — where you're playing, how many players, your formats, your dates. You'll get a reply with any follow-up questions and the details for your build. The price is a flat $450 per event.</p>
         </div>
         <div class="step">
           <span class="num">02</span>
@@ -1206,6 +1235,47 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section id="pricing" style="padding-top:0" data-view="home">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Pricing</span>
+        <h2>One flat price. The whole app.</h2>
+        <p>No per-player fees, no subscription, nothing to cancel — one number per event, the same for a foursome trip or a full invitational field.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-main">
+          <div class="price-fig"><span class="price-amt">$450</span><span class="price-per">per event</span></div>
+          <p class="price-lede">The full custom scoring app, built from scratch around your event:</p>
+          <ul class="tick-list">
+            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Your event's own branding</b> — your logo and colors on every screen</span></li>
+            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Live leaderboard</b> — including the Projected board, so everyone can watch the finish take shape</span></li>
+            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Match play, Stableford &amp; low net boards</b> — every format your weekend runs</span></li>
+            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Calcutta board</b> — if your group wants one</span></li>
+            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Spectator link</b> — view-only, so everyone back home can follow along</span></li>
+            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Full Admin</b> — pairings, score fixes, and result exports</span></li>
+          </ul>
+          <p class="price-split">Split it across a 24-player field and it works out to <b>under $19 a player</b> — less than a sleeve of balls each, for a custom app with your event's name on it.</p>
+          <a class="btn" href="#/quote">Start Building</a>
+        </div>
+        <div class="price-side">
+          <div class="price-addon">
+            <div class="pa-top"><h3>Promo video</h3><span class="pa-price">+$250</span></div>
+            <p>A trailer for your event, like the one made for the Fellas Invitational — cut to get the group chat buzzing before anyone tees off.</p>
+          </div>
+          <div class="price-addon">
+            <div class="pa-top"><h3>Rush build</h3><span class="pa-price">+$100</span></div>
+            <p>Event less than two weeks out? The rush build gets your app built, reviewed, and ready in time to tee off.</p>
+          </div>
+          <div class="price-terms">
+            <b>Simple terms</b>
+            <p>A 50% deposit starts the build, and the balance is due the day before your event. That's it — no subscription, nothing renews, nothing to cancel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq" style="padding-top:0" data-view="faq">
     <div class="wrap">
@@ -1232,11 +1302,11 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         </details>
         <details>
           <summary>How far ahead should we reach out?</summary>
-          <p>The earlier the better — a few weeks before the trip is comfortable, so there's time to load rosters, set pairings, and let you review everything. Rush builds are sometimes possible; ask.</p>
+          <p>The earlier the better — a few weeks before the trip is comfortable, so there's time to load rosters, set pairings, and let you review everything. Inside two weeks? A rush build is +$100 — ask, and you'll get an honest answer on whether it can be done in time.</p>
         </details>
         <details>
           <summary>What does it cost?</summary>
-          <p>Less than you'd expect — Tally is deliberately kept affordable: one flat price per event, no per-player fees, no subscription, nothing to cancel. Field size, number of matches, and format complexity set the exact number, so each build is priced individually. Head to Start Building and you'll get your price with no obligation.</p>
+          <p>$450 per event — one flat price for the full custom app: your event's branding, the live leaderboard with the Projected board, match play, Stableford and low net boards, a Calcutta if your group wants one, a spectator link, and full Admin. No per-player fees, no subscription, nothing to cancel — split across a 24-player field, it's under $19 a player. Two add-ons if you want them: a promo video for your event at +$250, and a rush build at +$100 if your event is less than two weeks out. Terms are simple: a 50% deposit starts the build, and the balance is due the day before your event.</p>
         </details>
         <details>
           <summary>Who runs the scoring during the trip?</summary>
@@ -1253,10 +1323,10 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <div>
           <span class="tag">The price</span>
           <h2>Tournament-grade scoring, without the tournament-software price</h2>
-          <p>Tally isn't licensed club software with a sales team and a contract — it's a custom app built for your event, and it's priced that way. Most organizers are surprised how affordable the price comes back.</p>
+          <p>Tally isn't licensed club software with a sales team and a contract — it's a custom app built for your event, and it's priced that way: $450 flat per event, published right on the home page. Split across a 24-player field, that's under $19 a player.</p>
         </div>
         <div class="value-facts">
-          <span><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>One flat price</b>&nbsp;per tournament — priced up front</span></span>
+          <span><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>$450 flat</b>&nbsp;per event — one price, published up front</span></span>
           <span><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>No per-player fees</b>&nbsp;— a small crew trip and a big invitational play by the same rules</span></span>
           <span><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>No subscription</b>&nbsp;— nothing renews, nothing to cancel after the trip</span></span>
           <a class="btn" href="#/quote" style="justify-self:start;margin-top:6px">Start Building</a>
@@ -1272,7 +1342,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <div>
           <span class="tag">Start Building</span>
           <h2>Tell us about your event</h2>
-          <p style="color:var(--ink-soft);font-size:16.5px">A tournament, an outing, a fundraiser, or just a golf weekend with your crew — whatever you're running, fill this out and you'll get a reply with follow-up questions and an affordable flat price for your build. And if there's a screen, board, or rule your event needs that you haven't seen anywhere on this site, put it in the notes: custom requests are the whole point. No obligation, no mailing list — just a conversation about your event.</p>
+          <p style="color:var(--ink-soft);font-size:16.5px">A tournament, an outing, a fundraiser, or just a golf weekend with your crew — whatever you're running, fill this out and you'll get a reply with follow-up questions and the details for your build — the price is the flat $450 per event, same for everyone. And if there's a screen, board, or rule your event needs that you haven't seen anywhere on this site, put it in the notes: custom requests are the whole point. No obligation, no mailing list — just a conversation about your event.</p>
           <p class="contact-line">Prefer email? Reach out directly at<br><a href="mailto:FTMOORE17@gmail.com">FTMOORE17@gmail.com</a></p>
           <ul class="tick-list">
             <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Tournaments, outings &amp; golf weekends of any kind and size</span></li>
@@ -1340,7 +1410,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
 <script>
 /* Page router — hash-based views with a persistent nav */
 var ROUTES = ['home', 'example', 'how', 'faq', 'quote'];
-var ALIASES = { demo: 'example', what: 'home', formats: 'home', app: 'how', top: 'home', '': 'home' };
+var ALIASES = { demo: 'example', what: 'home', formats: 'home', pricing: 'home', app: 'how', top: 'home', '': 'home' };
 function routeFromHash(){
   var h = location.hash.replace(/^#\/?/, '');
   if (ROUTES.indexOf(h) >= 0) return h;
@@ -1406,10 +1476,10 @@ var demoPlayers = [
   { name: 'D. Cole', team: '#7a1f2b', gross: 6, totals: { Dye: 17, Fazio: 16, Love: 18, Norman: 17 } }
 ];
 var demoMatches = [
-  { n: 1, fmt: 'Best Ball', course: 'Fazio Course', hole: 4, holes: 9, par: 4, yds: 372, si: 7, status: 'Final · Orange won 3&2', strokes: [false, true, false, true] },
-  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 13, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Blue won 2&1', strokes: [true, true, false, true] },
-  { n: 3, fmt: 'Singles', course: 'Dye Course', hole: 12, holes: 18, par: 4, yds: 388, si: 5, status: 'Orange 1 UP · Thru 12', strokes: [true, true, false, false] },
-  { n: 4, fmt: 'Singles', course: 'Norman Course', hole: 1, holes: 18, par: 4, yds: 385, si: 5, status: 'Not started', strokes: [false, true, false, true] }
+  { n: 1, fmt: 'Best Ball', course: 'Fazio Course', hole: 4, holes: 9, par: 4, yds: 372, si: 7, status: 'Final · Orange won 3&2' },
+  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 13, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Blue won 2&1' },
+  { n: 3, fmt: 'Singles', course: 'Dye Course', hole: 12, holes: 18, par: 4, yds: 388, si: 15, status: 'Orange 1 UP · Thru 12' },
+  { n: 4, fmt: 'Singles', course: 'Norman Course', hole: 1, holes: 18, par: 4, yds: 385, si: 5, status: 'Not started' }
 ];
 var currentMatch = demoMatches[2];
 var currentHole = currentMatch.hole;
@@ -1422,8 +1492,9 @@ function renderDemo(){
   document.getElementById('sc-enter').textContent = 'Enter scores — Hole ' + currentHole;
   document.getElementById('sc-status-pill').textContent = m.status;
   scorersEl.innerHTML = '';
+  var courseKey = m.course.split(' ')[0];
   demoPlayers.forEach(function(p, i){
-    var stroke = m.strokes[i];
+    var stroke = m.si <= p.totals[courseKey];
     var row = document.createElement('div');
     row.className = 'scorer';
     var who = document.createElement('div');
