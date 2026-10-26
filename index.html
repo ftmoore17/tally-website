@@ -97,7 +97,7 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .phone-tabs{display:flex;gap:6px;padding:12px 14px 4px}
-.phone-tabs button{flex:1;border:0;border-radius:999px;padding:10px 4px;font:600 13.5px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;cursor:pointer}
+.phone-tabs button{flex:1;border:0;border-radius:999px;padding:10px 2px;font:600 12px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;cursor:pointer;white-space:nowrap}
 .phone-tabs button.active{background:var(--green);color:#fff}
 .board{padding:12px 16px 18px}
 .board table{width:100%;border-collapse:collapse;font-size:14.5px}
@@ -251,6 +251,8 @@ section{padding:76px 0}
 .match-picker{display:flex;flex-wrap:nowrap;gap:5px;margin-bottom:12px}
 .match-picker button{flex:1 1 0;min-width:0;border:0;border-radius:999px;padding:7px 2px;font:600 12.5px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;cursor:pointer;white-space:nowrap}
 .match-picker button.active{background:var(--green);color:#fff}
+.match-picker .mp-pill{flex:1 1 0;min-width:0;border-radius:999px;padding:7px 2px;font:600 12.5px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;text-align:center;white-space:nowrap}
+.match-picker .mp-pill.active{background:var(--green);color:#fff}
 .hc-line{text-align:center;font-family:"DM Mono",monospace;font-size:12.5px;color:#45554e;margin-top:2px;white-space:nowrap}
 @media(max-width:560px){.hc-line{font-size:11px;letter-spacing:-.02em}}
 .sc-who{min-width:0;display:flex;align-items:center;gap:9px}
@@ -367,6 +369,12 @@ section{padding:76px 0}
 .demo-card h4{margin:0 0 4px;font-family:"Bricolage Grotesque",sans-serif;font-size:16px}
 .demo-card .sub{font-size:12.5px;color:#7b8a81;margin-bottom:12px}
 .scorer{display:grid;grid-template-columns:minmax(132px,1fr) auto 64px;align-items:center;column-gap:14px;height:58px;padding:0;border-bottom:1px solid #edf1ed;font-size:14.5px;font-weight:500}
+.home-scorer{grid-template-columns:minmax(92px,1fr) auto 56px;column-gap:9px;height:51px;font-size:13.5px}
+.home-scorer .stepper{gap:7px}
+.home-scorer .stepper .fm-b{width:27px;height:27px;font-size:15px}
+.home-scorer .stepper .gross{font-size:15px;min-width:18px;padding:3px 5px}
+.home-scorer .sc-net-slot{width:56px}
+.home-scorer .sc-net-slot .val{font-size:15px}
 .stepper{display:flex;align-items:center;gap:10px;justify-self:center}
 .stepper button{width:32px;height:32px;border-radius:50%;border:1.5px solid #dce5de;background:#fff;font-size:17px;cursor:pointer;line-height:1;color:#0c3b2e}
 .stepper button:hover{border-color:#0c3b2e}
@@ -529,6 +537,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           </div>
           <div class="phone-tabs" role="tablist" aria-label="Preview boards">
             <button class="active" data-board="standings" role="tab">Standings</button>
+            <button data-board="scoring" role="tab">Scoring</button>
             <button data-board="matches" role="tab">Matches</button>
             <button data-board="lownet" role="tab">Low Net</button>
           </div>
@@ -547,17 +556,49 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <tr><td><span class="team-dot" style="background:#274b73"></span>Navy</td><td class="num to-par">7</td><td class="num to-par">7</td><td class="num to-par">6</td><td class="num to-par">6</td><td class="num to-par totcol">26</td></tr>
             </table>
           </div>
+          <div class="board" id="board-scoring" hidden>
+            <div class="match-picker" aria-hidden="true">
+              <span class="mp-pill">M1</span>
+              <span class="mp-pill">M2</span>
+              <span class="mp-pill active">M3</span>
+              <span class="mp-pill">M4</span>
+            </div>
+            <div class="hc-nav">
+              <span class="hc-arrow" aria-hidden="true">‹</span>
+              <div class="hc-hole" style="font-size:24px">Hole 12</div>
+              <span class="hc-arrow" aria-hidden="true">›</span>
+            </div>
+            <div class="hc-line">Dye Course · Par 4 · SI 15 · 388 yds</div>
+            <div class="sc-status"><span class="sc-status-label">Match status</span><span class="pill hot">Orange 1 UP · Thru 12</span></div>
+            <h5 class="af-sub" style="font-size:14px;margin-top:14px">Enter scores — Hole 12</h5>
+            <div class="scorer home-scorer">
+              <div class="sc-who"><span class="sc-team-bar" style="background:#e85d26" aria-hidden="true"></span><span class="sc-name">J. Carter<sup class="sc-total">9</sup></span></div>
+              <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">5</span><span class="fm-b">+</span></span></span>
+              <span class="sc-net-slot"><span class="lbl">Net</span><span class="val">5</span></span>
+            </div>
+            <div class="scorer home-scorer">
+              <div class="sc-who"><span class="sc-team-bar" style="background:#e85d26" aria-hidden="true"></span><span class="sc-name">T. Moore<sup class="sc-total">12</sup></span></div>
+              <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">4</span><span class="fm-b">+</span></span></span>
+              <span class="sc-net-slot"><span class="lbl">Net</span><span class="val">4</span></span>
+            </div>
+            <div class="scorer home-scorer">
+              <div class="sc-who"><span class="sc-team-bar" style="background:#7a1f2b" aria-hidden="true"></span><span class="sc-name">M. Reyes<sup class="sc-total">7</sup></span></div>
+              <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">4</span><span class="fm-b">+</span></span></span>
+              <span class="sc-net-slot"><span class="lbl">Net</span><span class="val">4</span></span>
+            </div>
+            <div class="scorer home-scorer">
+              <div class="sc-who"><span class="sc-team-bar" style="background:#7a1f2b" aria-hidden="true"></span><span class="sc-name">D. Cole<sup class="sc-total">17</sup></span></div>
+              <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">6<span class="hole-dot"></span></span><span class="fm-b">+</span></span></span>
+              <span class="sc-net-slot"><span class="lbl">Net</span><span class="val">5</span></span>
+            </div>
+            <span class="sc-save" style="text-align:center;margin-top:14px;padding:11px;font-size:14px">Save scores</span>
+          </div>
           <div class="board" id="board-matches" hidden>
-            <div class="match-row"><span><b>Match 5</b> · Best Ball</span><span class="pill hot">Orange 2 UP</span></div>
-            <div class="match-row"><span><b>Match 6</b> · Singles</span><span class="pill">Maroon 1 UP</span></div>
-            <div class="match-row"><span><b>Match 7</b> · Singles</span><span class="pill">AS thru 7</span></div>
-            <div class="match-row"><span><b>Match 4</b> · Alt Shot</span><span class="pill">Blue won 3&amp;2</span></div>
-            <div class="match-row"><span><b>Match 3</b> · Scramble</span><span class="pill">Gold 1st · 40 pts</span></div>
-            <div class="match-row"><span><b>Match 2</b> · Best Ball</span><span class="pill">White won 2&amp;1</span></div>
-            <div class="match-row"><span><b>Match 8</b> · Singles</span><span class="pill hot">Red 2 UP</span></div>
-            <div class="match-row"><span><b>Match 9</b> · Best Ball</span><span class="pill">Teal won 4&amp;3</span></div>
-            <div class="match-row"><span><b>Match 1</b> · Best Ball</span><span class="pill">Green won 2&amp;1</span></div>
-            <div class="match-row" style="border-bottom:0"><span><b>Match 11</b> · Singles</span><span class="pill">Navy 1 UP</span></div>
+            <div class="match-row"><span><b>Orange</b> vs Maroon</span><span class="pill hot">Orange 2 UP</span></div>
+            <div class="match-row"><span><b>Blue</b> vs Green</span><span class="pill">Blue 1 UP</span></div>
+            <div class="match-row"><span><b>Gold</b> vs Purple</span><span class="pill">AS thru 7</span></div>
+            <div class="match-row"><span><b>Red</b> vs Teal</span><span class="pill hot">Red 2 UP</span></div>
+            <div class="match-row" style="border-bottom:0"><span><b>Pink</b> vs Navy</span><span class="pill">Navy won 3&amp;2</span></div>
           </div>
           <div class="board" id="board-lownet" hidden>
             <table class="lownet">
@@ -1434,7 +1475,7 @@ document.querySelectorAll('.phone-tabs button').forEach(function(btn){
   btn.addEventListener('click', function(){
     document.querySelectorAll('.phone-tabs button').forEach(function(b){ b.classList.remove('active'); });
     btn.classList.add('active');
-    ['standings','matches','lownet'].forEach(function(id){
+    ['standings','scoring','matches','lownet'].forEach(function(id){
       document.getElementById('board-' + id).hidden = (id !== btn.dataset.board);
     });
   });
