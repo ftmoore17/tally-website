@@ -286,6 +286,9 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .match-picker button.active{background:var(--green);color:#fff}
 .match-picker .mp-pill{flex:1 1 0;min-width:0;border-radius:999px;padding:7px 2px;font:600 12.5px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;text-align:center;white-space:nowrap}
 .match-picker .mp-pill.active{background:var(--green);color:#fff}
+.ln-picker{display:flex;flex-wrap:nowrap;gap:6px;margin-bottom:12px}
+.ln-picker button{flex:1 1 0;min-width:0;border:0;border-radius:999px;padding:10px 2px;font:700 14px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;cursor:pointer;white-space:nowrap}
+.ln-picker button.active{background:var(--green);color:#fff}
 .hc-line{text-align:center;font-family:"DM Mono",monospace;font-size:12.5px;color:#45554e;margin-top:2px;white-space:nowrap}
 @media(max-width:560px){.hc-line{font-size:11px;letter-spacing:-.02em}}
 .sc-who{min-width:0;display:flex;align-items:center;gap:9px}
@@ -311,7 +314,7 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .board-toggle{display:flex;gap:8px;margin-bottom:12px}
 .board-toggle button{flex:1;border:1.5px solid #d8dfe4;border-radius:999px;padding:9px 4px;font:700 14px "DM Sans",sans-serif;background:#fff;color:#12233f;cursor:pointer}
 .board-toggle button.active{background:#0b1e3a;border-color:#0b1e3a;color:#fff}
-.af-panel table.standings{table-layout:fixed;width:100%;font-size:13px}
+.af-panel table.standings{table-layout:fixed;width:100%;font-size:14px}
 .af-panel table.standings th,.af-panel table.standings td{padding:7px 1px}
 .af-panel table.standings th{text-align:center;letter-spacing:.02em}
 .af-panel table.standings tr:first-child th{border-bottom:0;padding-bottom:0}
@@ -324,19 +327,20 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .af-panel table.standings th.totcol{text-align:right;padding-right:3px}
 .slot{display:inline-block;width:17px;text-align:center}
 .slot.wide{width:34px}
-.tcell{display:flex;align-items:center;gap:6px}
-.tcell .place{font-family:"DM Mono",monospace;font-size:11.5px;font-weight:700;color:#a87b14;flex:0 0 auto;min-width:23px}
-.tcell .tname{display:block;font-weight:700;font-size:13.5px;line-height:1.15}
-.tcell .back{display:block;font-size:10.5px;font-weight:500;color:#7b8a81;line-height:1.25}
+.tcell{display:flex;align-items:flex-start;gap:6px}
+.tcell .place{font-family:"DM Mono",monospace;font-size:12.5px;font-weight:700;color:#a87b14;flex:0 0 auto;min-width:25px;padding-top:2px}
+.tcell .place sup{font-size:.66em}
+.tcell .tname{display:block;font-weight:700;font-size:15px;line-height:1.15}
+.tcell .back{display:block;font-size:11.5px;font-weight:500;color:#7b8a81;line-height:1.25}
 @media(max-width:560px){
-  .af-panel table.standings{font-size:11.5px}
-  .af-panel table.standings th{font-size:10px}
-  .af-panel table.standings th.totcol{font-size:9px;letter-spacing:0}
+  .af-panel table.standings{font-size:12.5px}
+  .af-panel table.standings th{font-size:10.5px}
+  .af-panel table.standings th.totcol{font-size:9.5px;letter-spacing:0}
   .slot{width:14px}
   .slot.wide{width:28px}
   .tcell{gap:4px}
-  .tcell .place{min-width:20px;font-size:10.5px}
-  .tcell .tname{font-size:12px}
+  .tcell .place{min-width:22px;font-size:11.5px;padding-top:2px}
+  .tcell .tname{font-size:13px}
   .board-toggle button{font-size:13px;padding:8px 4px}
 }
 
@@ -514,6 +518,7 @@ form .btn[disabled]{opacity:.65;cursor:wait;transform:none}
 .appframe .board-toggle button{color:#1F3662;border-color:#c3cede}
 .appframe .board-toggle button.active{background:#1F3662;border-color:#1F3662;color:#fff}
 .appframe .match-picker button.active{background:#1F3662}
+.appframe .ln-picker button.active{background:#1F3662}
 .appframe .hc-arrow{color:#1F3662}
 .appframe .hc-arrow:hover{border-color:#1F3662}
 .appframe .sc-status{background:#1F3662}
@@ -819,20 +824,20 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <table class="standings">
                 <colgroup><col style="width:35%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:17%"></colgroup>
                 <tr><th class="tcol">Team</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th class="totcol">Total</th></tr>
-                <tr class="leader"><td class="tcol"><div class="tcell"><span class="place">1st</span><span><span class="tname" style="color:#e85d26">Orange</span><span class="back">Leader</span></span></div></td><td>20</td><td>10</td><td>10</td><td></td><td class="totcol">40</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">2nd</span><span><span class="tname" style="color:#1d4ed8">Blue</span><span class="back">15 back</span></span></div></td><td>5</td><td>15</td><td>5</td><td></td><td class="totcol">25</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">3rd</span><span><span class="tname" style="color:#7a1f2b">Maroon</span><span class="back">20 back</span></span></div></td><td>10</td><td>10</td><td>0</td><td></td><td class="totcol">20</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">4th</span><span><span class="tname" style="color:#0c3b2e">Green</span><span class="back">25 back</span></span></div></td><td>5</td><td>5</td><td>5</td><td></td><td class="totcol">15</td></tr>
+                <tr class="leader"><td class="tcol"><div class="tcell"><span class="place">1<sup>st</sup></span><span><span class="tname" style="color:#e85d26">Orange</span><span class="back">Leader</span></span></div></td><td>20</td><td>10</td><td>10</td><td></td><td class="totcol">40</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">2<sup>nd</sup></span><span><span class="tname" style="color:#1d4ed8">Blue</span><span class="back">15 back</span></span></div></td><td>5</td><td>15</td><td>5</td><td></td><td class="totcol">25</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">3<sup>rd</sup></span><span><span class="tname" style="color:#7a1f2b">Maroon</span><span class="back">20 back</span></span></div></td><td>10</td><td>10</td><td>0</td><td></td><td class="totcol">20</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">4<sup>th</sup></span><span><span class="tname" style="color:#0c3b2e">Green</span><span class="back">25 back</span></span></div></td><td>5</td><td>5</td><td>5</td><td></td><td class="totcol">15</td></tr>
               </table>
             </div>
             <div id="standings-projected" hidden>
               <table class="standings">
                 <colgroup><col style="width:35%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:17%"></colgroup>
                 <tr><th class="tcol">Team</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th class="totcol">Total</th></tr>
-                <tr class="leader"><td class="tcol"><div class="tcell"><span class="place">1st</span><span><span class="tname" style="color:#e85d26">Orange</span><span class="back">Leader</span></span></div></td><td>20</td><td>10</td><td>20</td><td></td><td class="totcol">50</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">2nd</span><span><span class="tname" style="color:#1d4ed8">Blue</span><span class="back">20 back</span></span></div></td><td>5</td><td>15</td><td>10</td><td></td><td class="totcol">30</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">3rd</span><span><span class="tname" style="color:#7a1f2b">Maroon</span><span class="back">25 back</span></span></div></td><td>10</td><td>10</td><td>5</td><td></td><td class="totcol">25</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">4th</span><span><span class="tname" style="color:#0c3b2e">Green</span><span class="back">35 back</span></span></div></td><td>5</td><td>5</td><td>5</td><td></td><td class="totcol">15</td></tr>
+                <tr class="leader"><td class="tcol"><div class="tcell"><span class="place">1<sup>st</sup></span><span><span class="tname" style="color:#e85d26">Orange</span><span class="back">Leader</span></span></div></td><td>20</td><td>10</td><td>20</td><td></td><td class="totcol">50</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">2<sup>nd</sup></span><span><span class="tname" style="color:#1d4ed8">Blue</span><span class="back">20 back</span></span></div></td><td>5</td><td>15</td><td>10</td><td></td><td class="totcol">30</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">3<sup>rd</sup></span><span><span class="tname" style="color:#7a1f2b">Maroon</span><span class="back">25 back</span></span></div></td><td>10</td><td>10</td><td>5</td><td></td><td class="totcol">25</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">4<sup>th</sup></span><span><span class="tname" style="color:#0c3b2e">Green</span><span class="back">35 back</span></span></div></td><td>5</td><td>5</td><td>5</td><td></td><td class="totcol">15</td></tr>
               </table>
             </div>
             <h5 class="af-sub">Matches</h5>
@@ -892,14 +897,58 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
 
           <!-- Boards -->
           <div class="af-panel" id="xpanel-boards" hidden>
-            <h5 class="af-sub" style="margin-top:2px">Match Low Net — Match 1 · Best Ball</h5>
-            <table>
-              <tr><th>Pair</th><th class="num">Net</th><th class="num">To par</th></tr>
-              <tr class="leader"><td>Carter &amp; Moore</td><td class="num">24</td><td class="num to-par under">−4</td></tr>
-              <tr><td>Reyes &amp; Cole</td><td class="num">26</td><td class="num to-par under">−2</td></tr>
-              <tr><td>Patel &amp; Donnelly</td><td class="num">27</td><td class="num to-par under">−1</td></tr>
-              <tr><td>Osei &amp; Alvarez</td><td class="num">29</td><td class="num to-par over">+1</td></tr>
-            </table>
+            <h5 class="af-sub" style="margin-top:2px">Match Low Net</h5>
+            <div class="ln-picker" role="tablist" aria-label="Pick a match for the low net board">
+              <button data-ln="1" role="tab" class="active" aria-selected="true" aria-label="Match 1">M1</button>
+              <button data-ln="2" role="tab" aria-selected="false" aria-label="Match 2">M2</button>
+              <button data-ln="3" role="tab" aria-selected="false" aria-label="Match 3">M3</button>
+              <button data-ln="4" role="tab" aria-selected="false" aria-label="Match 4">M4</button>
+            </div>
+            <div id="ln-board-1">
+              <table>
+                <tr><th>Pair</th><th class="num">Net</th><th class="num">To par</th></tr>
+                <tr class="leader"><td>Carter &amp; Moore</td><td class="num">24</td><td class="num to-par under">−4</td></tr>
+                <tr><td>Reyes &amp; Cole</td><td class="num">26</td><td class="num to-par under">−2</td></tr>
+                <tr><td>Patel &amp; Donnelly</td><td class="num">27</td><td class="num to-par under">−1</td></tr>
+                <tr><td>Osei &amp; Alvarez</td><td class="num">29</td><td class="num to-par over">+1</td></tr>
+              </table>
+            </div>
+            <div id="ln-board-2" hidden>
+              <table>
+                <tr><th>Pair</th><th class="num">Net</th><th class="num">To par</th></tr>
+                <tr class="leader"><td>Patel &amp; Donnelly</td><td class="num">25</td><td class="num to-par under">−3</td></tr>
+                <tr><td>Carter &amp; Moore</td><td class="num">27</td><td class="num to-par under">−1</td></tr>
+                <tr><td>Reyes &amp; Cole</td><td class="num">28</td><td class="num to-par">E</td></tr>
+                <tr><td>Osei &amp; Alvarez</td><td class="num">30</td><td class="num to-par over">+2</td></tr>
+              </table>
+            </div>
+            <div id="ln-board-3" hidden>
+              <table>
+                <tr><th>Player</th><th class="num">Net</th><th class="num">To par</th></tr>
+                <tr class="leader"><td>M. Reyes</td><td class="num">68</td><td class="num to-par under">−4</td></tr>
+                <tr><td>J. Carter</td><td class="num">69</td><td class="num to-par under">−3</td></tr>
+                <tr><td>T. Moore</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
+                <tr><td>R. Alvarez</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
+                <tr><td>S. Patel</td><td class="num">71</td><td class="num to-par under">−1</td></tr>
+                <tr><td>K. Donnelly</td><td class="num">72</td><td class="num to-par">E</td></tr>
+                <tr><td>D. Cole</td><td class="num">73</td><td class="num to-par over">+1</td></tr>
+                <tr><td>J. Osei</td><td class="num">73</td><td class="num to-par over">+1</td></tr>
+              </table>
+            </div>
+            <div id="ln-board-4" hidden>
+              <table>
+                <tr><th>Player</th><th class="num">Net</th><th class="num">To par</th></tr>
+                <tr><td>J. Carter</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>T. Moore</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>M. Reyes</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>D. Cole</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>S. Patel</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>K. Donnelly</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>J. Osei</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>R. Alvarez</td><td class="num">—</td><td class="num to-par">—</td></tr>
+              </table>
+              <p class="af-note">Match 4 hasn't teed off yet — this board fills in as scores come&nbsp;in.</p>
+            </div>
             <h5 class="af-sub">Weekend Low Net</h5>
             <table class="fixed">
               <colgroup><col style="width:29%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:14%"><col style="width:17%"></colgroup>
@@ -1608,6 +1657,19 @@ document.querySelectorAll('.board-toggle button').forEach(function(btn){
     });
     document.getElementById('standings-official').hidden = (btn.dataset.sview !== 'official');
     document.getElementById('standings-projected').hidden = (btn.dataset.sview !== 'projected');
+  });
+});
+
+/* Boards panel — Match Low Net switcher (M1–M4) */
+document.querySelectorAll('.ln-picker button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.ln-picker button').forEach(function(b){
+      b.classList.toggle('active', b === btn);
+      b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+    });
+    [1, 2, 3, 4].forEach(function(n){
+      document.getElementById('ln-board-' + n).hidden = (String(n) !== btn.dataset.ln);
+    });
   });
 });
 
