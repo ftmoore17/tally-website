@@ -120,13 +120,22 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .match-row .team-dot{width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle;margin-top:-2px;flex:0 0 auto}
 .to-par{font-family:"DM Mono",monospace;font-weight:500}
 .under{color:#c2410c}.over{color:#5b6f65}
-.match-row{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:8px;padding:12px 14px;background:#fff;border:1px solid #e3eae4;border-radius:14px;font-size:15px}
-.match-vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
-.match-vs .m-side{font-weight:600;white-space:nowrap}
+.match-row{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:6px;padding:9px 12px;background:#fff;border:1px solid #e3eae4;border-radius:14px;font-size:15px}
+.match-vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:8px}
+.match-vs .m-side{font-weight:600;white-space:nowrap;display:flex;flex-direction:column;gap:3px;min-width:0}
+.match-vs .m-side.right{align-items:flex-end}
+.m-team{display:inline-flex;align-items:center;line-height:1.2}
+.m-players{display:flex;flex-direction:column;gap:1px;font-size:12px;font-weight:500;color:#5b6f65;line-height:1.3;white-space:nowrap;align-items:flex-start}
+.m-side.right .m-players{align-items:flex-end}
+.match-vs .vs{padding-top:3px}
 .match-vs .m-side.right{text-align:right}
 .match-row .vs{font-size:11px;color:#7b8a81;font-weight:700;letter-spacing:.05em;text-align:center}
 .match-row .pill{align-self:center}
-#board-matches:not([hidden]){gap:9px}
+#board-matches:not([hidden]){gap:7px}
+#board-matches{padding:8px 12px 10px}
+#board-matches .match-row{padding:7px 10px;gap:4px}
+#board-matches .m-players{font-size:11.5px;line-height:1.2}
+#board-matches .pill{padding:3px 8px}
 #board-matches .match-row{flex:1}
 .pill{font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;background:#eef3ef;color:#0c3b2e;white-space:nowrap}
 .pill.hot{background:#fdeee7;color:#c2410c}
@@ -516,8 +525,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <h1>Your tournament.<br>Your <span class="tally-word">app.</span></h1>
         <p class="lede">Tally builds custom scoring apps for golf weekends and tournaments of every kind — buddy trips, annual invitationals, club events, company outings, fundraisers, or just the weekend your group talks about all year. Every app is made however you'd like it: built from scratch around how your exact event works — live scoring, real leaderboards, any format, any course, your teams, your name on it, and any board, tab, or screen you can dream up.</p>
         <div class="hero-ctas">
-          <a class="btn" href="#/quote">Start building your app</a>
-          <a class="btn ghost" href="#/example" style="color:#fff;border-color:rgba(255,255,255,.4)">See it in action</a>
+          <a class="btn" href="#/quote">Start Building Your App</a>
+          <a class="btn ghost" href="#/example" style="color:#fff;border-color:rgba(255,255,255,.4)">See It in Action</a>
         </div>
         <div class="hero-points">
           <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>On your home screen</b> — save it like an&nbsp;app</span></div>
@@ -599,11 +608,11 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <span class="sc-save" style="text-align:center;margin-top:14px;padding:11px;font-size:14px">Save scores</span>
           </div>
           <div class="board" id="board-matches" hidden>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#e85d26"></span><b>Orange</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#7a1f2b"></span>Maroon</span></div><span class="pill hot">Orange 2 UP · thru 12</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#1d4ed8"></span><b>Blue</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#0c3b2e"></span>Green</span></div><span class="pill">Blue 1 UP · thru 10</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#d9a441"></span><b>Gold</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#6b4fa1"></span>Purple</span></div><span class="pill">AS thru 7</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#cf3527"></span><b>Red</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#0f766e"></span>Teal</span></div><span class="pill hot">Red 2 UP · thru 14</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#c94f7c"></span><b>Pink</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#274b73"></span>Navy</span></div><span class="pill">Navy won 3&amp;2 · F</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#e85d26"></span><b>Orange</b></span><span class="m-players"><span>J. Carter</span><span>T. Moore</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#7a1f2b"></span>Maroon</span><span class="m-players"><span>M. Reyes</span><span>D. Cole</span></span></span></div><span class="pill hot">Orange 2 UP · Thru 12</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#1d4ed8"></span><b>Blue</b></span><span class="m-players"><span>S. Patel</span><span>K. Donnelly</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#0c3b2e"></span>Green</span><span class="m-players"><span>J. Osei</span><span>R. Alvarez</span></span></span></div><span class="pill">Blue 1 UP · Thru 10</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#d9a441"></span><b>Gold</b></span><span class="m-players"><span>B. Callahan</span><span>C. Murphy</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#6b4fa1"></span>Purple</span><span class="m-players"><span>R. Nguyen</span><span>A. Lindqvist</span></span></span></div><span class="pill">AS Thru 7</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#cf3527"></span><b>Red</b></span><span class="m-players"><span>J. Whitfield</span><span>E. Brooks</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#0f766e"></span>Teal</span><span class="m-players"><span>H. Foster</span><span>L. Bennett</span></span></span></div><span class="pill hot">Red 2 UP · Thru 14</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#c94f7c"></span><b>Pink</b></span><span class="m-players"><span>N. Clarke</span><span>W. Harrison</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#274b73"></span>Navy</span><span class="m-players"><span>G. Mitchell</span><span>P. Sullivan</span></span></span></div><span class="pill">Navy Won 3&amp;2 · F</span></div>
           </div>
           <div class="board" id="board-lownet" hidden>
             <table class="lownet">
@@ -703,7 +712,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <div style="max-width:640px">
           <span class="tag" style="color:#ffb59d">Example app</span>
           <h2>One app, every section your event runs on</h2>
-          <p>This is a real build — the Fellas at Barefoot Resort — made the way every Tally app is: from scratch, around one event's courses, formats, and players. Work through the tabs, and try the Scoring tab: tap + or − and each player's net updates on the spot. Then scroll on — below, every section gets its own breakdown, and every one of them can be different in yours. The screens here are examples. Yours gets made however you'd like.</p>
+          <p>A working example, built the way every Tally app is: from scratch, around one event's courses, formats, and players. Work through the tabs, and try the Scoring tab: tap + or − and each player's net updates on the spot. Then scroll on — below, every section gets its own breakdown, and every one of them can be different in yours. The screens here are examples. Yours gets made however you'd like.</p>
         </div>
         <div class="appframe" aria-label="Example Tally app for The Fellas">
           <div class="af-screen">
@@ -745,7 +754,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             </div>
             <h5 class="af-sub">Matches</h5>
             <div class="pair-card">
-              <div class="pair-head"><b>Match 1</b><span class="fmt">Best Ball · Fazio</span><span class="pill">Final · Orange won 3&amp;2</span></div>
+              <div class="pair-head"><b>Match 1</b><span class="fmt">Best Ball · Fazio</span><span class="pill">Final · Orange Won 3&amp;2</span></div>
               <div class="pair-vs">
                 <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter / Moore</span>
                 <span class="vs">VS</span>
@@ -753,7 +762,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               </div>
             </div>
             <div class="pair-card">
-              <div class="pair-head"><b>Match 2</b><span class="fmt">Best Ball · Love</span><span class="pill">Final · Blue won 2&amp;1</span></div>
+              <div class="pair-head"><b>Match 2</b><span class="fmt">Best Ball · Love</span><span class="pill">Final · Blue Won 2&amp;1</span></div>
               <div class="pair-vs">
                 <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Patel / Donnelly</span>
                 <span class="vs">VS</span>
@@ -761,7 +770,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               </div>
             </div>
             <div class="pair-card">
-              <div class="pair-head"><b>Match 3</b><span class="fmt">Singles · Dye</span><span class="pill hot">Orange 1 UP · thru 12</span></div>
+              <div class="pair-head"><b>Match 3</b><span class="fmt">Singles · Dye</span><span class="pill hot">Orange 1 UP · Thru 12</span></div>
               <div class="pair-vs">
                 <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter</span>
                 <span class="vs">VS</span>
@@ -943,7 +952,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <div class="step">
           <span class="num">01</span>
           <h3>Tell us about your event</h3>
-          <p>Fill out the form on the Start Building page — where you're playing, how many players, your formats, your dates. You'll get a reply with any follow-up questions and the details for your build. The price is $25 per person, everything included — and once your group reaches 24 players, the math stops: $600 flat, no matter how many more you bring.</p>
+          <p>Fill out the form on the Start Building page — where you're playing, how many players, your formats, your dates. You'll get a reply with any follow-up questions and the details for your build. We talk through your event — formats, scoring, and rules — or help you design the whole thing, ideas and inspiration included. Then we quote one flat price for the group. The price is $25 per person, everything included — and once your group reaches 24 players, the math stops: $600 flat, no matter how many more you bring.</p>
         </div>
         <div class="step">
           <span class="num">02</span>
@@ -1009,7 +1018,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <tr><td><span class="team-dot" style="background:#0c3b2e"></span>Green</td><td class="num">5</td><td class="num">5</td><td class="num">5</td><td class="num">—</td><td class="num totcol">15</td></tr>
             </table>
             <div class="pair-card">
-              <div class="pair-head"><b>Match 3</b><span class="fmt">Singles · Dye</span><span class="pill hot">Orange 2 UP · thru 7</span></div>
+              <div class="pair-head"><b>Match 3</b><span class="fmt">Singles · Dye</span><span class="pill hot">Orange 2 UP · Thru 7</span></div>
               <div class="pair-vs">
                 <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter</span>
                 <span class="vs">VS</span>
@@ -1525,8 +1534,8 @@ var demoPlayers = [
   { name: 'D. Cole', team: '#7a1f2b', gross: 6, totals: { Dye: 17, Fazio: 16, Love: 18, Norman: 17 } }
 ];
 var demoMatches = [
-  { n: 1, fmt: 'Best Ball', course: 'Fazio Course', hole: 4, holes: 9, par: 4, yds: 372, si: 7, status: 'Final · Orange won 3&2' },
-  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 13, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Blue won 2&1' },
+  { n: 1, fmt: 'Best Ball', course: 'Fazio Course', hole: 4, holes: 9, par: 4, yds: 372, si: 7, status: 'Final · Orange Won 3&2' },
+  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 13, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Blue Won 2&1' },
   { n: 3, fmt: 'Singles', course: 'Dye Course', hole: 12, holes: 18, par: 4, yds: 388, si: 15, status: 'Orange 1 UP · Thru 12' },
   { n: 4, fmt: 'Singles', course: 'Norman Course', hole: 1, holes: 18, par: 4, yds: 385, si: 5, status: 'Not started' }
 ];
