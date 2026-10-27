@@ -147,10 +147,9 @@ section{padding:48px 0}
 .sec-head p{color:var(--ink-soft);font-size:17px;margin:10px 0 0}
 .tag{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 
-.strip{background:var(--surface);border-block:1px solid var(--line);padding:16px 0}
-.strip .wrap{display:flex;gap:14px 44px;flex-wrap:wrap;justify-content:space-between}
-.strip div b{font-family:"Bricolage Grotesque",sans-serif;font-size:21px;display:block}
-.strip div span{font-size:13.5px;color:var(--ink-soft)}
+.strip{padding:28px 0 0}
+.strip-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.strip-grid{grid-template-columns:1fr}}
 
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -174,9 +173,10 @@ section{padding:48px 0}
 .step-flags li{font-size:15.5px;color:var(--ink-soft);line-height:1.5;gap:10px}
 .step-flags .dot-mark{width:18px;height:18px;flex-basis:18px;margin-top:3px}
 
-.formats{display:flex;flex-wrap:wrap;gap:10px}
-.fmt{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px}
-.fmt small{display:block;font-weight:400;color:var(--ink-soft);font-size:12.5px}
+.formats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fmt{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px;text-wrap:balance}
+.fmt small{display:block;font-weight:400;color:var(--ink-soft);font-size:12.5px;text-wrap:balance}
+@media(max-width:560px){.fmt{padding:10px 14px;font-size:14.5px}.fmt small{font-size:12px}}
 
 .split{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 @media(max-width:860px){.split{grid-template-columns:1fr}}
@@ -230,6 +230,7 @@ section{padding:48px 0}
 .af-tabbar button{flex:1;min-width:0;border:0;background:transparent;border-radius:12px;padding:7px 1px 5px;display:flex;flex-direction:column;align-items:center;gap:3px;font:600 10px "DM Sans",sans-serif;letter-spacing:-.01em;color:#8fa0b5;cursor:pointer}
 .af-tabbar button span{white-space:nowrap}
 .af-tabbar button svg{color:#8fa0b5;flex:0 0 auto}
+.af-tabbar .tab-emoji{font-size:21px;line-height:1.15}
 .af-tabbar button.active{background:rgba(255,255,255,.13);color:#fff}
 .af-tabbar button.active svg{color:#e9b949}
 @media(max-width:560px){.af-tabbar button{font-size:9px;padding-left:0;padding-right:0}}
@@ -360,8 +361,7 @@ section{padding:48px 0}
 .value-facts>span{display:flex;gap:11px;align-items:flex-start}
 
 /* Pricing */
-.price-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;align-items:stretch}
-@media(max-width:860px){.price-grid{grid-template-columns:1fr}}
+.price-grid{display:grid;grid-template-columns:1fr;gap:14px;align-items:stretch}
 .price-main{background:var(--green-deep);color:#eef4f0;border-radius:26px;padding:28px;display:flex;flex-direction:column}
 @media(max-width:860px){.price-main{padding:28px 22px}}
 .price-fig{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
@@ -404,8 +404,6 @@ section{padding:48px 0}
 .demo-board td:last-child,.demo-board th:last-child{text-align:right}
 
 /* Feature breakdown — mini screens distilled from the example app */
-.what-custom{margin:18px auto 0;max-width:660px;text-align:center;font-size:16.5px;color:var(--ink-soft)}
-.what-custom b{color:var(--ink)}
 .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:860px){.feature-grid{grid-template-columns:1fr}}
 .feature{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;flex-direction:column}
@@ -534,6 +532,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     <nav class="nav-links" aria-label="Site pages">
       <a href="#/home" data-route="home">Home</a>
       <a href="#/how" data-route="how">How It Works</a>
+      <a href="#/included" data-route="included">What's Included</a>
       <a href="#/example" data-route="example">Example App</a>
       <a href="#/faq" data-route="faq">FAQ</a>
     </nav>
@@ -666,15 +665,43 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
   <!-- STRIP -->
   <div class="strip" data-view="home">
     <div class="wrap">
-      <div><b>Any group size</b><span>A single foursome or a full invitational field — no minimum, no cap</span></div>
-      <div><b>Any format, any course</b><span>Best ball, scramble, singles, alt shot — wherever your group plays</span></div>
-      <div><b>Handicaps &amp; net scoring</b><span>If your group wants them — from GHIN indexes, course by course</span></div>
-      <div><b>Zero spreadsheets</b><span>No paper cards, no math at the 19th hole</span></div>
+      <div class="strip-grid">
+        <div class="card">
+          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M15.5 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Any group size</h3>
+          <p>a weekend crew or a full invitational&nbsp;field</p>
+        </div>
+        <div class="card">
+          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22V3"/><path d="M5 4h12l-2.5 3.5L17 11H5"/></svg></div>
+          <h3>Any format, any course</h3>
+          <p>Best ball, scramble, singles, alt shot — wherever your group&nbsp;plays</p>
+        </div>
+        <div class="card">
+          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+          <h3>Handicaps &amp; net scoring</h3>
+          <p>If your group wants them — from GHIN indexes, course by&nbsp;course</p>
+        </div>
+        <div class="card">
+          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+          <h3>Zero spreadsheets</h3>
+          <p>No paper cards, no math at the 19th&nbsp;hole</p>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- WHAT'S INCLUDED — PAGE HEADING -->
+  <section style="padding-top:0" data-view="included">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:6px">
+        <h2>What's Included</h2>
+        <p>What every Tally build comes with — and the one flat price that covers&nbsp;it.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- WHAT YOU GET -->
-  <section id="what" data-view="home">
+  <section id="what" style="padding-top:0" data-view="included">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">What you get</span>
@@ -718,7 +745,6 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <p>Not sure which format fits? Our golf tournament experts will help design your setup — formats, pairings, scoring — for any group size. Inspiration&nbsp;included.</p>
         </div>
       </div>
-      <p class="what-custom">Need a screen not shown? <b>Describe it — we'll build it.</b> The cards above are just where most events&nbsp;start.</p>
     </div>
   </section>
 
@@ -919,23 +945,23 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <!-- Bottom tab bar -->
           <div class="af-tabbar" role="tablist" aria-label="Example app sections">
             <button class="active" data-xtab="leaderboard" role="tab" aria-label="Leaderboard">
-              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14.5" cy="3.4" r="1.7"/><path d="M13.8 5.6c-.8 2.2-1.8 4.3-3.2 6.2l-2.7 8.7M10.6 11.8l3.6 1.6 1.2 7.1M12.2 7.6l4.6 2.7 3-2.4M16.8 10.3l1.3 6.1"/></svg>
+              <span class="tab-emoji" aria-hidden="true">🏌️</span>
               <span>Leaderboard</span>
             </button>
             <button data-xtab="scoring" role="tab" aria-label="Scoring">
-              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21.5v-18"/><path d="M8 4l9.5 2.2L8 8.6"/><path d="M3.8 21.5c1.4-1.1 2.8-1.6 4.2-1.6s2.8.5 4.2 1.6"/></svg>
+              <span class="tab-emoji" aria-hidden="true">⛳</span>
               <span>Scoring</span>
             </button>
             <button data-xtab="boards" role="tab" aria-label="Boards">
-              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5h9V9a4.5 4.5 0 0 1-9 0V3.5z"/><path d="M7.5 4.8H4.8a2.7 2.7 0 0 0 2.9 3.9M16.5 4.8h2.7a2.7 2.7 0 0 1-2.9 3.9"/><path d="M12 13.5v3M9.2 20.5l.8-4h4l.8 4z"/></svg>
+              <span class="tab-emoji" aria-hidden="true">🏆</span>
               <span>Boards</span>
             </button>
             <button data-xtab="calcutta" role="tab" aria-label="Calcutta">
-              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.2 3h5.6l-1.2 2.2c1.9 1.1 3.1 2.9 3.7 5.1.7 2.7.3 5.3-1.1 7.2-1 1.4-2.5 2-4.2 2s-3.2-.6-4.2-2C6.4 15.6 6 13 6.7 10.3c.6-2.2 1.8-4 3.7-5.1L9.2 3z"/><text x="12" y="16.8" text-anchor="middle" font-size="8.5" font-weight="700" fill="currentColor" stroke="none">$</text></svg>
+              <span class="tab-emoji" aria-hidden="true">💰</span>
               <span>Calcutta</span>
             </button>
             <button data-xtab="admin" role="tab" aria-label="Admin">
-              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.1"/><path d="M12 2.9v2.7M12 18.4v2.7M2.9 12h2.7M18.4 12h2.7M5.6 5.6l1.9 1.9M16.5 16.5l1.9 1.9M18.4 5.6l-1.9 1.9M7.5 16.5l-1.9 1.9"/></svg>
+              <span class="tab-emoji" aria-hidden="true">⚙️</span>
               <span>Admin</span>
             </button>
           </div>
@@ -1312,14 +1338,14 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <div class="formats" style="margin-top:22px">
           <span class="fmt">Best Ball<small>2- or 4-man, gross &amp; net</small></span>
           <span class="fmt">Scramble<small>9 or 18 holes</small></span>
-          <span class="fmt">Singles Match Play<small>Seeded head-to-head</small></span>
+          <span class="fmt">Singles Match&nbsp;Play<small>Seeded head-to-head</small></span>
           <span class="fmt">Alternate Shot<small>Partners, one ball</small></span>
           <span class="fmt">Stableford<small>Points &amp; tiebreakers</small></span>
-          <span class="fmt">Low Net<small>Per match &amp; full weekend</small></span>
+          <span class="fmt">Low Net<small>Per match &amp; full&nbsp;weekend</small></span>
           <span class="fmt">Skins<small>Optional side game</small></span>
           <span class="fmt">Calcutta<small>Optional auction board</small></span>
           <span class="fmt">9-Hole Matches<small>Front nine or back nine</small></span>
-          <span class="fmt">Something else entirely<small>Invented a format? We'll build it</small></span>
+          <span class="fmt">Something else entirely<small>Invented a format? We'll build&nbsp;it</small></span>
         </div>
       </div>
       <div class="lineup">
@@ -1353,8 +1379,16 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     </div>
   </section>
 
+  <!-- INCLUDED POINTER (Home) -->
+  <section style="padding-top:0" data-view="home">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:14px 20px;flex-wrap:wrap">
+      <p style="margin:0;font-size:17px"><b>See everything that's included</b> — one flat&nbsp;price.</p>
+      <a class="btn green" href="#/included">What's Included</a>
+    </div>
+  </section>
+
   <!-- PRICING -->
-  <section id="pricing" style="padding-top:0" data-view="home">
+  <section id="pricing" style="padding-top:0" data-view="included">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">Pricing</span>
@@ -1375,12 +1409,6 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           </ul>
           <p class="price-split"><b>24 or more players?</b> The math stops — <b>$600 flat</b>, no matter how many more you bring.</p>
           <a class="btn" href="#/quote">Start Building</a>
-        </div>
-        <div class="price-side">
-          <div class="price-terms">
-            <b>Simple terms</b>
-            <p>50% deposit to start; balance due the day before your event. No subscription, nothing to&nbsp;cancel.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -1509,8 +1537,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
 
 <script>
 /* Page router — hash-based views with a persistent nav */
-var ROUTES = ['home', 'example', 'how', 'faq', 'quote'];
-var ALIASES = { demo: 'example', what: 'home', formats: 'home', pricing: 'home', app: 'how', top: 'home', '': 'home' };
+var ROUTES = ['home', 'example', 'how', 'included', 'faq', 'quote'];
+var ALIASES = { demo: 'example', what: 'included', formats: 'home', pricing: 'included', app: 'how', top: 'home', '': 'home' };
 function routeFromHash(){
   var h = location.hash.replace(/^#\/?/, '');
   if (ROUTES.indexOf(h) >= 0) return h;
