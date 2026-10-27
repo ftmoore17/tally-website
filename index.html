@@ -117,6 +117,7 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .board td{padding:8px 6px;border-bottom:1px solid #edf1ed;font-weight:500}
 .board tr.leader td{font-weight:700}
 .team-dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px;vertical-align:1px}
+.match-row .team-dot{width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle;margin-top:-2px;flex:0 0 auto}
 .to-par{font-family:"DM Mono",monospace;font-weight:500}
 .under{color:#c2410c}.over{color:#5b6f65}
 .match-row{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:8px;padding:12px 14px;background:#fff;border:1px solid #e3eae4;border-radius:14px;font-size:15px}
@@ -598,11 +599,11 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <span class="sc-save" style="text-align:center;margin-top:14px;padding:11px;font-size:14px">Save scores</span>
           </div>
           <div class="board" id="board-matches" hidden>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Orange</b></span><span class="vs">VS</span><span class="m-side right">Maroon</span></div><span class="pill hot">Orange 2 UP</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Blue</b></span><span class="vs">VS</span><span class="m-side right">Green</span></div><span class="pill">Blue 1 UP</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Gold</b></span><span class="vs">VS</span><span class="m-side right">Purple</span></div><span class="pill">AS thru 7</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Red</b></span><span class="vs">VS</span><span class="m-side right">Teal</span></div><span class="pill hot">Red 2 UP</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Pink</b></span><span class="vs">VS</span><span class="m-side right">Navy</span></div><span class="pill">Navy won 3&amp;2</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#e85d26"></span><b>Orange</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#7a1f2b"></span>Maroon</span></div><span class="pill hot">Orange 2 UP · thru 12</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#1d4ed8"></span><b>Blue</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#0c3b2e"></span>Green</span></div><span class="pill">Blue 1 UP · thru 10</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#d9a441"></span><b>Gold</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#6b4fa1"></span>Purple</span></div><span class="pill">AS thru 7</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#cf3527"></span><b>Red</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#0f766e"></span>Teal</span></div><span class="pill hot">Red 2 UP · thru 14</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="team-dot" style="background:#c94f7c"></span><b>Pink</b></span><span class="vs">VS</span><span class="m-side right"><span class="team-dot" style="background:#274b73"></span>Navy</span></div><span class="pill">Navy won 3&amp;2 · F</span></div>
           </div>
           <div class="board" id="board-lownet" hidden>
             <table class="lownet">
