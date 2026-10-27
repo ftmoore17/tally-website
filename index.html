@@ -178,7 +178,7 @@ section{padding:48px 0}
 
 .formats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .fmt{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px;text-wrap:balance}
-.formats .fmt{border-radius:var(--radius);display:flex;flex-direction:column;justify-content:center}
+.formats .fmt{border-radius:var(--radius);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .fmt small{display:block;font-weight:400;color:var(--ink-soft);font-size:12.5px;text-wrap:balance}
 @media(max-width:560px){.fmt{padding:10px 14px;font-size:14.5px}.fmt small{font-size:12px}}
 
@@ -1374,8 +1374,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
 
   <!-- INCLUDED POINTER (Home) -->
   <section style="padding:32px 0 32px" data-view="home">
-    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:14px 20px;flex-wrap:wrap">
-      <p style="margin:0;font-size:17px"><b>See everything that's included</b> — one flat&nbsp;price.</p>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:center;gap:14px 20px;flex-wrap:wrap">
       <a class="btn green" href="#/included">What's Included</a>
     </div>
   </section>
