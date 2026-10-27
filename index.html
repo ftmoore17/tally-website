@@ -331,7 +331,7 @@ section{padding:48px 0}
   .board-toggle button{font-size:13px;padding:8px 4px}
 }
 
-/* Feature-card mini toggle (Projected standings card) */
+/* Feature-card mini toggle (Leaderboard card — Leaderboard | Projected) */
 .fm-toggle{display:flex;gap:6px;margin-bottom:10px}
 .fm-toggle span{flex:1;text-align:center;border:1.5px solid #d8dfe4;border-radius:999px;padding:5px 4px;font-weight:700;font-size:12.5px;color:#12233f;background:#fff}
 .fm-toggle span.on{background:#0b1e3a;border-color:#0b1e3a;color:#fff}
@@ -1023,6 +1023,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
 
         <div class="feature">
           <div class="feat-mock" aria-hidden="true">
+            <div class="fm-toggle"><span class="on">Leaderboard</span><span>Projected</span></div>
             <table class="fm-table fixed">
               <colgroup><col style="width:34%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:18%"></colgroup>
               <tr><th>Team</th><th class="num">M1</th><th class="num">M2</th><th class="num">M3</th><th class="num">M4</th><th class="num">Total</th></tr>
@@ -1041,25 +1042,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             </div>
           </div>
           <h3>Leaderboard &amp; match status</h3>
-          <p>Team standings in match points, plus every match below with live status — from 2 UP to the clinched&nbsp;call.</p>
-          <p class="feat-differ"><span>How yours could differ:</span> Weight points by round, double them Sunday, break ties your way — and add Stableford if you'd&nbsp;like.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feat-mock" aria-hidden="true">
-            <div class="fm-toggle"><span>Leaderboard</span><span class="on">Projected</span></div>
-            <table class="fm-table fixed">
-              <colgroup><col style="width:66%"><col style="width:34%"></colgroup>
-              <tr><th>Team</th><th class="num">Proj. total</th></tr>
-              <tr class="leader"><td><span class="team-dot" style="background:#e85d26"></span>Orange</td><td class="num totcol">50</td></tr>
-              <tr><td><span class="team-dot" style="background:#1d4ed8"></span>Blue</td><td class="num totcol">30</td></tr>
-              <tr><td><span class="team-dot" style="background:#7a1f2b"></span>Maroon</td><td class="num totcol">25</td></tr>
-              <tr><td><span class="team-dot" style="background:#0c3b2e"></span>Green</td><td class="num totcol">15</td></tr>
-            </table>
-          </div>
-          <h3>Projected standings</h3>
-          <p>A second board scoring every match as it stands — leader credited, all-square split — so everyone sees who's winning before matches&nbsp;finish.</p>
-          <p class="feat-differ"><span>How yours could differ:</span> Include it, skip it, or credit in-progress matches your&nbsp;way.</p>
+          <p>Team standings in match points, plus every match below with live status — from 2 UP to the clinched&nbsp;call. Flip to Projected and the board scores every match as it stands — leader credited, all-square split — so everyone sees who's winning before matches&nbsp;finish.</p>
+          <p class="feat-differ"><span>How yours could differ:</span> Weight points by round, double them Sunday, break ties your way — add Stableford if you'd like, and include Projected, skip it, or credit in-progress matches your&nbsp;way.</p>
         </div>
 
         <div class="feature">
