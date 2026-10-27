@@ -45,7 +45,7 @@ h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;line-height:1.05
 /* ---------- Nav ---------- */
 header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:12px 20px;padding-top:13px;padding-bottom:13px;flex-wrap:wrap}
-.nav-links{display:flex;gap:6px 24px;align-items:center;flex-wrap:wrap}
+.nav-links{display:flex;gap:6px 24px;align-items:center;flex-wrap:wrap;justify-content:center;flex:1}
 .nav-links a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink-soft);padding:4px 0}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a.active{color:var(--ink);font-weight:700;box-shadow:inset 0 -2px 0 var(--accent)}
@@ -60,7 +60,7 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
 .btn.ghost:hover{border-color:var(--ink-soft)}
 @media(max-width:760px){
-  .nav-links{order:3;width:100%;gap:4px 20px;border-top:1px solid var(--line);padding-top:9px}
+  .nav-links{order:3;width:100%;flex:0 0 100%;justify-content:center;gap:4px 20px;border-top:1px solid var(--line);padding-top:9px}
   .nav-links a{font-size:15.5px;padding:6px 0}
   .nav .btn{padding:10px 16px;font-size:14.5px}
 }
@@ -70,10 +70,10 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(100deg, rgba(7,39,30,.94) 30%, rgba(7,39,30,.55) 62%, rgba(7,39,30,.25))}
 .hero-inner{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;padding-top:72px;padding-bottom:84px;align-items:center}
-.hero h1{font-size:clamp(42px,6vw,68px);font-weight:800}
+.hero h1{font-size:clamp(42px,6vw,68px);font-weight:800;text-align:center}
 .hero h1 .tally-word{color:#ffb59d}
 .hero p.lede{font-size:19px;color:#d7e4dc;max-width:34em;margin:20px 0 28px}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .hero-points{display:grid;gap:13px;margin-top:32px;font-size:15.5px;color:#d7e4dc;max-width:34em}
 .hp-row{display:flex;gap:12px;align-items:flex-start}
 .hp-mark{flex:0 0 auto;margin-top:4px}
@@ -82,8 +82,8 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;padding-top:52px;padding-bottom:64px}}
 
 /* Phone mockup */
-.phone{width:min(368px,100%);margin:0 auto;background:#0a0f0d;border-radius:38px;padding:11px;box-shadow:0 34px 70px rgba(0,0,0,.5);aspect-ratio:9/17.5}
-.phone-screen{background:#f6f7f4;border-radius:28px;overflow:hidden;color:#14211c;height:100%}
+.phone{width:min(368px,100%);margin:0 auto;background:#0a0f0d;border-radius:38px;padding:11px;box-shadow:0 34px 70px rgba(0,0,0,.5);aspect-ratio:9/16.5}
+.phone-screen{background:#f6f7f4;border-radius:28px;overflow:hidden;color:#14211c;height:100%;display:flex;flex-direction:column}
 .phone-top{background:var(--green);color:#fff;padding:16px 18px 10px}
 .phone-top .t-row{display:flex;align-items:center;gap:9px}
 .phone-top .mini-mark{width:27px;height:27px;flex:0 0 27px;border-radius:8px;overflow:hidden;display:block}
@@ -96,18 +96,20 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .phone-tabs{display:flex;gap:6px;padding:12px 14px 4px}
 .phone-tabs button{flex:1;border:0;border-radius:999px;padding:10px 2px;font:600 12px "DM Sans",sans-serif;background:#e6ece7;color:#45554e;cursor:pointer;white-space:nowrap}
 .phone-tabs button.active{background:var(--green);color:#fff}
-.board{padding:12px 16px 18px}
+.board{padding:12px 16px 14px}
+.board:not([hidden]){flex:1;display:flex;flex-direction:column}
+.board table{flex:1}
 .board table{width:100%;border-collapse:collapse;font-size:14.5px}
 .board th{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#7b8a81;text-align:left;padding:6px 6px;border-bottom:1px solid #dde5de}
 .board th:last-child,.board td:last-child{text-align:right}
 .board th.num,.board td.num{text-align:right}
 .board table.scoreboard{font-size:15.5px}
-.board table.scoreboard td{padding:11px 3px}
+.board table.scoreboard td{padding:9.5px 3px}
 .board table.scoreboard td.num{font-weight:600}
 .board table.scoreboard .totcol{font-weight:800;font-size:17px}
 .board table.lownet{font-size:13px}
 .board table.lownet th{padding:6px 4px}
-.board table.lownet td{padding:9px 4px}
+.board table.lownet td{padding:8px 4px}
 .board table.scoreboard,.board table.lownet{table-layout:fixed}
 .board table.scoreboard th.num,.board table.scoreboard td.num{width:42px}
 .board table.lownet th.num,.board table.lownet td.num{width:32px}
@@ -117,8 +119,14 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .team-dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:7px;vertical-align:1px}
 .to-par{font-family:"DM Mono",monospace;font-weight:500}
 .under{color:#c2410c}.over{color:#5b6f65}
-.match-row{display:flex;justify-content:space-between;align-items:center;padding:12px 4px;border-bottom:1px solid #edf1ed;font-size:14.5px}
-.match-row .vs{font-size:11px;color:#7b8a81;font-weight:700}
+.match-row{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:8px;padding:12px 14px;background:#fff;border:1px solid #e3eae4;border-radius:14px;font-size:15px}
+.match-vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+.match-vs .m-side{font-weight:600;white-space:nowrap}
+.match-vs .m-side.right{text-align:right}
+.match-row .vs{font-size:11px;color:#7b8a81;font-weight:700;letter-spacing:.05em;text-align:center}
+.match-row .pill{align-self:center}
+#board-matches:not([hidden]){gap:9px}
+#board-matches .match-row{flex:1}
 .pill{font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;background:#eef3ef;color:#0c3b2e;white-space:nowrap}
 .pill.hot{background:#fdeee7;color:#c2410c}
 
@@ -511,10 +519,10 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <a class="btn ghost" href="#/example" style="color:#fff;border-color:rgba(255,255,255,.4)">See it in action</a>
         </div>
         <div class="hero-points">
-          <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Lives on your home screen</b> — save it like an app</span></div>
+          <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>On your home screen</b> — save it like an&nbsp;app</span></div>
           <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>$25 per person</b> — everything included</span></div>
-          <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Made however you'd like</b> — built for your group, not a generic template</span></div>
-          <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Made for any golf weekend or tournament</b> — if it's played, Tally can score it</span></div>
+          <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Made however you'd like</b> — not a&nbsp;template</span></div>
+          <div class="hp-row"><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Made for any golf weekend or tournament</b> — if it's played, Tally can score&nbsp;it</span></div>
         </div>
       </div>
 
@@ -590,11 +598,11 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <span class="sc-save" style="text-align:center;margin-top:14px;padding:11px;font-size:14px">Save scores</span>
           </div>
           <div class="board" id="board-matches" hidden>
-            <div class="match-row"><span><b>Orange</b> vs Maroon</span><span class="pill hot">Orange 2 UP</span></div>
-            <div class="match-row"><span><b>Blue</b> vs Green</span><span class="pill">Blue 1 UP</span></div>
-            <div class="match-row"><span><b>Gold</b> vs Purple</span><span class="pill">AS thru 7</span></div>
-            <div class="match-row"><span><b>Red</b> vs Teal</span><span class="pill hot">Red 2 UP</span></div>
-            <div class="match-row" style="border-bottom:0"><span><b>Pink</b> vs Navy</span><span class="pill">Navy won 3&amp;2</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Orange</b></span><span class="vs">VS</span><span class="m-side right">Maroon</span></div><span class="pill hot">Orange 2 UP</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Blue</b></span><span class="vs">VS</span><span class="m-side right">Green</span></div><span class="pill">Blue 1 UP</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Gold</b></span><span class="vs">VS</span><span class="m-side right">Purple</span></div><span class="pill">AS thru 7</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Red</b></span><span class="vs">VS</span><span class="m-side right">Teal</span></div><span class="pill hot">Red 2 UP</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><b>Pink</b></span><span class="vs">VS</span><span class="m-side right">Navy</span></div><span class="pill">Navy won 3&amp;2</span></div>
           </div>
           <div class="board" id="board-lownet" hidden>
             <table class="lownet">
@@ -1308,9 +1316,9 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <ul class="tick-list">
             <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Your event's own branding</b> — your logo and colors on every screen</span></li>
             <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Live leaderboard</b> — including the Projected board, so everyone can watch the finish take shape</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Match play, Stableford &amp; low net boards</b> — every format your weekend runs</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Calcutta board</b> — if your group wants one</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Spectator link</b> — view-only, so everyone back home can follow along</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Match play, Stableford &amp; low net boards</b> — every format you run</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Calcutta board</b> — if your group wants one, it's included</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Spectator link</b> — view-only, so everyone back home can follow&nbsp;along</span></li>
             <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Full Admin</b> — pairings, score fixes, and result exports</span></li>
           </ul>
           <p class="price-split"><b>24 or more players?</b> The math stops — <b>$600 flat</b>, no matter how many more you bring.</p>
@@ -1372,9 +1380,9 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <p>Tally isn't licensed club software with a sales team and a contract — it's a custom app built for your event, and it's priced that way: $25 per person with everything included, published right on the home page — and groups of 24 or more pay a flat $600 total.</p>
         </div>
         <div class="value-facts">
-          <span><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>$25 per person</b>&nbsp;— everything included, published up front</span></span>
-          <span><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Flat $600</b>&nbsp;for groups of 24 or more — the per-person math stops there</span></span>
-          <span><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>No subscription</b>&nbsp;— nothing renews, nothing to cancel after the trip</span></span>
+          <span><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>$25 per person</b>&nbsp;— everything included, published up&nbsp;front</span></span>
+          <span><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Flat $600</b>&nbsp;for groups of 24 or more — the per-person math stops&nbsp;there</span></span>
+          <span><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>No subscription</b>&nbsp;— nothing renews, nothing to cancel after the&nbsp;trip</span></span>
         </div>
       </div>
     </div>
