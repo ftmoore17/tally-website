@@ -323,6 +323,9 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .pair-side{display:flex;align-items:center;white-space:nowrap;min-width:0}
 .pair-side .team-dot{flex:0 0 auto}
 .pair-side.right{justify-content:flex-end;text-align:right}
+.mc-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;font-size:14.5px;margin:4px 0 2px}
+.mc-head .fmt{color:#7b8a81;font-size:12.5px;font-weight:500}
+.mc-pill-row{display:flex;justify-content:center;margin-bottom:8px}
 
 /* Standings toggle + production-style board (Example App Leaderboard) */
 .board-toggle{display:flex;gap:8px;margin-bottom:12px}
@@ -847,10 +850,10 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <table class="standings">
                 <colgroup><col style="width:35%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:12%"><col style="width:17%"></colgroup>
                 <tr><th class="tcol">Team</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th class="totcol">Total</th></tr>
-                <tr class="leader"><td class="tcol"><div class="tcell"><span class="place">1<sup>st</sup></span><span><span class="tname" style="color:#e85d26">Orange</span><span class="back">Leader</span></span></div></td><td>20</td><td>10</td><td>20</td><td></td><td class="totcol">50</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">2<sup>nd</sup></span><span><span class="tname" style="color:#1d4ed8">Blue</span><span class="back">20 back</span></span></div></td><td>5</td><td>15</td><td>10</td><td></td><td class="totcol">30</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">3<sup>rd</sup></span><span><span class="tname" style="color:#7a1f2b">Maroon</span><span class="back">25 back</span></span></div></td><td>10</td><td>10</td><td>5</td><td></td><td class="totcol">25</td></tr>
-                <tr><td class="tcol"><div class="tcell"><span class="place">4<sup>th</sup></span><span><span class="tname" style="color:#0c3b2e">Green</span><span class="back">35 back</span></span></div></td><td>5</td><td>5</td><td>5</td><td></td><td class="totcol">15</td></tr>
+                <tr class="leader"><td class="tcol"><div class="tcell"><span class="place">1<sup>st</sup></span><span><span class="tname" style="color:#e85d26">Orange</span><span class="back">Leader</span></span></div></td><td>20</td><td>10</td><td>35</td><td></td><td class="totcol">65</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">2<sup>nd</sup></span><span><span class="tname" style="color:#0c3b2e">Green</span><span class="back">25 back</span></span></div></td><td>5</td><td>5</td><td>30</td><td></td><td class="totcol">40</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">3<sup>rd</sup></span><span><span class="tname" style="color:#1d4ed8">Blue</span><span class="back">35 back</span></span></div></td><td>5</td><td>15</td><td>10</td><td></td><td class="totcol">30</td></tr>
+                <tr><td class="tcol"><div class="tcell"><span class="place">4<sup>th</sup></span><span><span class="tname" style="color:#7a1f2b">Maroon</span><span class="back">40 back</span></span></div></td><td>10</td><td>10</td><td>5</td><td></td><td class="totcol">25</td></tr>
               </table>
             </div>
             <h5 class="af-sub">Match Center</h5>
@@ -860,44 +863,209 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <button type="button" data-mc="3" role="tab" class="active" aria-selected="true" aria-label="Match 3">M3</button>
               <button type="button" data-mc="4" role="tab" aria-selected="false" aria-label="Match 4">M4</button>
             </div>
-            <div class="pair-card" id="mc-card-1" hidden>
-              <div class="pair-head"><b>Match 1</b><span class="fmt">Best Ball · Fazio Course</span><span class="pill">Final · Orange Won 3&amp;2</span></div>
-              <div class="pair-vs">
-                <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter / Moore</span>
-                <span class="vs">VS</span>
-                <span class="pair-side right">Reyes / Cole<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+            <div id="mc-card-1" hidden>
+              <div class="mc-head"><b>Match 1</b><span class="fmt">Best Ball · Fazio Course</span></div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · Orange Won 3&amp;2</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter / Moore</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Reyes / Cole<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · Orange Won 2&amp;1</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Callahan / Doyle</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Osei / Alvarez<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · Maroon Won 1 UP</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#7a1f2b"></span>Whitfield / Brooks</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Patel / Donnelly<span class="team-dot" style="background:#1d4ed8;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · All Square</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Singh / Meyer</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Foster / Kim<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
               </div>
             </div>
-            <div class="pair-card" id="mc-card-2" hidden>
-              <div class="pair-head"><b>Match 2</b><span class="fmt">Best Ball · Love Course</span><span class="pill">Final · Blue Won 2&amp;1</span></div>
-              <div class="pair-vs">
-                <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Patel / Donnelly</span>
-                <span class="vs">VS</span>
-                <span class="pair-side right">Osei / Alvarez<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+            <div id="mc-card-2" hidden>
+              <div class="mc-head"><b>Match 2</b><span class="fmt">Best Ball · Love Course</span></div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · Orange Won 2&amp;1</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter / Moore</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Reyes / Cole<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · Maroon Won 1 UP</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#7a1f2b"></span>Whitfield / Brooks</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Callahan / Doyle<span class="team-dot" style="background:#e85d26;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · Blue Won 2&amp;1</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Patel / Donnelly</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Osei / Alvarez<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · All Square</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Singh / Meyer</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Foster / Kim<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
               </div>
             </div>
-            <div class="pair-card" id="mc-card-3">
-              <div class="pair-head"><b>Match 3</b><span class="fmt">Singles · Dye Course</span><span class="pill hot">Orange 1 UP · Thru 12</span></div>
-              <div class="pair-vs">
-                <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter</span>
-                <span class="vs">VS</span>
-                <span class="pair-side right">Reyes<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+            <div id="mc-card-3">
+              <div class="mc-head"><b>Match 3</b><span class="fmt">Singles · Dye Course</span></div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · Orange Won 3&amp;2</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Callahan</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Whitfield<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Final · All Square</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Singh</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Foster<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill hot">Green 2 UP · Thru 15</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Donnelly</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Alvarez<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill hot">Orange 1 UP · Thru 12</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Reyes<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill hot">Orange 2 UP · Thru 12</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Moore</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Cole<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill hot">All Square · Thru 11</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Patel</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Kim<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill hot">All Square · Thru 10</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Doyle</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Brooks<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill hot">Green 1 UP · Thru 9</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Meyer</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Osei<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
               </div>
             </div>
-            <div class="pair-card" id="mc-card-4" hidden>
-              <div class="pair-head"><b>Match 4</b><span class="fmt">Singles · Norman Course</span><span class="pill">Not started</span></div>
-              <div class="pair-vs">
-                <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Donnelly</span>
-                <span class="vs">VS</span>
-                <span class="pair-side right">Osei<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+            <div id="mc-card-4" hidden>
+              <div class="mc-head"><b>Match 4</b><span class="fmt">Singles · Norman Course</span></div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 1:00 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Donnelly</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Osei<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
               </div>
-            </div>
-            <div class="mc-updates">
-              <p class="fm-cap">Updates — every match this round</p>
-              <div class="adm-row"><span class="k">M1 · Fazio Course</span><span class="v">Final · Orange Won 3&amp;2</span></div>
-              <div class="adm-row"><span class="k">M2 · Love Course</span><span class="v">Final · Blue Won 2&amp;1</span></div>
-              <div class="adm-row"><span class="k">M3 · Dye Course</span><span class="v">Orange 1 UP · Thru 12</span></div>
-              <div class="adm-row" style="border-bottom:0"><span class="k">M4 · Norman Course</span><span class="v">Not started</span></div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 1:10 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Cole<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 1:20 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#0c3b2e"></span>Alvarez</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Moore<span class="team-dot" style="background:#e85d26;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 1:30 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#7a1f2b"></span>Reyes</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Singh<span class="team-dot" style="background:#1d4ed8;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 1:40 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Callahan</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Foster<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 1:50 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#7a1f2b"></span>Whitfield</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Meyer<span class="team-dot" style="background:#1d4ed8;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 2:00 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Doyle</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Kim<span class="team-dot" style="background:#0c3b2e;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
+              <div class="pair-card">
+                <div class="mc-pill-row"><span class="pill">Tee time 2:10 PM</span></div>
+                <div class="pair-vs">
+                  <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Patel</span>
+                  <span class="vs">VS</span>
+                  <span class="pair-side right">Brooks<span class="team-dot" style="background:#7a1f2b;margin:0 0 0 7px"></span></span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -933,33 +1101,48 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <table>
                 <tr><th>Pair</th><th class="num">Net</th><th class="num">To par</th></tr>
                 <tr class="leader"><td>Carter &amp; Moore</td><td class="num">24</td><td class="num to-par under">−4</td></tr>
+                <tr><td>Callahan &amp; Doyle</td><td class="num">25</td><td class="num to-par under">−3</td></tr>
                 <tr><td>Reyes &amp; Cole</td><td class="num">26</td><td class="num to-par under">−2</td></tr>
                 <tr><td>Patel &amp; Donnelly</td><td class="num">27</td><td class="num to-par under">−1</td></tr>
+                <tr><td>Whitfield &amp; Brooks</td><td class="num">27</td><td class="num to-par under">−1</td></tr>
+                <tr><td>Singh &amp; Meyer</td><td class="num">28</td><td class="num to-par">E</td></tr>
                 <tr><td>Osei &amp; Alvarez</td><td class="num">29</td><td class="num to-par over">+1</td></tr>
+                <tr><td>Foster &amp; Kim</td><td class="num">30</td><td class="num to-par over">+2</td></tr>
               </table>
             </div>
             <div id="ln-board-2" hidden>
               <table>
                 <tr><th>Pair</th><th class="num">Net</th><th class="num">To par</th></tr>
                 <tr class="leader"><td>Patel &amp; Donnelly</td><td class="num">25</td><td class="num to-par under">−3</td></tr>
+                <tr><td>Singh &amp; Meyer</td><td class="num">26</td><td class="num to-par under">−2</td></tr>
                 <tr><td>Carter &amp; Moore</td><td class="num">27</td><td class="num to-par under">−1</td></tr>
                 <tr><td>Reyes &amp; Cole</td><td class="num">28</td><td class="num to-par">E</td></tr>
+                <tr><td>Callahan &amp; Doyle</td><td class="num">28</td><td class="num to-par">E</td></tr>
+                <tr><td>Whitfield &amp; Brooks</td><td class="num">29</td><td class="num to-par over">+1</td></tr>
+                <tr><td>Foster &amp; Kim</td><td class="num">29</td><td class="num to-par over">+1</td></tr>
                 <tr><td>Osei &amp; Alvarez</td><td class="num">30</td><td class="num to-par over">+2</td></tr>
               </table>
             </div>
             <div id="ln-board-3" hidden>
               <table>
                 <tr><th>Player</th><th class="num">Net</th><th class="num">To par</th><th class="num">Thru</th></tr>
-                <tr class="leader"><td>M. Reyes</td><td class="num">44</td><td class="num to-par under">−3</td><td class="num">12</td></tr>
-                <tr><td>J. Carter</td><td class="num">45</td><td class="num to-par under">−2</td><td class="num">12</td></tr>
+                <tr class="leader"><td>B. Callahan</td><td class="num">68</td><td class="num to-par under">−4</td><td class="num">F</td></tr>
+                <tr><td>J. Carter</td><td class="num">44</td><td class="num to-par under">−3</td><td class="num">12</td></tr>
+                <tr><td>A. Singh</td><td class="num">69</td><td class="num to-par under">−3</td><td class="num">F</td></tr>
+                <tr><td>R. Alvarez</td><td class="num">57</td><td class="num to-par under">−3</td><td class="num">15</td></tr>
+                <tr><td>M. Reyes</td><td class="num">45</td><td class="num to-par under">−2</td><td class="num">12</td></tr>
+                <tr><td>J. Whitfield</td><td class="num">70</td><td class="num to-par under">−2</td><td class="num">F</td></tr>
                 <tr><td>T. Moore</td><td class="num">46</td><td class="num to-par under">−1</td><td class="num">12</td></tr>
-                <tr><td>R. Alvarez</td><td class="num">46</td><td class="num to-par under">−1</td><td class="num">12</td></tr>
-                <tr><td>S. Patel</td><td class="num">47</td><td class="num to-par">E</td><td class="num">12</td></tr>
-                <tr><td>K. Donnelly</td><td class="num">48</td><td class="num to-par over">+1</td><td class="num">12</td></tr>
+                <tr><td>H. Foster</td><td class="num">71</td><td class="num to-par under">−1</td><td class="num">F</td></tr>
+                <tr><td>K. Donnelly</td><td class="num">59</td><td class="num to-par under">−1</td><td class="num">15</td></tr>
+                <tr><td>S. Patel</td><td class="num">42</td><td class="num to-par under">−1</td><td class="num">11</td></tr>
+                <tr><td>D. Kim</td><td class="num">42</td><td class="num to-par under">−1</td><td class="num">11</td></tr>
+                <tr><td>W. Doyle</td><td class="num">39</td><td class="num to-par under">−1</td><td class="num">10</td></tr>
+                <tr><td>N. Brooks</td><td class="num">39</td><td class="num to-par under">−1</td><td class="num">10</td></tr>
                 <tr><td>D. Cole</td><td class="num">48</td><td class="num to-par over">+1</td><td class="num">12</td></tr>
-                <tr><td>J. Osei</td><td class="num">49</td><td class="num to-par over">+2</td><td class="num">12</td></tr>
+                <tr><td>J. Osei</td><td class="num">37</td><td class="num to-par over">+1</td><td class="num">9</td></tr>
+                <tr><td>J. Meyer</td><td class="num">38</td><td class="num to-par over">+2</td><td class="num">9</td></tr>
               </table>
-              <p class="af-note">Match 3 is still on the course — these are the scores as they stand thru&nbsp;12.</p>
             </div>
             <div id="ln-board-4" hidden>
               <table>
@@ -972,23 +1155,37 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 <tr><td>K. Donnelly</td><td class="num">—</td><td class="num to-par">—</td></tr>
                 <tr><td>J. Osei</td><td class="num">—</td><td class="num to-par">—</td></tr>
                 <tr><td>R. Alvarez</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>B. Callahan</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>W. Doyle</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>J. Whitfield</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>N. Brooks</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>A. Singh</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>J. Meyer</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>H. Foster</td><td class="num">—</td><td class="num to-par">—</td></tr>
+                <tr><td>D. Kim</td><td class="num">—</td><td class="num to-par">—</td></tr>
               </table>
-              <p class="af-note">Match 4 hasn't teed off yet — this board fills in as scores come&nbsp;in.</p>
             </div>
             <h5 class="af-sub">Weekend Low Net</h5>
             <table class="fixed">
               <colgroup><col style="width:29%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:14%"><col style="width:17%"></colgroup>
               <tr><th>Player</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th class="num">R4</th><th class="num">Total</th><th class="num">To par</th></tr>
-              <tr class="leader"><td>J. Carter</td><td class="num">70</td><td class="num">68</td><td class="num">45</td><td class="num">—</td><td class="num">183</td><td class="num to-par under">−8</td></tr>
-              <tr><td>M. Reyes</td><td class="num">71</td><td class="num">69</td><td class="num">44</td><td class="num">—</td><td class="num">184</td><td class="num to-par under">−7</td></tr>
-              <tr><td>T. Moore</td><td class="num">72</td><td class="num">70</td><td class="num">46</td><td class="num">—</td><td class="num">188</td><td class="num to-par under">−3</td></tr>
-              <tr><td>R. Alvarez</td><td class="num">73</td><td class="num">71</td><td class="num">46</td><td class="num">—</td><td class="num">190</td><td class="num to-par under">−1</td></tr>
-              <tr><td>S. Patel</td><td class="num">74</td><td class="num">72</td><td class="num">47</td><td class="num">—</td><td class="num">193</td><td class="num to-par over">+2</td></tr>
-              <tr><td>D. Cole</td><td class="num">74</td><td class="num">71</td><td class="num">48</td><td class="num">—</td><td class="num">193</td><td class="num to-par over">+2</td></tr>
-              <tr><td>K. Donnelly</td><td class="num">75</td><td class="num">73</td><td class="num">48</td><td class="num">—</td><td class="num">196</td><td class="num to-par over">+5</td></tr>
-              <tr><td>J. Osei</td><td class="num">76</td><td class="num">74</td><td class="num">49</td><td class="num">—</td><td class="num">199</td><td class="num to-par over">+8</td></tr>
+              <tr class="leader"><td>J. Carter</td><td class="num">70</td><td class="num">68</td><td class="num">44</td><td class="num">—</td><td class="num">182</td><td class="num to-par under">−8</td></tr>
+              <tr><td>M. Reyes</td><td class="num">71</td><td class="num">69</td><td class="num">45</td><td class="num">—</td><td class="num">185</td><td class="num to-par under">−5</td></tr>
+              <tr><td>A. Singh</td><td class="num">72</td><td class="num">70</td><td class="num">69</td><td class="num">—</td><td class="num">211</td><td class="num to-par under">−4</td></tr>
+              <tr><td>B. Callahan</td><td class="num">73</td><td class="num">71</td><td class="num">68</td><td class="num">—</td><td class="num">212</td><td class="num to-par under">−3</td></tr>
+              <tr><td>T. Moore</td><td class="num">72</td><td class="num">70</td><td class="num">46</td><td class="num">—</td><td class="num">188</td><td class="num to-par under">−2</td></tr>
+              <tr><td>R. Alvarez</td><td class="num">73</td><td class="num">71</td><td class="num">57</td><td class="num">—</td><td class="num">201</td><td class="num to-par under">−2</td></tr>
+              <tr><td>J. Whitfield</td><td class="num">74</td><td class="num">72</td><td class="num">70</td><td class="num">—</td><td class="num">216</td><td class="num to-par over">+1</td></tr>
+              <tr><td>S. Patel</td><td class="num">74</td><td class="num">72</td><td class="num">42</td><td class="num">—</td><td class="num">188</td><td class="num to-par over">+2</td></tr>
+              <tr><td>D. Kim</td><td class="num">74</td><td class="num">72</td><td class="num">42</td><td class="num">—</td><td class="num">188</td><td class="num to-par over">+2</td></tr>
+              <tr><td>D. Cole</td><td class="num">74</td><td class="num">71</td><td class="num">48</td><td class="num">—</td><td class="num">193</td><td class="num to-par over">+3</td></tr>
+              <tr><td>N. Brooks</td><td class="num">75</td><td class="num">72</td><td class="num">39</td><td class="num">—</td><td class="num">186</td><td class="num to-par over">+3</td></tr>
+              <tr><td>K. Donnelly</td><td class="num">75</td><td class="num">73</td><td class="num">59</td><td class="num">—</td><td class="num">207</td><td class="num to-par over">+4</td></tr>
+              <tr><td>H. Foster</td><td class="num">75</td><td class="num">73</td><td class="num">71</td><td class="num">—</td><td class="num">219</td><td class="num to-par over">+4</td></tr>
+              <tr><td>W. Doyle</td><td class="num">76</td><td class="num">73</td><td class="num">39</td><td class="num">—</td><td class="num">188</td><td class="num to-par over">+5</td></tr>
+              <tr><td>J. Osei</td><td class="num">76</td><td class="num">74</td><td class="num">37</td><td class="num">—</td><td class="num">187</td><td class="num to-par over">+8</td></tr>
+              <tr><td>J. Meyer</td><td class="num">77</td><td class="num">74</td><td class="num">38</td><td class="num">—</td><td class="num">189</td><td class="num to-par over">+10</td></tr>
             </table>
-            <p class="af-note">R3 is thru 12 — Match 3 is still on the course. R4 stays empty until Match 4 tees&nbsp;off.</p>
           </div>
 
           <!-- Calcutta -->
@@ -1032,24 +1229,40 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <p class="adm-sec">Players</p>
             <div class="adm-row"><span class="k">J. Carter</span><span class="v">Orange · Index 8.4</span></div>
             <div class="adm-row"><span class="k">T. Moore</span><span class="v">Orange · Index 11.2</span></div>
+            <div class="adm-row"><span class="k">B. Callahan</span><span class="v">Orange · Index 10.3</span></div>
+            <div class="adm-row"><span class="k">W. Doyle</span><span class="v">Orange · Index 14.1</span></div>
             <div class="adm-row"><span class="k">M. Reyes</span><span class="v">Maroon · Index 6.1</span></div>
             <div class="adm-row"><span class="k">D. Cole</span><span class="v">Maroon · Index 15.8</span></div>
+            <div class="adm-row"><span class="k">J. Whitfield</span><span class="v">Maroon · Index 9.1</span></div>
+            <div class="adm-row"><span class="k">N. Brooks</span><span class="v">Maroon · Index 16.4</span></div>
             <div class="adm-row"><span class="k">S. Patel</span><span class="v">Blue · Index 9.7</span></div>
             <div class="adm-row"><span class="k">K. Donnelly</span><span class="v">Blue · Index 13.5</span></div>
+            <div class="adm-row"><span class="k">A. Singh</span><span class="v">Blue · Index 11.8</span></div>
+            <div class="adm-row"><span class="k">J. Meyer</span><span class="v">Blue · Index 13.9</span></div>
             <div class="adm-row"><span class="k">J. Osei</span><span class="v">Green · Index 7.9</span></div>
             <div class="adm-row"><span class="k">R. Alvarez</span><span class="v">Green · Index 12.6</span></div>
+            <div class="adm-row"><span class="k">H. Foster</span><span class="v">Green · Index 12.2</span></div>
+            <div class="adm-row"><span class="k">D. Kim</span><span class="v">Green · Index 8.8</span></div>
             <p class="adm-sec">Strokes — course handicaps from GHIN index</p>
             <table class="fixed">
               <colgroup><col style="width:32%"><col style="width:14%"><col style="width:13.5%"><col style="width:13.5%"><col style="width:13.5%"><col style="width:13.5%"></colgroup>
               <tr><th>Player</th><th class="num">Index</th><th class="num">Dye</th><th class="num">Fazio</th><th class="num">Love</th><th class="num">Norman</th></tr>
               <tr><td>J. Carter</td><td class="num">8.4</td><td class="num">9</td><td class="num">8</td><td class="num">10</td><td class="num">9</td></tr>
               <tr><td>T. Moore</td><td class="num">11.2</td><td class="num">12</td><td class="num">11</td><td class="num">13</td><td class="num">12</td></tr>
+              <tr><td>B. Callahan</td><td class="num">10.3</td><td class="num">11</td><td class="num">10</td><td class="num">12</td><td class="num">11</td></tr>
+              <tr><td>W. Doyle</td><td class="num">14.1</td><td class="num">15</td><td class="num">14</td><td class="num">16</td><td class="num">15</td></tr>
               <tr><td>M. Reyes</td><td class="num">6.1</td><td class="num">7</td><td class="num">6</td><td class="num">7</td><td class="num">7</td></tr>
               <tr><td>D. Cole</td><td class="num">15.8</td><td class="num">17</td><td class="num">16</td><td class="num">18</td><td class="num">17</td></tr>
+              <tr><td>J. Whitfield</td><td class="num">9.1</td><td class="num">10</td><td class="num">9</td><td class="num">11</td><td class="num">10</td></tr>
+              <tr><td>N. Brooks</td><td class="num">16.4</td><td class="num">17</td><td class="num">16</td><td class="num">18</td><td class="num">17</td></tr>
               <tr><td>S. Patel</td><td class="num">9.7</td><td class="num">10</td><td class="num">10</td><td class="num">11</td><td class="num">10</td></tr>
               <tr><td>K. Donnelly</td><td class="num">13.5</td><td class="num">14</td><td class="num">13</td><td class="num">15</td><td class="num">14</td></tr>
+              <tr><td>A. Singh</td><td class="num">11.8</td><td class="num">12</td><td class="num">11</td><td class="num">13</td><td class="num">12</td></tr>
+              <tr><td>J. Meyer</td><td class="num">13.9</td><td class="num">15</td><td class="num">14</td><td class="num">16</td><td class="num">14</td></tr>
               <tr><td>J. Osei</td><td class="num">7.9</td><td class="num">8</td><td class="num">8</td><td class="num">9</td><td class="num">8</td></tr>
               <tr><td>R. Alvarez</td><td class="num">12.6</td><td class="num">13</td><td class="num">12</td><td class="num">14</td><td class="num">13</td></tr>
+              <tr><td>H. Foster</td><td class="num">12.2</td><td class="num">13</td><td class="num">12</td><td class="num">14</td><td class="num">13</td></tr>
+              <tr><td>D. Kim</td><td class="num">8.8</td><td class="num">9</td><td class="num">8</td><td class="num">10</td><td class="num">9</td></tr>
             </table>
             <p class="adm-sec">Controls</p>
             <div class="adm-btns">
@@ -1160,10 +1373,10 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <table class="fm-table fixed">
               <colgroup><col style="width:28%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:10%"><col style="width:14%"><col style="width:18%"></colgroup>
               <tr><th>Player</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th class="num">R4</th><th class="num">Net</th><th class="num">To par</th></tr>
-              <tr class="leader"><td>J. Carter</td><td class="num to-par under">−2</td><td class="num to-par under">−4</td><td class="num to-par under">−2</td><td class="num">—</td><td class="num">183</td><td class="num to-par under">−8</td></tr>
-              <tr><td>M. Reyes</td><td class="num to-par under">−1</td><td class="num to-par under">−3</td><td class="num to-par under">−3</td><td class="num">—</td><td class="num">184</td><td class="num to-par under">−7</td></tr>
-              <tr><td>T. Moore</td><td class="num to-par">E</td><td class="num to-par under">−2</td><td class="num to-par under">−1</td><td class="num">—</td><td class="num">188</td><td class="num to-par under">−3</td></tr>
-              <tr><td>R. Alvarez</td><td class="num to-par over">+1</td><td class="num to-par under">−1</td><td class="num to-par under">−1</td><td class="num">—</td><td class="num">190</td><td class="num to-par under">−1</td></tr>
+              <tr class="leader"><td>J. Carter</td><td class="num to-par under">−1</td><td class="num to-par under">−4</td><td class="num to-par under">−3</td><td class="num">—</td><td class="num">182</td><td class="num to-par under">−8</td></tr>
+              <tr><td>M. Reyes</td><td class="num to-par">E</td><td class="num to-par under">−3</td><td class="num to-par under">−2</td><td class="num">—</td><td class="num">185</td><td class="num to-par under">−5</td></tr>
+              <tr><td>A. Singh</td><td class="num to-par over">+1</td><td class="num to-par under">−2</td><td class="num to-par under">−3</td><td class="num">—</td><td class="num">211</td><td class="num to-par under">−4</td></tr>
+              <tr><td>B. Callahan</td><td class="num to-par over">+2</td><td class="num to-par under">−1</td><td class="num to-par under">−4</td><td class="num">—</td><td class="num">212</td><td class="num to-par under">−3</td></tr>
             </table>
           </div>
           <h3>Low Net boards</h3>
@@ -1722,7 +1935,7 @@ var demoPlayers = [
 ];
 var demoMatches = [
   { n: 1, fmt: 'Best Ball', course: 'Fazio Course', hole: 4, holes: 9, par: 4, yds: 372, si: 7, status: 'Final · Orange Won 3&2' },
-  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 13, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Blue Won 2&1' },
+  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 13, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Orange Won 2&1' },
   { n: 3, fmt: 'Singles', course: 'Dye Course', hole: 12, holes: 18, par: 4, yds: 388, si: 15, status: 'Orange 1 UP · Thru 12' },
   { n: 4, fmt: 'Singles', course: 'Norman Course', hole: 1, holes: 18, par: 4, yds: 385, si: 5, status: 'Not started' }
 ];
