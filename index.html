@@ -147,7 +147,7 @@ section{padding:48px 0}
 .sec-head p{color:var(--ink-soft);font-size:17px;margin:10px 0 0}
 .tag{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 
-.strip{padding:28px 0 0}
+.strip{padding:32px 0 0}
 .strip-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:600px){.strip-grid{grid-template-columns:1fr}}
 
@@ -443,8 +443,8 @@ section{padding:48px 0}
 }
 
 /* Custom band */
-.custom-band{background:var(--green-deep);color:#eef4f0;border-radius:26px;padding:28px}
-@media(max-width:860px){.custom-band{padding:28px 22px}}
+.custom-band{background:var(--green-deep);color:#eef4f0;border-radius:26px;padding:26px 28px 24px}
+@media(max-width:860px){.custom-band{padding:24px 22px 22px}}
 .custom-band h2{font-size:clamp(28px,3.8vw,38px)}
 .custom-band p{color:#bcd2c6;font-size:16.5px;max-width:46em;margin:10px 0 0}
 .custom-asks{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 20px}
@@ -761,10 +761,10 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
   </section>
 
   <!-- VS TEMPLATE APPS -->
-  <section style="padding-top:0" data-view="home">
+  <section style="padding:32px 0 0" data-view="home">
     <div class="wrap">
       <div class="custom-band">
-        <h2>Other scoring apps give you a template. Tally builds yours.</h2>
+        <h2>Other scoring apps give you a template. <span style="color:var(--accent)">Tally builds yours.</span></h2>
       </div>
     </div>
   </section>
@@ -1372,7 +1372,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
   </section>
 
   <!-- INCLUDED POINTER (Home) -->
-  <section style="padding-top:0" data-view="home">
+  <section style="padding:32px 0 32px" data-view="home">
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:14px 20px;flex-wrap:wrap">
       <p style="margin:0;font-size:17px"><b>See everything that's included</b> — one flat&nbsp;price.</p>
       <a class="btn green" href="#/included">What's Included</a>
