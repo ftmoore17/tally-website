@@ -1393,7 +1393,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <span class="tag">Start Building</span>
           <h2>Tell us about your event</h2>
           <p style="color:var(--ink-soft);font-size:16.5px">A tournament, an outing, a fundraiser, or just a golf weekend with your crew — whatever you're running, fill this out and you'll get a reply with follow-up questions and the details for your build — the price is $25 per person with everything included — and once your group reaches 24 players, the math stops: $600 flat, no matter how many more you bring. And if there's a screen, board, or rule your event needs that you haven't seen anywhere on this site, put it in the notes: custom requests are the whole point. No obligation, no mailing list — just a conversation about your event.</p>
-          <p class="contact-line">Prefer email? Reach out directly at<br><a href="mailto:FTMOORE17@gmail.com">FTMOORE17@gmail.com</a></p>
+          <p class="contact-line">Prefer email? Reach out directly at<br><a href="mailto:hello@tallygolfscoring.com">hello@tallygolfscoring.com</a></p>
           <ul class="tick-list">
             <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Tournaments, outings &amp; golf weekends of any kind and size</span></li>
             <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Any course, any destination — a resort lineup or your home club</span></li>
@@ -1433,7 +1433,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <input id="f-formats" name="formats" type="text" placeholder="e.g. Best ball, scramble, singles match play" />
           </div>
           <div class="field full">
-            <label for="f-notes">Anything else we should know?</label>
+            <label for="f-notes">Tell us more about your event</label>
             <textarea id="f-notes" name="notes" placeholder="Teams, traditions, the trophy, side games — and any screen, board, or rule you'd want that you haven't seen here. If you can describe it, we can almost always build it."></textarea>
           </div>
           <p class="form-note">Submitting opens your email app with everything addressed to Tally and ready to send — just hit send there to complete your inquiry. Custom screens, boards, and rules are included in the same per-person price — asking costs nothing extra.</p>
@@ -1453,7 +1453,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
       Tally
     </a>
     <span>Custom scoring apps for golf tournaments, outings, and weekends of every kind — made however you'd like. Your event. Your app.</span>
-    <span>Questions? <a href="mailto:FTMOORE17@gmail.com">FTMOORE17@gmail.com</a></span>
+    <span>Questions? <a href="mailto:hello@tallygolfscoring.com">hello@tallygolfscoring.com</a></span>
   </div>
 </footer>
 
@@ -1629,7 +1629,7 @@ saveBtn.addEventListener('click', function(){
   }, 950);
 });
 
-/* Inquiry form -> mailto to FTMOORE17@gmail.com */
+/* Inquiry form -> mailto to hello@tallygolfscoring.com */
 document.getElementById('quote-form').addEventListener('submit', function(e){
   e.preventDefault();
   var form = e.target;
@@ -1655,9 +1655,9 @@ document.getElementById('quote-form').addEventListener('submit', function(e){
     val('f-notes') || '—'
   ];
   var subject = 'Tally inquiry — ' + (val('f-tournament') || 'new tournament') + ' (' + name + ')';
-  var href = 'mailto:FTMOORE17@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+  var href = 'mailto:hello@tallygolfscoring.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
   ok.style.display = 'block';
-  ok.innerHTML = 'Opening your email app with your inquiry addressed to <b>FTMOORE17@gmail.com</b> — just hit send there and it\'s on its way. If nothing opens, email us directly at that address.';
+  ok.innerHTML = 'Opening your email app with your inquiry addressed to <b>hello@tallygolfscoring.com</b> — just hit send there and it\'s on its way. If nothing opens, email us directly at that address.';
   window.location.href = href;
 });
 </script>
