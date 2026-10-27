@@ -159,6 +159,9 @@ section{padding:48px 0}
 .card h3{font-size:20px;margin:10px 0 6px}
 .card p{margin:0;color:var(--ink-soft);font-size:15.5px}
 .icon-box{width:46px;height:46px;border-radius:13px;background:var(--surface-2);display:grid;place-items:center;color:var(--green)}
+.strip-card .card-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.strip-card .card-head .icon-box{flex:0 0 46px}
+.strip-card .card-head h3{margin:0}
 @media (prefers-color-scheme: dark){.icon-box{color:#8fd0b6}}
 
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:step}
@@ -666,24 +669,32 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
   <div class="strip" data-view="home">
     <div class="wrap">
       <div class="strip-grid">
-        <div class="card">
-          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M15.5 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Any group size</h3>
+        <div class="card strip-card">
+          <div class="card-head">
+            <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M15.5 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Any group size</h3>
+          </div>
           <p>a weekend crew or a full invitational&nbsp;field</p>
         </div>
-        <div class="card">
-          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22V3"/><path d="M5 4h12l-2.5 3.5L17 11H5"/></svg></div>
-          <h3>Any format, any course</h3>
+        <div class="card strip-card">
+          <div class="card-head">
+            <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22V3"/><path d="M5 4h12l-2.5 3.5L17 11H5"/></svg></div>
+            <h3>Any format, any course</h3>
+          </div>
           <p>Best ball, scramble, singles, alt shot — wherever your group&nbsp;plays</p>
         </div>
-        <div class="card">
-          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
-          <h3>Handicaps &amp; net scoring</h3>
+        <div class="card strip-card">
+          <div class="card-head">
+            <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+            <h3>Handicaps &amp; net scoring</h3>
+          </div>
           <p>If your group wants them — from GHIN indexes, course by&nbsp;course</p>
         </div>
-        <div class="card">
-          <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
-          <h3>Zero spreadsheets</h3>
+        <div class="card strip-card">
+          <div class="card-head">
+            <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+            <h3>Zero spreadsheets</h3>
+          </div>
           <p>No paper cards, no math at the 19th&nbsp;hole</p>
         </div>
       </div>
