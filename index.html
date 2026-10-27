@@ -476,6 +476,7 @@ textarea{resize:vertical;min-height:96px}
 .form-note{grid-column:1/-1;font-size:13.5px;color:var(--ink-soft);margin:0}
 .form-ok{grid-column:1/-1;display:none;background:var(--surface-2);border-radius:11px;padding:13px 15px;font-size:14.5px}
 form .btn{grid-column:1/-1;justify-content:center;font-size:16px;padding:15px}
+form .btn[disabled]{opacity:.65;cursor:wait;transform:none}
 
 /* Scoring rows at phone width — placed after the base rules so these win the cascade */
 @media(max-width:560px){
@@ -1455,7 +1456,11 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <p style="color:var(--ink-soft);font-size:16.5px">A tournament, an outing, a fundraiser, or just a golf weekend with your crew — whatever you're running, fill this out and you'll get a reply with follow-up questions and the details for your build. No obligation, no mailing list — just a conversation about your event.</p>
           <p class="contact-line">Prefer email? Reach out directly at<br><a href="mailto:hello@tallygolfscoring.com">hello@tallygolfscoring.com</a></p>
         </div>
-        <form id="quote-form" novalidate>
+        <form id="quote-form" action="https://formsubmit.co/hello@tallygolfscoring.com" method="POST">
+          <input type="hidden" name="_subject" value="New Tally inquiry from the website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field">
             <label for="f-name">Your name *</label>
             <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
@@ -1491,9 +1496,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <label for="f-notes">Tell us more about your event</label>
             <textarea id="f-notes" name="notes" placeholder="Teams, traditions, the trophy, side games — and any screen, board, or rule you'd want. If you can describe it, we can almost always build&nbsp;it."></textarea>
           </div>
-          <p class="form-note">Submitting opens your email app, addressed to Tally and ready to send.</p>
           <div class="form-ok" id="form-ok" role="status"></div>
-          <button class="btn" type="submit">Start My Build</button>
+          <button class="btn" type="submit" id="quote-submit">Send My Details</button>
         </form>
       </div>
     </div>
@@ -1684,10 +1688,11 @@ saveBtn.addEventListener('click', function(){
   }, 950);
 });
 
-/* Inquiry form -> mailto to hello@tallygolfscoring.com */
+/* Inquiry form -> auto-sends to hello@tallygolfscoring.com via FormSubmit (AJAX, visitor stays on the page) */
 document.getElementById('quote-form').addEventListener('submit', function(e){
   e.preventDefault();
   var form = e.target;
+  var btn = document.getElementById('quote-submit');
   var name = document.getElementById('f-name').value.trim();
   var email = document.getElementById('f-email').value.trim();
   var ok = document.getElementById('form-ok');
@@ -1697,23 +1702,45 @@ document.getElementById('quote-form').addEventListener('submit', function(e){
     return;
   }
   function val(id){ return document.getElementById(id).value.trim(); }
-  var lines = [
-    'Name: ' + name,
-    'Email: ' + email,
-    'Tournament name: ' + (val('f-tournament') || '—'),
-    'Number of players: ' + (val('f-players') || '—'),
-    'Dates: ' + (val('f-dates') || '—'),
-    'Location / courses: ' + (val('f-location') || '—'),
-    'Formats: ' + (val('f-formats') || '—'),
-    '',
-    'Notes:',
-    val('f-notes') || '—'
-  ];
-  var subject = 'Tally inquiry — ' + (val('f-tournament') || 'new tournament') + ' (' + name + ')';
-  var href = 'mailto:hello@tallygolfscoring.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-  ok.style.display = 'block';
-  ok.innerHTML = 'Opening your email app with your inquiry addressed to <b>hello@tallygolfscoring.com</b> — just hit send there and it\'s on its way. If nothing opens, email us directly at that address.';
-  window.location.href = href;
+  var payload = {
+    'Name': name,
+    'Email': email,
+    '_replyto': email,
+    '_subject': 'Tally inquiry — ' + (val('f-tournament') || 'new tournament') + ' (' + name + ')',
+    '_template': 'table',
+    '_captcha': 'false',
+    'Tournament / trip name': val('f-tournament') || '—',
+    'Number of players': val('f-players') || '—',
+    'Tournament dates': val('f-dates') || '—',
+    'Location / courses': val('f-location') || '—',
+    'Formats you play': val('f-formats') || '—',
+    'Tell us more about your event': val('f-notes') || '—'
+  };
+  btn.disabled = true;
+  var originalText = btn.textContent;
+  btn.textContent = 'Sending…';
+  ok.style.display = 'none';
+  ok.textContent = '';
+  fetch('https://formsubmit.co/ajax/hello@tallygolfscoring.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(function(response){
+    if (!response.ok) throw new Error('Send failed');
+    return response.json();
+  }).then(function(){
+    form.reset();
+    ok.style.display = 'block';
+    ok.textContent = 'Thanks — your inquiry has been sent to Tally. We\u2019ll reply to the email address you gave above.';
+    btn.disabled = false;
+    btn.textContent = originalText;
+    ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }).catch(function(){
+    ok.style.display = 'block';
+    ok.innerHTML = 'That didn\u2019t go through — please try again, or email us directly at <a href="mailto:hello@tallygolfscoring.com" style="color:var(--accent);font-weight:700">hello@tallygolfscoring.com</a>.';
+    btn.disabled = false;
+    btn.textContent = originalText;
+  });
 });
 </script>
 </body>
