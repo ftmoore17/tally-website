@@ -78,10 +78,7 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .hp-row{display:flex;gap:12px;align-items:flex-start}
 .hp-mark{flex:0 0 auto;margin-top:4px}
 .hero-points b{color:#fff}
-.tick-mark{flex:0 0 auto;margin-top:4px}
-.tick-mark .v{stroke:var(--green)}
-.tick-mark .d{stroke:var(--accent)}
-@media (prefers-color-scheme: dark){.tick-mark .v{stroke:#8fd0b6}}
+.dot-mark{flex:0 0 auto;margin-top:4px}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;padding-top:52px;padding-bottom:64px}}
 
 /* Phone mockup */
@@ -351,7 +348,6 @@ section{padding:76px 0}
 .price-lede{color:#bcd2c6;font-size:16.5px;margin:16px 0 0}
 .price-main .tick-list{margin-top:18px}
 .price-main .tick-list li{color:#eef4f0}
-.price-main .tick-mark .v{stroke:#8fd0b6}
 .price-split{margin:22px 0 0;font-size:16.5px;color:#bcd2c6}
 .price-split b{color:#fff}
 .price-main .btn{margin-top:24px;align-self:flex-start}
@@ -515,10 +511,10 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <a class="btn ghost" href="#/example" style="color:#fff;border-color:rgba(255,255,255,.4)">See it in action</a>
         </div>
         <div class="hero-points">
-          <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Lives on your home screen</b> — save it like an app</span></div>
-          <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>$25 per person</b> — everything included</span></div>
-          <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Made however you'd like</b> — built for your group, not a generic template</span></div>
-          <div class="hp-row"><svg class="hp-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/><path d="M1.5 11.5L19.5 3" stroke="#f2e7c8" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Made for any golf weekend or tournament</b> — if it's played, Tally can score it</span></div>
+          <div class="hp-row"><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Lives on your home screen</b> — save it like an app</span></div>
+          <div class="hp-row"><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>$25 per person</b> — everything included</span></div>
+          <div class="hp-row"><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Made however you'd like</b> — built for your group, not a generic template</span></div>
+          <div class="hp-row"><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Made for any golf weekend or tournament</b> — if it's played, Tally can score it</span></div>
         </div>
       </div>
 
@@ -1287,10 +1283,10 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         <h2 style="font-size:clamp(28px,3.6vw,38px);margin-bottom:14px">Whoever's teeing it up</h2>
         <p style="color:var(--ink-soft);font-size:16.5px;margin:0">If it's golf and somebody's keeping score, Tally fits. The annual buddy trip, the invitational that's run for a decade on paper cards, a club championship, a company outing, a charity fundraiser, a league final — or an event that isn't a "tournament" at all, just a crew and a scoreboard that keeps up. Tell us what you're running and the app gets built around it.</p>
         <ul class="tick-list">
-          <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Buddy trips, friend invitationals &amp; annual golf weekends</span></li>
-          <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Club events, company outings &amp; charity tournaments</span></li>
-          <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Groups of any size who play real formats</span></li>
-          <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Organizers tired of spreadsheets and scorecard photos</span></li>
+          <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span>Buddy trips, friend invitationals &amp; annual golf weekends</span></li>
+          <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span>Club events, company outings &amp; charity tournaments</span></li>
+          <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span>Groups of any size who play real formats</span></li>
+          <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span>Organizers tired of spreadsheets and scorecard photos</span></li>
         </ul>
         <p style="color:var(--ink-soft);font-size:15px;margin-top:18px">Whatever the event — your group, your courses, your app.</p>
       </div>
@@ -1310,12 +1306,12 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <div class="price-fig"><span class="price-amt">$25</span><span class="price-per">per person</span></div>
           <p class="price-lede">Everything's included — the full custom scoring app, built from scratch around your event:</p>
           <ul class="tick-list">
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Your event's own branding</b> — your logo and colors on every screen</span></li>
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Live leaderboard</b> — including the Projected board, so everyone can watch the finish take shape</span></li>
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Match play, Stableford &amp; low net boards</b> — every format your weekend runs</span></li>
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Calcutta board</b> — if your group wants one</span></li>
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Spectator link</b> — view-only, so everyone back home can follow along</span></li>
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Full Admin</b> — pairings, score fixes, and result exports</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Your event's own branding</b> — your logo and colors on every screen</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Live leaderboard</b> — including the Projected board, so everyone can watch the finish take shape</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Match play, Stableford &amp; low net boards</b> — every format your weekend runs</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Calcutta board</b> — if your group wants one</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Spectator link</b> — view-only, so everyone back home can follow along</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Full Admin</b> — pairings, score fixes, and result exports</span></li>
           </ul>
           <p class="price-split"><b>24 or more players?</b> The math stops — <b>$600 flat</b>, no matter how many more you bring.</p>
           <a class="btn" href="#/quote">Start Building</a>
@@ -1376,10 +1372,9 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <p>Tally isn't licensed club software with a sales team and a contract — it's a custom app built for your event, and it's priced that way: $25 per person with everything included, published right on the home page — and groups of 24 or more pay a flat $600 total.</p>
         </div>
         <div class="value-facts">
-          <span><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>$25 per person</b>&nbsp;— everything included, published up front</span></span>
-          <span><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>Flat $600</b>&nbsp;for groups of 24 or more — the per-person math stops there</span></span>
-          <span><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span><b>No subscription</b>&nbsp;— nothing renews, nothing to cancel after the trip</span></span>
-          <a class="btn" href="#/quote" style="justify-self:start;margin-top:6px">Start Building</a>
+          <span><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>$25 per person</b>&nbsp;— everything included, published up front</span></span>
+          <span><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>Flat $600</b>&nbsp;for groups of 24 or more — the per-person math stops there</span></span>
+          <span><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span><b>No subscription</b>&nbsp;— nothing renews, nothing to cancel after the trip</span></span>
         </div>
       </div>
     </div>
@@ -1395,9 +1390,9 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <p style="color:var(--ink-soft);font-size:16.5px">A tournament, an outing, a fundraiser, or just a golf weekend with your crew — whatever you're running, fill this out and you'll get a reply with follow-up questions and the details for your build — the price is $25 per person with everything included — and once your group reaches 24 players, the math stops: $600 flat, no matter how many more you bring. And if there's a screen, board, or rule your event needs that you haven't seen anywhere on this site, put it in the notes: custom requests are the whole point. No obligation, no mailing list — just a conversation about your event.</p>
           <p class="contact-line">Prefer email? Reach out directly at<br><a href="mailto:hello@tallygolfscoring.com">hello@tallygolfscoring.com</a></p>
           <ul class="tick-list">
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Tournaments, outings &amp; golf weekends of any kind and size</span></li>
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Any course, any destination — a resort lineup or your home club</span></li>
-            <li><svg class="tick-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><path class="v" d="M3 1.5v12M8 1.5v12M13 1.5v12M18 1.5v12" stroke-width="2.2" stroke-linecap="round"/><path class="d" d="M1.5 11.5L19.5 3" stroke-width="2.2" stroke-linecap="round"/></svg><span>Already have formats and pairings? Send them along in the notes</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span>Tournaments, outings &amp; golf weekends of any kind and size</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span>Any course, any destination — a resort lineup or your home club</span></li>
+            <li><svg class="dot-mark" width="21" height="15" viewBox="0 0 21 15" fill="none" aria-hidden="true"><circle cx="10.5" cy="7.5" r="4" fill="#e85d26"/></svg><span>Already have formats and pairings? Send them along in the notes</span></li>
           </ul>
         </div>
         <form id="quote-form" novalidate>
