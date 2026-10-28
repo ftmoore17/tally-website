@@ -236,7 +236,7 @@ section{padding:48px 0}
 .af-head .crest img{width:100%;height:100%;object-fit:cover;display:block}
 .af-head h4{margin:0;font-family:"Bricolage Grotesque",sans-serif;font-size:16.5px}
 .af-head p{margin:2px 0 0;font-size:12px;color:#bcd2c6}
-.af-tabbar{display:flex;gap:2px;background:#0b1322;padding:8px 9px 10px}
+.af-tabbar{display:flex;gap:2px;background:#0b1322;padding:8px 17px 10px}
 .af-tabbar button{flex:1;min-width:0;border:0;background:transparent;border-radius:12px;padding:7px 1px 5px;display:flex;flex-direction:column;align-items:center;gap:3px;font:600 10px "DM Sans",sans-serif;letter-spacing:-.01em;color:#8fa0b5;cursor:pointer}
 .af-tabbar button span{white-space:nowrap}
 .af-tabbar button svg{color:#8fa0b5;flex:0 0 auto}
@@ -254,6 +254,18 @@ section{padding:48px 0}
 .af-panel table.scoreboard td{padding:9px 3px}
 .af-panel table.scoreboard td.num{font-weight:600}
 .af-panel table.scoreboard .totcol{font-weight:800;font-size:15.5px}
+.af-panel table.strokes-table{table-layout:fixed;width:100%}
+.af-panel table.strokes-table th{font-size:9.5px;letter-spacing:.01em;padding:6px 4px;white-space:nowrap;overflow:hidden}
+.af-panel table.strokes-table th:first-child{text-align:left;padding-left:6px}
+.af-panel table.strokes-table th.num{text-align:right}
+.af-panel table.strokes-table td{padding:8px 4px}
+.af-panel table.strokes-table td:first-child{padding-left:6px}
+@media(max-width:560px){
+  .af-panel table.strokes-table th{font-size:8.5px;letter-spacing:0;padding:6px 2px}
+  .af-panel table.strokes-table th:first-child{padding-left:3px}
+  .af-panel table.strokes-table td{padding:7px 3px}
+  .af-panel table.strokes-table td:first-child{padding-left:3px}
+}
 .af-sub{font-family:"Bricolage Grotesque",sans-serif;font-size:15.5px;margin:18px 0 4px}
 .af-note{font-size:12.5px;color:#7b8a81;margin:8px 0 0}
 .pill.on{background:var(--green);color:#fff}
@@ -1243,9 +1255,9 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <div class="adm-row"><span class="k">R. Alvarez</span><span class="v">Green · Index 12.6</span></div>
             <div class="adm-row"><span class="k">H. Foster</span><span class="v">Green · Index 12.2</span></div>
             <div class="adm-row"><span class="k">D. Kim</span><span class="v">Green · Index 8.8</span></div>
-            <p class="adm-sec">Strokes — course handicaps from GHIN index</p>
-            <table class="fixed">
-              <colgroup><col style="width:32%"><col style="width:14%"><col style="width:13.5%"><col style="width:13.5%"><col style="width:13.5%"><col style="width:13.5%"></colgroup>
+            <p class="adm-sec">Strokes — course handicaps</p>
+            <table class="fixed strokes-table">
+              <colgroup><col style="width:30%"><col style="width:13%"><col style="width:12%"><col style="width:15%"><col style="width:13%"><col style="width:17%"></colgroup>
               <tr><th>Player</th><th class="num">Index</th><th class="num">Dye</th><th class="num">Fazio</th><th class="num">Love</th><th class="num">Norman</th></tr>
               <tr><td>J. Carter</td><td class="num">8.4</td><td class="num">9</td><td class="num">8</td><td class="num">10</td><td class="num">9</td></tr>
               <tr><td>T. Moore</td><td class="num">11.2</td><td class="num">12</td><td class="num">11</td><td class="num">13</td><td class="num">12</td></tr>
@@ -1315,7 +1327,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
 
         <div class="feature">
           <div class="feat-mock" aria-hidden="true">
-            <div class="fm-cap">Hole 7 · Norman · Par 4</div>
+            <div class="fm-cap">Hole 7 · Norman · Par 4 · SI 9</div>
             <div class="scorer">
               <div class="sc-who"><span class="sc-team-bar" style="background:#e85d26"></span><span class="sc-name">J. Carter<sup class="sc-total">9</sup></span></div>
               <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">5<span class="hole-dot"></span></span><span class="fm-b">+</span></span></span>
@@ -1440,7 +1452,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <div class="feat-mock" aria-hidden="true">
             <div class="adm-row"><span class="k">Scoring</span><span class="pill on">Open</span></div>
             <div class="adm-row"><span class="k">Spectator link</span><span class="pill on">View-only · code set</span></div>
-            <div class="fm-cap" style="margin:12px 0 2px">Strokes — from GHIN index</div>
+            <div class="fm-cap" style="margin:12px 0 2px">Strokes — course handicaps</div>
             <table class="fm-table fixed">
               <colgroup><col style="width:28%"><col style="width:18%"><col style="width:18%"><col style="width:18%"><col style="width:18%"></colgroup>
               <tr><th>Player</th><th class="num">Dye</th><th class="num">Fazio</th><th class="num">Love</th><th class="num">Norman</th></tr>
@@ -1928,16 +1940,16 @@ document.querySelectorAll('.ln-picker button').forEach(function(btn){
 
 /* Interactive scoring demo */
 var demoPlayers = [
-  { name: 'J. Carter', team: '#e85d26', gross: 5, totals: { Dye: 9, Fazio: 8, Love: 10, Norman: 9 } },
-  { name: 'T. Moore', team: '#e85d26', gross: 4, totals: { Dye: 12, Fazio: 11, Love: 13, Norman: 12 } },
-  { name: 'M. Reyes', team: '#7a1f2b', gross: 4, totals: { Dye: 7, Fazio: 6, Love: 7, Norman: 7 } },
-  { name: 'D. Cole', team: '#7a1f2b', gross: 6, totals: { Dye: 17, Fazio: 16, Love: 18, Norman: 17 } }
+  { name: 'J. Carter', team: '#e85d26', totals: { Dye: 9, Fazio: 8, Love: 10, Norman: 9 } },
+  { name: 'T. Moore', team: '#e85d26', totals: { Dye: 12, Fazio: 11, Love: 13, Norman: 12 } },
+  { name: 'M. Reyes', team: '#7a1f2b', totals: { Dye: 7, Fazio: 6, Love: 7, Norman: 7 } },
+  { name: 'D. Cole', team: '#7a1f2b', totals: { Dye: 17, Fazio: 16, Love: 18, Norman: 17 } }
 ];
 var demoMatches = [
-  { n: 1, fmt: 'Best Ball', course: 'Fazio Course', hole: 4, holes: 9, par: 4, yds: 372, si: 7, status: 'Final · Orange Won 3&2' },
-  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 13, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Orange Won 2&1' },
-  { n: 3, fmt: 'Singles', course: 'Dye Course', hole: 12, holes: 18, par: 4, yds: 388, si: 15, status: 'Orange 1 UP · Thru 12' },
-  { n: 4, fmt: 'Singles', course: 'Norman Course', hole: 1, holes: 18, par: 4, yds: 385, si: 5, status: 'Not started' }
+  { n: 1, fmt: 'Best Ball', course: 'Fazio Course', hole: 9, holes: 9, par: 4, yds: 372, si: 7, status: 'Final · Orange Won 3&2', scores: [5, 4, 4, 6] },
+  { n: 2, fmt: 'Best Ball', course: 'Love Course', hole: 9, holes: 9, par: 5, yds: 512, si: 6, status: 'Final · Orange Won 2&1', scores: [4, 5, 5, 4] },
+  { n: 3, fmt: 'Singles', course: 'Dye Course', hole: 12, holes: 18, par: 4, yds: 388, si: 15, status: 'Orange 1 UP · Thru 12', scores: [5, 4, 4, 6] },
+  { n: 4, fmt: 'Singles', course: 'Norman Course', hole: 1, holes: 18, par: 4, yds: 385, si: 5, status: 'Not started', scores: [null, null, null, null] }
 ];
 var currentMatch = demoMatches[2];
 var currentHole = currentMatch.hole;
@@ -1951,7 +1963,10 @@ function renderDemo(){
   scorersEl.innerHTML = '';
   var courseKey = m.course.split(' ')[0];
   demoPlayers.forEach(function(p, i){
-    var stroke = m.si <= p.totals[courseKey];
+    var idx = i;
+    var scores = m.scores;
+    var grossVal = scores[idx];
+    var stroke = grossVal != null && m.si <= p.totals[courseKey];
     var row = document.createElement('div');
     row.className = 'scorer';
     var who = document.createElement('div');
@@ -1972,22 +1987,22 @@ function renderDemo(){
     who.appendChild(nm);
     var netSlot = document.createElement('span');
     netSlot.className = 'sc-net-slot';
-    if (p.gross != null) {
+    if (grossVal != null) {
       var netLbl = document.createElement('span');
       netLbl.className = 'lbl';
       netLbl.textContent = 'Net';
       var netVal = document.createElement('span');
       netVal.className = 'val';
-      netVal.textContent = (p.gross - (stroke ? 1 : 0));
+      netVal.textContent = (grossVal - (stroke ? 1 : 0));
       netSlot.appendChild(netLbl); netSlot.appendChild(netVal);
     }
     var stepper = document.createElement('span');
     stepper.className = 'stepper';
     var minus = document.createElement('button');
     minus.type = 'button'; minus.textContent = '−'; minus.setAttribute('aria-label', 'Lower ' + p.name + ' gross score');
-    minus.addEventListener('click', function(){ if (p.gross > 1) { p.gross--; renderDemo(); } });
+    minus.addEventListener('click', function(){ if (scores[idx] != null && scores[idx] > 1) { scores[idx]--; renderDemo(); } });
     var g = document.createElement('span');
-    g.className = 'gross'; g.textContent = p.gross;
+    g.className = 'gross'; g.textContent = grossVal == null ? '' : grossVal;
     if (stroke) {
       var holeDot = document.createElement('span');
       holeDot.className = 'hole-dot';
@@ -1997,7 +2012,7 @@ function renderDemo(){
     }
     var plus = document.createElement('button');
     plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', 'Raise ' + p.name + ' gross score');
-    plus.addEventListener('click', function(){ if (p.gross < 12) { p.gross++; renderDemo(); } });
+    plus.addEventListener('click', function(){ if (scores[idx] == null) { scores[idx] = 1; renderDemo(); } else if (scores[idx] < 12) { scores[idx]++; renderDemo(); } });
     stepper.appendChild(minus); stepper.appendChild(g); stepper.appendChild(plus);
     var stepperWrap = document.createElement('span');
     stepperWrap.className = 'stepper-wrap';
