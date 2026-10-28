@@ -139,6 +139,12 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 #board-matches .match-row{flex:1}
 .pill{font-size:11.5px;font-weight:700;padding:4px 9px;border-radius:999px;background:#eef3ef;color:#0c3b2e;white-space:nowrap}
 .pill.hot{background:#fdeee7;color:#c2410c}
+/* Match-status pills take the color of the team that's up; All Square stays neutral */
+.pill.up-orange{background:#fdeee7;color:#c2410c}
+.pill.up-red{background:#fdecec;color:#b91c1c}
+.pill.up-blue{background:#e6edfd;color:#1d4ed8}
+.pill.up-green{background:#e5f5ea;color:#15803d}
+.pill.up-square{background:#eef1f0;color:#5b6f65}
 
 /* ---------- Sections ---------- */
 section{padding:48px 0}
@@ -431,6 +437,14 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .price-terms b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:17px;margin-bottom:5px}
 .price-terms p{margin:0;color:var(--ink-soft)}
 
+/* Guarantee banner — the headline feature under the price */
+.guarantee{margin-top:14px;background:var(--accent);color:#fff;border-radius:26px;padding:26px 28px;display:flex;gap:18px;align-items:center;box-shadow:0 16px 34px rgba(232,93,38,.30)}
+.guarantee .g-icon{flex:0 0 54px;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;color:#fff}
+.guarantee h3{font-family:"Bricolage Grotesque",sans-serif;font-size:27px;font-weight:800;margin:0 0 5px;color:#fff;letter-spacing:-.01em}
+.guarantee p{margin:0;font-size:16.5px;line-height:1.5;color:#ffe9df}
+.guarantee p b{color:#fff}
+@media(max-width:600px){.guarantee{padding:22px;gap:14px}.guarantee .g-icon{flex-basis:46px;width:46px;height:46px}.guarantee h3{font-size:24px}}
+
 /* Demo */
 .demo{background:var(--green-deep);color:#eef4f0;border-radius:26px;padding:28px;display:grid;grid-template-columns:1fr;gap:20px}
 @media(max-width:860px){.demo{grid-template-columns:1fr;padding:28px 22px}}
@@ -664,7 +678,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <span class="hc-arrow" aria-hidden="true">›</span>
             </div>
             <div class="hc-line">Dye Course · Par 4 · SI 15 · 388 yds</div>
-            <div class="sc-status"><span class="sc-status-label">Match status</span><span class="pill hot">Orange 1 UP · Thru 12</span></div>
+            <div class="sc-status"><span class="sc-status-label">Match status</span><span class="pill up-orange">Orange 1 UP · Thru 12</span></div>
             <div class="scorer home-scorer">
               <div class="sc-who"><span class="sc-team-bar" style="background:#e85d26" aria-hidden="true"></span><span class="sc-name">J. Carter<sup class="sc-total">9</sup></span></div>
               <span class="stepper-wrap"><span class="stepper"><span class="fm-b">−</span><span class="gross">5</span><span class="fm-b">+</span></span></span>
@@ -688,11 +702,11 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <span class="sc-save" style="text-align:center;margin-top:14px;padding:11px;font-size:14px">Save scores</span>
           </div>
           <div class="board" id="board-matches" hidden>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#e85d26"></span><b>Orange</b></span><span class="m-players"><span>J. Carter</span><span>T. Moore</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#7a1f2b"></span>Maroon</span><span class="m-players"><span>M. Reyes</span><span>D. Cole</span></span></span></div><span class="pill hot">Orange 2 UP · Thru 12</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#1d4ed8"></span><b>Blue</b></span><span class="m-players"><span>S. Patel</span><span>K. Donnelly</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#0c3b2e"></span>Green</span><span class="m-players"><span>J. Osei</span><span>R. Alvarez</span></span></span></div><span class="pill">Blue 1 UP · Thru 10</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#d9a441"></span><b>Gold</b></span><span class="m-players"><span>B. Callahan</span><span>C. Murphy</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#6b4fa1"></span>Purple</span><span class="m-players"><span>R. Nguyen</span><span>A. Lindqvist</span></span></span></div><span class="pill">AS Thru 7</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#cf3527"></span><b>Red</b></span><span class="m-players"><span>J. Whitfield</span><span>E. Brooks</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#0f766e"></span>Teal</span><span class="m-players"><span>H. Foster</span><span>L. Bennett</span></span></span></div><span class="pill hot">Red 2 UP · Thru 14</span></div>
-            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#c94f7c"></span><b>Pink</b></span><span class="m-players"><span>N. Clarke</span><span>W. Harrison</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#274b73"></span>Navy</span><span class="m-players"><span>G. Mitchell</span><span>P. Sullivan</span></span></span></div><span class="pill">Navy Won 3&amp;2 · F</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#e85d26"></span><b>Orange</b></span><span class="m-players"><span>J. Carter</span><span>T. Moore</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#7a1f2b"></span>Maroon</span><span class="m-players"><span>M. Reyes</span><span>D. Cole</span></span></span></div><span class="pill up-orange">Orange 2 UP · Thru 12</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#1d4ed8"></span><b>Blue</b></span><span class="m-players"><span>S. Patel</span><span>K. Donnelly</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#0c3b2e"></span>Green</span><span class="m-players"><span>J. Osei</span><span>R. Alvarez</span></span></span></div><span class="pill up-blue">Blue 1 UP · Thru 10</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#d9a441"></span><b>Gold</b></span><span class="m-players"><span>B. Callahan</span><span>C. Murphy</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#6b4fa1"></span>Purple</span><span class="m-players"><span>R. Nguyen</span><span>A. Lindqvist</span></span></span></div><span class="pill up-square">AS Thru 7</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#cf3527"></span><b>Red</b></span><span class="m-players"><span>J. Whitfield</span><span>E. Brooks</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#0f766e"></span>Teal</span><span class="m-players"><span>H. Foster</span><span>L. Bennett</span></span></span></div><span class="pill up-red">Red 2 UP · Thru 14</span></div>
+            <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#c94f7c"></span><b>Pink</b></span><span class="m-players"><span>N. Clarke</span><span>W. Harrison</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#274b73"></span>Navy</span><span class="m-players"><span>G. Mitchell</span><span>P. Sullivan</span></span></span></div><span class="pill" style="background:#e4ebf3;color:#274b73">Navy Won 3&amp;2 · F</span></div>
           </div>
           <div class="board" id="board-lownet" hidden>
             <table class="lownet">
@@ -885,7 +899,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <div id="mc-card-1" hidden>
               <div class="mc-head"><b>Match 1</b><span class="fmt">Best Ball · Fazio Course</span></div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · Orange Won 3&amp;2</span></div>
+                <div class="mc-pill-row"><span class="pill up-orange">Final · Orange Won 3&amp;2</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter / Moore</span>
                   <span class="vs">VS</span>
@@ -893,7 +907,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · Orange Won 2&amp;1</span></div>
+                <div class="mc-pill-row"><span class="pill up-orange">Final · Orange Won 2&amp;1</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Callahan / Doyle</span>
                   <span class="vs">VS</span>
@@ -901,7 +915,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · Red Won 1 UP</span></div>
+                <div class="mc-pill-row"><span class="pill up-red">Final · Red Won 1 UP</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#dc2626"></span>Whitfield / Brooks</span>
                   <span class="vs">VS</span>
@@ -909,7 +923,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · All Square</span></div>
+                <div class="mc-pill-row"><span class="pill up-square">Final · All Square</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Singh / Meyer</span>
                   <span class="vs">VS</span>
@@ -920,7 +934,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <div id="mc-card-2" hidden>
               <div class="mc-head"><b>Match 2</b><span class="fmt">Best Ball · Love Course</span></div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · Orange Won 2&amp;1</span></div>
+                <div class="mc-pill-row"><span class="pill up-orange">Final · Orange Won 2&amp;1</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter / Callahan</span>
                   <span class="vs">VS</span>
@@ -928,7 +942,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · Red Won 1 UP</span></div>
+                <div class="mc-pill-row"><span class="pill up-red">Final · Red Won 1 UP</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#dc2626"></span>Whitfield / Brooks</span>
                   <span class="vs">VS</span>
@@ -936,7 +950,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · Blue Won 2&amp;1</span></div>
+                <div class="mc-pill-row"><span class="pill up-blue">Final · Blue Won 2&amp;1</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Patel / Donnelly</span>
                   <span class="vs">VS</span>
@@ -944,7 +958,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · All Square</span></div>
+                <div class="mc-pill-row"><span class="pill up-square">Final · All Square</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Singh / Meyer</span>
                   <span class="vs">VS</span>
@@ -955,7 +969,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <div id="mc-card-3">
               <div class="mc-head"><b>Match 3</b><span class="fmt">Singles · Dye Course</span></div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · Orange Won 3&amp;2</span></div>
+                <div class="mc-pill-row"><span class="pill up-orange">Final · Orange Won 3&amp;2</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Callahan</span>
                   <span class="vs">VS</span>
@@ -963,7 +977,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill">Final · All Square</span></div>
+                <div class="mc-pill-row"><span class="pill up-square">Final · All Square</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Singh</span>
                   <span class="vs">VS</span>
@@ -971,7 +985,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill hot">Green 2 UP · Thru 15</span></div>
+                <div class="mc-pill-row"><span class="pill up-green">Green 2 UP · Thru 15</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Donnelly</span>
                   <span class="vs">VS</span>
@@ -979,7 +993,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill hot">Orange 1 UP · Thru 12</span></div>
+                <div class="mc-pill-row"><span class="pill up-orange">Orange 1 UP · Thru 12</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter</span>
                   <span class="vs">VS</span>
@@ -987,7 +1001,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill hot">Orange 2 UP · Thru 12</span></div>
+                <div class="mc-pill-row"><span class="pill up-orange">Orange 2 UP · Thru 12</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Moore</span>
                   <span class="vs">VS</span>
@@ -995,7 +1009,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill hot">All Square · Thru 11</span></div>
+                <div class="mc-pill-row"><span class="pill up-square">All Square · Thru 11</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Patel</span>
                   <span class="vs">VS</span>
@@ -1003,7 +1017,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill hot">All Square · Thru 10</span></div>
+                <div class="mc-pill-row"><span class="pill up-square">All Square · Thru 10</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Doyle</span>
                   <span class="vs">VS</span>
@@ -1011,7 +1025,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 </div>
               </div>
               <div class="pair-card">
-                <div class="mc-pill-row"><span class="pill hot">Green 1 UP · Thru 9</span></div>
+                <div class="mc-pill-row"><span class="pill up-green">Green 1 UP · Thru 9</span></div>
                 <div class="pair-vs">
                   <span class="pair-side"><span class="team-dot" style="background:#1d4ed8"></span>Meyer</span>
                   <span class="vs">VS</span>
@@ -1102,7 +1116,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <button type="button" class="hc-arrow" id="hole-next" aria-label="Next hole">›</button>
             </div>
             <div class="hc-line" id="sc-line">Dye Course · Par 4 · SI 15 · 388 yds</div>
-            <div class="sc-status"><span class="sc-status-label">Match status</span><span class="pill hot" id="sc-status-pill">Orange 1 UP · Thru 12</span></div>
+            <div class="sc-status"><span class="sc-status-label">Match status</span><span class="pill up-orange" id="sc-status-pill">Orange 1 UP · Thru 12</span></div>
             <div id="scorers"></div>
             <button type="button" class="sc-save" id="sc-save">Save scores</button>
           </div>
@@ -1374,7 +1388,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             </table>
             <div class="mc-head"><b>Match 3</b><span class="fmt">Singles · Dye Course</span></div>
             <div class="pair-card">
-              <div class="mc-pill-row"><span class="pill hot">Orange 1 UP · Thru 12</span></div>
+              <div class="mc-pill-row"><span class="pill up-orange">Orange 1 UP · Thru 12</span></div>
               <div class="pair-vs">
                 <span class="pair-side"><span class="team-dot" style="background:#e85d26"></span>Carter</span>
                 <span class="vs">VS</span>
@@ -1725,9 +1739,12 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <a class="btn" href="#/quote">Start Building</a>
         </div>
       </div>
-      <div class="card" style="margin-top:14px;padding:16px 18px">
-        <h3 style="font-size:18px;margin:0 0 6px">The guarantee</h3>
-        <p style="font-size:14.5px;margin:0">Love it or your deposit back — if the app isn't right for your group, we refund your deposit in full and it never goes live for your&nbsp;event.</p>
+      <div class="guarantee">
+        <span class="g-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10z"/><path d="M9 11.6l2.2 2.2L15.4 9.6"/></svg></span>
+        <div>
+          <h3>The guarantee</h3>
+          <p><b>Love it or your deposit back</b> — if the app isn't right for your group, we refund your deposit in full and it never goes live for your&nbsp;event.</p>
+        </div>
       </div>
       <div class="card" style="margin-top:14px;padding:16px 18px">
         <div style="display:flex;align-items:baseline;gap:8px 12px;flex-wrap:wrap">
@@ -1985,11 +2002,21 @@ var currentMatch = demoMatches[2];
 var currentHole = currentMatch.hole;
 var scorersEl = document.getElementById('scorers');
 
+function statusPillClass(status){
+  if (/\bOrange\b/.test(status)) return 'pill up-orange';
+  if (/\bRed\b/.test(status)) return 'pill up-red';
+  if (/\bBlue\b/.test(status)) return 'pill up-blue';
+  if (/\bGreen\b/.test(status)) return 'pill up-green';
+  return 'pill up-square';
+}
+
 function renderDemo(){
   var m = currentMatch;
   document.getElementById('sc-hole').textContent = 'Hole ' + currentHole;
   document.getElementById('sc-line').textContent = m.course + ' · Par ' + m.par + ' · SI ' + m.si + ' · ' + m.yds + ' yds';
-  document.getElementById('sc-status-pill').textContent = m.status;
+  var statusPill = document.getElementById('sc-status-pill');
+  statusPill.textContent = m.status;
+  statusPill.className = statusPillClass(m.status);
   scorersEl.innerHTML = '';
   var courseKey = m.course.split(' ')[0];
   var matchPlayers = m.players || demoPlayers;
