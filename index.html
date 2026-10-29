@@ -170,7 +170,7 @@ section{padding:48px 0}
 .strip-card .card-head h3{margin:0}
 @media (prefers-color-scheme: dark){.icon-box{color:#8fd0b6}}
 
-/* Included page — What You Get cards: icon beside the title, one line */
+/* Pricing page — What You Get cards: icon beside the title, one line */
 #what .card{display:flex;flex-wrap:wrap;align-items:center;column-gap:12px}
 #what .card .icon-box{flex:0 0 46px}
 #what .card h3{margin:0;flex:1;min-width:0;white-space:nowrap}
@@ -601,8 +601,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     <nav class="nav-links" aria-label="Site pages">
       <a href="#/home" data-route="home">Home</a>
       <a href="#/how" data-route="how">How It Works</a>
-      <a href="#/included" data-route="included">What You Get</a>
       <a href="#/example" data-route="example">The App</a>
+      <a href="#/pricing" data-route="pricing">Pricing</a>
       <a href="#/faq" data-route="faq">FAQ</a>
     </nav>
     <a class="btn nav-cta" href="#/quote" data-route="quote">Start Building</a>
@@ -785,8 +785,51 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section id="pricing" style="padding-top:0" data-view="pricing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Pricing</span>
+        <h2>One price per person. Everything included.</h2>
+        <p>One price covers the app and everything your event needs. Want to run it again later? It's a $150 setup fee each time you put it live again — next year, in six months, whenever you'd&nbsp;like.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-main">
+          <div class="price-fig"><span class="price-amt">$25</span><span class="price-per">per person</span></div>
+          <p class="price-lede">Everything's included — the full custom scoring app, built from scratch around your event:</p>
+          <ul class="tick-list">
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Your event's own branding</b> — the whole design built around your logo, colors, and style, on every&nbsp;screen</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Live leaderboard</b> — including the Projected&nbsp;board</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Every format you run</b> — boards for all of it, however you play&nbsp;it.</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Calcutta board</b> — if your group wants one, it's included</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Spectator link</b> — view-only, so everyone back home can follow&nbsp;along</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Full Admin</b> — pairings, score fixes, and result exports</span></li>
+            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Anything else</b> — whatever your group needs or wants, we can build&nbsp;it</span></li>
+          </ul>
+          <p class="price-split"><b>24 or more players?</b> The math stops — <b>$600 flat</b>, no matter how many more you bring.</p>
+          <a class="btn" href="#/quote">Start Building</a>
+        </div>
+      </div>
+      <div class="guarantee">
+        <span class="g-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10z"/><path d="M9 11.6l2.2 2.2L15.4 9.6"/></svg></span>
+        <div>
+          <h3>The Guarantee</h3>
+          <p><b>Love it or your money back</b> — if the app isn't right for your group, we refund your deposit in full and it never goes live for your&nbsp;event.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;padding:16px 18px">
+        <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;line-height:1.1;margin:0">Run it back?</h3>
+        <div style="display:flex;align-items:baseline;gap:8px 10px;flex-wrap:wrap;margin-top:10px">
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;line-height:1">$150</span>
+          <span style="font-size:15.5px;font-weight:600">setup fee</span>
+        </div>
+        <p style="font-size:14.5px;margin-top:8px">No yearly subscription. After your first event, that $150 setup fee puts your app live again whenever you want to run it — next year, in six months, or anytime in between. Each time, we can change the app around — new players, a bigger or smaller field, fresh ideas in, anything you didn't like&nbsp;out.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- WHAT YOU GET -->
-  <section id="what" style="padding-top:0" data-view="included">
+  <section id="what" style="padding-top:0" data-view="pricing">
     <div class="wrap">
       <div class="sec-head">
         <span class="tag">What you get</span>
@@ -1707,54 +1750,13 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
     </div>
   </section>
 
-  <!-- INCLUDED POINTER (Home) -->
+  <!-- PRICING POINTER (Home) -->
   <section style="padding:32px 0 32px" data-view="home">
     <div class="wrap" style="display:flex;align-items:center;justify-content:center;gap:14px 20px;flex-wrap:wrap">
-      <a class="btn green" href="#/included">What's Included</a>
+      <a class="btn green" href="#/pricing">Pricing</a>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing" style="padding-top:0" data-view="included">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="tag">Pricing</span>
-        <h2>One price per person. Everything included.</h2>
-        <p>One price covers the app and everything your event needs. Want to run it again later? It's a $150 setup fee each time you put it live again — next year, in six months, whenever you'd&nbsp;like.</p>
-      </div>
-      <div class="price-grid">
-        <div class="price-main">
-          <div class="price-fig"><span class="price-amt">$25</span><span class="price-per">per person</span></div>
-          <p class="price-lede">Everything's included — the full custom scoring app, built from scratch around your event:</p>
-          <ul class="tick-list">
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Your event's own branding</b> — the whole design built around your logo, colors, and style, on every&nbsp;screen</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Live leaderboard</b> — including the Projected&nbsp;board</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Every format you run</b> — boards for all of it, however you play&nbsp;it.</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Calcutta board</b> — if your group wants one, it's included</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Spectator link</b> — view-only, so everyone back home can follow&nbsp;along</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Full Admin</b> — pairings, score fixes, and result exports</span></li>
-            <li><svg class="dot-mark" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5.2 2v16" stroke="#e85d26" stroke-width="2" stroke-linecap="round"/><path d="M6.4 2.4 15.6 5.2 6.4 8Z" fill="#e85d26"/></svg><span><b>Anything else</b> — whatever your group needs or wants, we can build&nbsp;it</span></li>
-          </ul>
-          <p class="price-split"><b>24 or more players?</b> The math stops — <b>$600 flat</b>, no matter how many more you bring.</p>
-          <a class="btn" href="#/quote">Start Building</a>
-        </div>
-      </div>
-      <div class="guarantee">
-        <span class="g-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5.2L12 2 4 5.2V12c0 6.4 8 10 8 10z"/><path d="M9 11.6l2.2 2.2L15.4 9.6"/></svg></span>
-        <div>
-          <h3>The Guarantee</h3>
-          <p><b>Love it or your money back</b> — if the app isn't right for your group, we refund your deposit in full and it never goes live for your&nbsp;event.</p>
-        </div>
-      </div>
-      <div class="card" style="margin-top:14px;padding:16px 18px">
-        <div style="display:flex;align-items:baseline;gap:8px 12px;flex-wrap:wrap">
-          <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;line-height:1">$150</span>
-          <h3 style="font-size:18px;margin:0">Run it again — whenever you'd&nbsp;like</h3>
-        </div>
-        <p style="font-size:14.5px;margin-top:8px">No yearly subscription. After your first event, a $150 setup fee puts your app live again whenever you want to run it — next year, in six months, or anytime in between. Each time, we can change the app around — new players, a bigger or smaller field, fresh ideas in, anything you didn't like&nbsp;out.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section id="faq" style="padding-top:0" data-view="faq">
@@ -1893,8 +1895,8 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
 
 <script>
 /* Page router — hash-based views with a persistent nav */
-var ROUTES = ['home', 'example', 'how', 'included', 'faq', 'quote'];
-var ALIASES = { demo: 'example', what: 'included', formats: 'how', pricing: 'included', app: 'how', top: 'home', '': 'home' };
+var ROUTES = ['home', 'example', 'how', 'pricing', 'faq', 'quote'];
+var ALIASES = { demo: 'example', what: 'pricing', included: 'pricing', formats: 'how', app: 'how', top: 'home', '': 'home' };
 function routeFromHash(){
   var h = location.hash.replace(/^#\/?/, '');
   if (ROUTES.indexOf(h) >= 0) return h;
