@@ -133,6 +133,15 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 .match-row .pill{align-self:center}
 #board-matches:not([hidden]){gap:7px}
 #board-matches{padding:8px 12px 10px}
+#board-matches .match-picker{margin-bottom:2px;flex:0 0 auto}
+#board-lownet{overflow-y:auto;min-height:0;scrollbar-width:thin}
+#board-lownet .match-picker{margin-bottom:2px;flex:0 0 auto}
+#board-lownet table{flex:0 0 auto}
+#board-lownet .ln-head{font-family:"Bricolage Grotesque",sans-serif;font-size:14.5px;font-weight:700;margin:12px 0 2px;color:#14211c}
+#board-lownet .ln-head.first{margin-top:4px}
+#board-lownet table.match-lownet{font-size:12.5px}
+#board-lownet table.match-lownet th{padding:5px 4px}
+#board-lownet table.match-lownet td{padding:5px 4px}
 #board-matches .match-row{padding:7px 10px;gap:4px}
 #board-matches .m-players{font-size:11.5px;line-height:1.2}
 #board-matches .pill{padding:3px 8px}
@@ -705,6 +714,12 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <span class="sc-save" style="text-align:center;margin-top:14px;padding:11px;font-size:14px">Save scores</span>
           </div>
           <div class="board" id="board-matches" hidden>
+            <div class="match-picker" aria-hidden="true">
+              <span class="mp-pill">M1</span>
+              <span class="mp-pill">M2</span>
+              <span class="mp-pill active">M3</span>
+              <span class="mp-pill">M4</span>
+            </div>
             <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#e85d26"></span><b>Orange</b></span><span class="m-players"><span>J. Carter</span><span>T. Moore</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#7a1f2b"></span>Maroon</span><span class="m-players"><span>M. Reyes</span><span>D. Cole</span></span></span></div><span class="pill up-orange">Orange 2 UP · Thru 12</span></div>
             <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#1d4ed8"></span><b>Blue</b></span><span class="m-players"><span>S. Patel</span><span>K. Donnelly</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#0c3b2e"></span>Green</span><span class="m-players"><span>J. Osei</span><span>R. Alvarez</span></span></span></div><span class="pill up-blue">Blue 1 UP · Thru 10</span></div>
             <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#d9a441"></span><b>Gold</b></span><span class="m-players"><span>B. Callahan</span><span>C. Murphy</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#6b4fa1"></span>Purple</span><span class="m-players"><span>R. Nguyen</span><span>A. Lindqvist</span></span></span></div><span class="pill up-square">AS Thru 7</span></div>
@@ -712,6 +727,29 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             <div class="match-row"><div class="match-vs"><span class="m-side"><span class="m-team"><span class="team-dot" style="background:#c94f7c"></span><b>Pink</b></span><span class="m-players"><span>N. Clarke</span><span>W. Harrison</span></span></span><span class="vs">VS</span><span class="m-side right"><span class="m-team"><span class="team-dot" style="background:#274b73"></span>Navy</span><span class="m-players"><span>G. Mitchell</span><span>P. Sullivan</span></span></span></div><span class="pill" style="background:#e4ebf3;color:#274b73">Navy Won 3&amp;2 · F</span></div>
           </div>
           <div class="board" id="board-lownet" hidden>
+            <div class="match-picker" aria-hidden="true">
+              <span class="mp-pill">M1</span>
+              <span class="mp-pill">M2</span>
+              <span class="mp-pill active">M3</span>
+              <span class="mp-pill">M4</span>
+            </div>
+            <div class="ln-head first">Match Low Net</div>
+            <table class="lownet match-lownet">
+              <tr><th>Player</th><th class="num">Net</th><th class="num">To par</th></tr>
+              <tr class="leader"><td>M. Reyes</td><td class="num">68</td><td class="num to-par under">−4</td></tr>
+              <tr><td>J. Carter</td><td class="num">69</td><td class="num to-par under">−3</td></tr>
+              <tr><td>T. Moore</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
+              <tr><td>R. Alvarez</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
+              <tr><td>S. Patel</td><td class="num">71</td><td class="num to-par under">−1</td></tr>
+              <tr><td>K. Donnelly</td><td class="num">72</td><td class="num to-par">E</td></tr>
+              <tr><td>J. Osei</td><td class="num">73</td><td class="num to-par over">+1</td></tr>
+              <tr><td>D. Cole</td><td class="num">73</td><td class="num to-par over">+1</td></tr>
+              <tr><td>B. Callahan</td><td class="num">74</td><td class="num to-par over">+2</td></tr>
+              <tr><td>R. Nguyen</td><td class="num">74</td><td class="num to-par over">+2</td></tr>
+              <tr><td>C. Murphy</td><td class="num">76</td><td class="num to-par over">+4</td></tr>
+              <tr><td>A. Lindqvist</td><td class="num">77</td><td class="num to-par over">+5</td></tr>
+            </table>
+            <div class="ln-head">Weekend Low Net</div>
             <table class="lownet">
               <tr><th>Player</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th class="num">R4</th><th class="num">Tot · Par</th></tr>
               <tr class="leader"><td>J. Carter</td><td class="num">70</td><td class="num">68</td><td class="num">69</td><td class="num">71</td><td class="num to-par under">278 · −10</td></tr>
