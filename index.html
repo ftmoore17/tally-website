@@ -142,11 +142,10 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 #board-lownet table.match-lownet{font-size:12.5px}
 #board-lownet table.match-lownet th{padding:5px 4px}
 #board-lownet table.match-lownet td{padding:5px 4px}
-/* Weekend Low Net — Tot · Par locked into fixed slots so TOT, the dot, and the to-par line up on every row, single- or double-digit */
+/* Weekend Low Net — Tot and Par locked into fixed slots so TOT and the to-par line up on every row, single- or double-digit */
 #board-lownet table.weekend-lownet th:last-child,#board-lownet table.weekend-lownet td:last-child{width:88px;padding-right:12px}
-#board-lownet .tp-wrap{display:inline-flex;align-items:baseline;justify-content:flex-end}
+#board-lownet .tp-wrap{display:inline-flex;align-items:baseline;justify-content:flex-end;gap:13px}
 #board-lownet .tp-tot{flex:0 0 27px;width:27px;text-align:right}
-#board-lownet .tp-dot{flex:0 0 13px;width:13px;text-align:center}
 #board-lownet .tp-par{flex:0 0 28px;width:28px;text-align:right}
 #board-matches .match-row{padding:7px 10px;gap:4px}
 #board-matches .m-players{font-size:11.5px;line-height:1.2}
@@ -755,19 +754,19 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             </table>
             <div class="ln-head">Weekend Low Net</div>
             <table class="lownet weekend-lownet">
-              <tr><th>Player</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th class="num">R4</th><th class="num"><span class="tp-wrap"><span class="tp-tot">Tot</span><span class="tp-dot">·</span><span class="tp-par">Par</span></span></th></tr>
-              <tr class="leader"><td>J. Carter</td><td class="num">70</td><td class="num">68</td><td class="num">69</td><td class="num">71</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">278</span><span class="tp-dot">·</span><span class="tp-par">−10</span></span></td></tr>
-              <tr><td>M. Reyes</td><td class="num">71</td><td class="num">69</td><td class="num">68</td><td class="num">72</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">280</span><span class="tp-dot">·</span><span class="tp-par">−8</span></span></td></tr>
-              <tr><td>T. Moore</td><td class="num">72</td><td class="num">70</td><td class="num">70</td><td class="num">69</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">281</span><span class="tp-dot">·</span><span class="tp-par">−7</span></span></td></tr>
-              <tr><td>R. Alvarez</td><td class="num">73</td><td class="num">71</td><td class="num">70</td><td class="num">72</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">286</span><span class="tp-dot">·</span><span class="tp-par">−2</span></span></td></tr>
-              <tr><td>S. Patel</td><td class="num">74</td><td class="num">72</td><td class="num">71</td><td class="num">70</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">287</span><span class="tp-dot">·</span><span class="tp-par">−1</span></span></td></tr>
-              <tr><td>K. Donnelly</td><td class="num">75</td><td class="num">73</td><td class="num">72</td><td class="num">71</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">291</span><span class="tp-dot">·</span><span class="tp-par">+3</span></span></td></tr>
-              <tr><td>D. Cole</td><td class="num">74</td><td class="num">71</td><td class="num">73</td><td class="num">74</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">292</span><span class="tp-dot">·</span><span class="tp-par">+4</span></span></td></tr>
-              <tr><td>J. Osei</td><td class="num">76</td><td class="num">74</td><td class="num">73</td><td class="num">72</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">295</span><span class="tp-dot">·</span><span class="tp-par">+7</span></span></td></tr>
-              <tr><td>B. Callahan</td><td class="num">77</td><td class="num">75</td><td class="num">74</td><td class="num">73</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">299</span><span class="tp-dot">·</span><span class="tp-par">+11</span></span></td></tr>
-              <tr><td>R. Nguyen</td><td class="num">78</td><td class="num">76</td><td class="num">74</td><td class="num">74</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">302</span><span class="tp-dot">·</span><span class="tp-par">+14</span></span></td></tr>
-              <tr><td>C. Murphy</td><td class="num">79</td><td class="num">77</td><td class="num">76</td><td class="num">75</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">307</span><span class="tp-dot">·</span><span class="tp-par">+19</span></span></td></tr>
-              <tr><td>A. Lindqvist</td><td class="num">80</td><td class="num">78</td><td class="num">77</td><td class="num">76</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">311</span><span class="tp-dot">·</span><span class="tp-par">+23</span></span></td></tr>
+              <tr><th>Player</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th class="num">R4</th><th class="num"><span class="tp-wrap"><span class="tp-tot">Tot</span><span class="tp-par">Par</span></span></th></tr>
+              <tr class="leader"><td>J. Carter</td><td class="num">70</td><td class="num">68</td><td class="num">69</td><td class="num">71</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">278</span><span class="tp-par">−10</span></span></td></tr>
+              <tr><td>M. Reyes</td><td class="num">71</td><td class="num">69</td><td class="num">68</td><td class="num">72</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">280</span><span class="tp-par">−8</span></span></td></tr>
+              <tr><td>T. Moore</td><td class="num">72</td><td class="num">70</td><td class="num">70</td><td class="num">69</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">281</span><span class="tp-par">−7</span></span></td></tr>
+              <tr><td>R. Alvarez</td><td class="num">73</td><td class="num">71</td><td class="num">70</td><td class="num">72</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">286</span><span class="tp-par">−2</span></span></td></tr>
+              <tr><td>S. Patel</td><td class="num">74</td><td class="num">72</td><td class="num">71</td><td class="num">70</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">287</span><span class="tp-par">−1</span></span></td></tr>
+              <tr><td>K. Donnelly</td><td class="num">75</td><td class="num">73</td><td class="num">72</td><td class="num">71</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">291</span><span class="tp-par">+3</span></span></td></tr>
+              <tr><td>D. Cole</td><td class="num">74</td><td class="num">71</td><td class="num">73</td><td class="num">74</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">292</span><span class="tp-par">+4</span></span></td></tr>
+              <tr><td>J. Osei</td><td class="num">76</td><td class="num">74</td><td class="num">73</td><td class="num">72</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">295</span><span class="tp-par">+7</span></span></td></tr>
+              <tr><td>B. Callahan</td><td class="num">77</td><td class="num">75</td><td class="num">74</td><td class="num">73</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">299</span><span class="tp-par">+11</span></span></td></tr>
+              <tr><td>R. Nguyen</td><td class="num">78</td><td class="num">76</td><td class="num">74</td><td class="num">74</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">302</span><span class="tp-par">+14</span></span></td></tr>
+              <tr><td>C. Murphy</td><td class="num">79</td><td class="num">77</td><td class="num">76</td><td class="num">75</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">307</span><span class="tp-par">+19</span></span></td></tr>
+              <tr><td>A. Lindqvist</td><td class="num">80</td><td class="num">78</td><td class="num">77</td><td class="num">76</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">311</span><span class="tp-par">+23</span></span></td></tr>
             </table>
           </div>
         </div>
