@@ -142,6 +142,12 @@ header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(-
 #board-lownet table.match-lownet{font-size:12.5px}
 #board-lownet table.match-lownet th{padding:5px 4px}
 #board-lownet table.match-lownet td{padding:5px 4px}
+/* Weekend Low Net — Tot · Par locked into fixed slots so TOT, the dot, and the to-par line up on every row, single- or double-digit */
+#board-lownet table.weekend-lownet th:last-child,#board-lownet table.weekend-lownet td:last-child{width:88px;padding-right:12px}
+#board-lownet .tp-wrap{display:inline-flex;align-items:baseline;justify-content:flex-end}
+#board-lownet .tp-tot{flex:0 0 27px;width:27px;text-align:right}
+#board-lownet .tp-dot{flex:0 0 13px;width:13px;text-align:center}
+#board-lownet .tp-par{flex:0 0 28px;width:28px;text-align:right}
 #board-matches .match-row{padding:7px 10px;gap:4px}
 #board-matches .m-players{font-size:11.5px;line-height:1.2}
 #board-matches .pill{padding:3px 8px}
@@ -733,37 +739,35 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <span class="mp-pill active">M3</span>
               <span class="mp-pill">M4</span>
             </div>
-            <div class="ln-head first">Match Low Net</div>
+            <div class="ln-head first">Match 3 · Best Ball</div>
             <table class="lownet match-lownet">
-              <tr><th>Player</th><th class="num">Net</th><th class="num">To par</th></tr>
-              <tr class="leader"><td>M. Reyes</td><td class="num">68</td><td class="num to-par under">−4</td></tr>
-              <tr><td>J. Carter</td><td class="num">69</td><td class="num to-par under">−3</td></tr>
-              <tr><td>T. Moore</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
-              <tr><td>R. Alvarez</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
-              <tr><td>S. Patel</td><td class="num">71</td><td class="num to-par under">−1</td></tr>
-              <tr><td>K. Donnelly</td><td class="num">72</td><td class="num to-par">E</td></tr>
-              <tr><td>J. Osei</td><td class="num">73</td><td class="num to-par over">+1</td></tr>
-              <tr><td>D. Cole</td><td class="num">73</td><td class="num to-par over">+1</td></tr>
-              <tr><td>B. Callahan</td><td class="num">74</td><td class="num to-par over">+2</td></tr>
-              <tr><td>R. Nguyen</td><td class="num">74</td><td class="num to-par over">+2</td></tr>
-              <tr><td>C. Murphy</td><td class="num">76</td><td class="num to-par over">+4</td></tr>
-              <tr><td>A. Lindqvist</td><td class="num">77</td><td class="num to-par over">+5</td></tr>
+              <tr><th>Team</th><th class="num">Net</th><th class="num">To par</th></tr>
+              <tr class="leader"><td><span class="team-dot" style="background:#e85d26"></span>Carter &amp; Moore</td><td class="num">64</td><td class="num to-par under">−8</td></tr>
+              <tr><td><span class="team-dot" style="background:#7a1f2b"></span>Reyes &amp; Cole</td><td class="num">66</td><td class="num to-par under">−6</td></tr>
+              <tr><td><span class="team-dot" style="background:#1d4ed8"></span>Patel &amp; Donnelly</td><td class="num">67</td><td class="num to-par under">−5</td></tr>
+              <tr><td><span class="team-dot" style="background:#0c3b2e"></span>Osei &amp; Alvarez</td><td class="num">68</td><td class="num to-par under">−4</td></tr>
+              <tr><td><span class="team-dot" style="background:#d9a441"></span>Callahan &amp; Murphy</td><td class="num">69</td><td class="num to-par under">−3</td></tr>
+              <tr><td><span class="team-dot" style="background:#cf3527"></span>Whitfield &amp; Brooks</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
+              <tr><td><span class="team-dot" style="background:#6b4fa1"></span>Nguyen &amp; Lindqvist</td><td class="num">71</td><td class="num to-par under">−1</td></tr>
+              <tr><td><span class="team-dot" style="background:#0f766e"></span>Foster &amp; Bennett</td><td class="num">72</td><td class="num to-par">E</td></tr>
+              <tr><td><span class="team-dot" style="background:#c94f7c"></span>Clarke &amp; Harrison</td><td class="num">73</td><td class="num to-par over">+1</td></tr>
+              <tr><td><span class="team-dot" style="background:#274b73"></span>Mitchell &amp; Sullivan</td><td class="num">74</td><td class="num to-par over">+2</td></tr>
             </table>
             <div class="ln-head">Weekend Low Net</div>
-            <table class="lownet">
-              <tr><th>Player</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th class="num">R4</th><th class="num">Tot · Par</th></tr>
-              <tr class="leader"><td>J. Carter</td><td class="num">70</td><td class="num">68</td><td class="num">69</td><td class="num">71</td><td class="num to-par under">278 · −10</td></tr>
-              <tr><td>M. Reyes</td><td class="num">71</td><td class="num">69</td><td class="num">68</td><td class="num">72</td><td class="num to-par under">280 · −8</td></tr>
-              <tr><td>T. Moore</td><td class="num">72</td><td class="num">70</td><td class="num">70</td><td class="num">69</td><td class="num to-par under">281 · −7</td></tr>
-              <tr><td>R. Alvarez</td><td class="num">73</td><td class="num">71</td><td class="num">70</td><td class="num">72</td><td class="num to-par under">286 · −2</td></tr>
-              <tr><td>S. Patel</td><td class="num">74</td><td class="num">72</td><td class="num">71</td><td class="num">70</td><td class="num to-par under">287 · −1</td></tr>
-              <tr><td>K. Donnelly</td><td class="num">75</td><td class="num">73</td><td class="num">72</td><td class="num">71</td><td class="num to-par over">291 · +3</td></tr>
-              <tr><td>D. Cole</td><td class="num">74</td><td class="num">71</td><td class="num">73</td><td class="num">74</td><td class="num to-par over">292 · +4</td></tr>
-              <tr><td>J. Osei</td><td class="num">76</td><td class="num">74</td><td class="num">73</td><td class="num">72</td><td class="num to-par over">295 · +7</td></tr>
-              <tr><td>B. Callahan</td><td class="num">77</td><td class="num">75</td><td class="num">74</td><td class="num">73</td><td class="num to-par over">299 · +11</td></tr>
-              <tr><td>R. Nguyen</td><td class="num">78</td><td class="num">76</td><td class="num">74</td><td class="num">74</td><td class="num to-par over">302 · +14</td></tr>
-              <tr><td>C. Murphy</td><td class="num">79</td><td class="num">77</td><td class="num">76</td><td class="num">75</td><td class="num to-par over">307 · +19</td></tr>
-              <tr><td>A. Lindqvist</td><td class="num">80</td><td class="num">78</td><td class="num">77</td><td class="num">76</td><td class="num to-par over">311 · +23</td></tr>
+            <table class="lownet weekend-lownet">
+              <tr><th>Player</th><th class="num">R1</th><th class="num">R2</th><th class="num">R3</th><th class="num">R4</th><th class="num"><span class="tp-wrap"><span class="tp-tot">Tot</span><span class="tp-dot">·</span><span class="tp-par">Par</span></span></th></tr>
+              <tr class="leader"><td>J. Carter</td><td class="num">70</td><td class="num">68</td><td class="num">69</td><td class="num">71</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">278</span><span class="tp-dot">·</span><span class="tp-par">−10</span></span></td></tr>
+              <tr><td>M. Reyes</td><td class="num">71</td><td class="num">69</td><td class="num">68</td><td class="num">72</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">280</span><span class="tp-dot">·</span><span class="tp-par">−8</span></span></td></tr>
+              <tr><td>T. Moore</td><td class="num">72</td><td class="num">70</td><td class="num">70</td><td class="num">69</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">281</span><span class="tp-dot">·</span><span class="tp-par">−7</span></span></td></tr>
+              <tr><td>R. Alvarez</td><td class="num">73</td><td class="num">71</td><td class="num">70</td><td class="num">72</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">286</span><span class="tp-dot">·</span><span class="tp-par">−2</span></span></td></tr>
+              <tr><td>S. Patel</td><td class="num">74</td><td class="num">72</td><td class="num">71</td><td class="num">70</td><td class="num to-par under"><span class="tp-wrap"><span class="tp-tot">287</span><span class="tp-dot">·</span><span class="tp-par">−1</span></span></td></tr>
+              <tr><td>K. Donnelly</td><td class="num">75</td><td class="num">73</td><td class="num">72</td><td class="num">71</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">291</span><span class="tp-dot">·</span><span class="tp-par">+3</span></span></td></tr>
+              <tr><td>D. Cole</td><td class="num">74</td><td class="num">71</td><td class="num">73</td><td class="num">74</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">292</span><span class="tp-dot">·</span><span class="tp-par">+4</span></span></td></tr>
+              <tr><td>J. Osei</td><td class="num">76</td><td class="num">74</td><td class="num">73</td><td class="num">72</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">295</span><span class="tp-dot">·</span><span class="tp-par">+7</span></span></td></tr>
+              <tr><td>B. Callahan</td><td class="num">77</td><td class="num">75</td><td class="num">74</td><td class="num">73</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">299</span><span class="tp-dot">·</span><span class="tp-par">+11</span></span></td></tr>
+              <tr><td>R. Nguyen</td><td class="num">78</td><td class="num">76</td><td class="num">74</td><td class="num">74</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">302</span><span class="tp-dot">·</span><span class="tp-par">+14</span></span></td></tr>
+              <tr><td>C. Murphy</td><td class="num">79</td><td class="num">77</td><td class="num">76</td><td class="num">75</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">307</span><span class="tp-dot">·</span><span class="tp-par">+19</span></span></td></tr>
+              <tr><td>A. Lindqvist</td><td class="num">80</td><td class="num">78</td><td class="num">77</td><td class="num">76</td><td class="num to-par over"><span class="tp-wrap"><span class="tp-tot">311</span><span class="tp-dot">·</span><span class="tp-par">+23</span></span></td></tr>
             </table>
           </div>
         </div>
@@ -1216,12 +1220,12 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           <div class="af-panel" id="xpanel-boards" hidden>
             <h5 class="af-sub" style="margin-top:2px">Match Low Net</h5>
             <div class="ln-picker" role="tablist" aria-label="Pick a match for the low net board">
-              <button data-ln="1" role="tab" class="active" aria-selected="true" aria-label="Match 1">M1</button>
+              <button data-ln="1" role="tab" aria-selected="false" aria-label="Match 1">M1</button>
               <button data-ln="2" role="tab" aria-selected="false" aria-label="Match 2">M2</button>
-              <button data-ln="3" role="tab" aria-selected="false" aria-label="Match 3">M3</button>
+              <button data-ln="3" role="tab" class="active" aria-selected="true" aria-label="Match 3">M3</button>
               <button data-ln="4" role="tab" aria-selected="false" aria-label="Match 4">M4</button>
             </div>
-            <div id="ln-board-1">
+            <div id="ln-board-1" hidden>
               <table>
                 <tr><th>Pair</th><th class="num">Net</th><th class="num">To par</th></tr>
                 <tr class="leader"><td>Carter &amp; Moore</td><td class="num">24</td><td class="num to-par under">−4</td></tr>
@@ -1247,25 +1251,18 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 <tr><td>Foster &amp; Kim</td><td class="num">30</td><td class="num to-par over">+2</td></tr>
               </table>
             </div>
-            <div id="ln-board-3" hidden>
+            <div id="ln-board-3">
+              <div class="fm-cap">Best Ball · Dye Course</div>
               <table>
-                <tr><th>Player</th><th class="num">Net</th><th class="num">To par</th><th class="num">Thru</th></tr>
-                <tr class="leader"><td>B. Callahan</td><td class="num">68</td><td class="num to-par under">−4</td><td class="num">F</td></tr>
-                <tr><td>J. Carter</td><td class="num">44</td><td class="num to-par under">−3</td><td class="num">12</td></tr>
-                <tr><td>A. Singh</td><td class="num">69</td><td class="num to-par under">−3</td><td class="num">F</td></tr>
-                <tr><td>R. Alvarez</td><td class="num">57</td><td class="num to-par under">−3</td><td class="num">15</td></tr>
-                <tr><td>M. Reyes</td><td class="num">45</td><td class="num to-par under">−2</td><td class="num">12</td></tr>
-                <tr><td>J. Whitfield</td><td class="num">70</td><td class="num to-par under">−2</td><td class="num">F</td></tr>
-                <tr><td>T. Moore</td><td class="num">46</td><td class="num to-par under">−1</td><td class="num">12</td></tr>
-                <tr><td>H. Foster</td><td class="num">71</td><td class="num to-par under">−1</td><td class="num">F</td></tr>
-                <tr><td>K. Donnelly</td><td class="num">59</td><td class="num to-par under">−1</td><td class="num">15</td></tr>
-                <tr><td>S. Patel</td><td class="num">42</td><td class="num to-par under">−1</td><td class="num">11</td></tr>
-                <tr><td>D. Kim</td><td class="num">42</td><td class="num to-par under">−1</td><td class="num">11</td></tr>
-                <tr><td>W. Doyle</td><td class="num">39</td><td class="num to-par under">−1</td><td class="num">10</td></tr>
-                <tr><td>N. Brooks</td><td class="num">39</td><td class="num to-par under">−1</td><td class="num">10</td></tr>
-                <tr><td>D. Cole</td><td class="num">48</td><td class="num to-par over">+1</td><td class="num">12</td></tr>
-                <tr><td>J. Osei</td><td class="num">37</td><td class="num to-par over">+1</td><td class="num">9</td></tr>
-                <tr><td>J. Meyer</td><td class="num">38</td><td class="num to-par over">+2</td><td class="num">9</td></tr>
+                <tr><th>Team</th><th class="num">Net</th><th class="num">To par</th></tr>
+                <tr class="leader"><td>Carter &amp; Moore</td><td class="num">64</td><td class="num to-par under">−8</td></tr>
+                <tr><td>Reyes &amp; Cole</td><td class="num">66</td><td class="num to-par under">−6</td></tr>
+                <tr><td>Patel &amp; Donnelly</td><td class="num">67</td><td class="num to-par under">−5</td></tr>
+                <tr><td>Osei &amp; Alvarez</td><td class="num">68</td><td class="num to-par under">−4</td></tr>
+                <tr><td>Whitfield &amp; Brooks</td><td class="num">69</td><td class="num to-par under">−3</td></tr>
+                <tr><td>Callahan &amp; Doyle</td><td class="num">70</td><td class="num to-par under">−2</td></tr>
+                <tr><td>Singh &amp; Meyer</td><td class="num">71</td><td class="num to-par under">−1</td></tr>
+                <tr><td>Foster &amp; Kim</td><td class="num">72</td><td class="num to-par">E</td></tr>
               </table>
             </div>
             <div id="ln-board-4" hidden>
