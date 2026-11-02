@@ -582,8 +582,8 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .gv-tabs span{flex:1;text-align:center;padding:7px 0;border-radius:999px;background:#fff;font-weight:600;font-size:12.5px;color:#5a7595;white-space:nowrap}
 .gv-tabs .on{background:#ff6b4a;color:#fff}
 .gv-body{padding:9px 12px 0;flex:1;display:flex;flex-direction:column;gap:6px}
-.gv-card{background:#fff;border-radius:14px;padding:8px 16px 8px 10px;display:flex;align-items:center;gap:8px;box-shadow:0 3px 10px rgba(18,86,160,.09)}
-.gv-ava{width:32px;height:32px;flex:0 0 32px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:11.5px}
+.gv-card{background:#fff;border-radius:14px;padding:8px 10px;display:grid;grid-template-columns:30px minmax(0,1fr) 42px 54px;column-gap:7px;align-items:center;box-shadow:0 3px 10px rgba(18,86,160,.09)}
+.gv-ava{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:11px}
 .gv-who{flex:1;min-width:0}
 .gv-card .nm{font-weight:600;font-size:13.5px;line-height:1.2;white-space:nowrap}
 .gv-card .sub{font-size:10.5px;color:#7d95b0;white-space:nowrap;margin-top:1px}
@@ -687,15 +687,14 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .ph-vs .vs{font-size:9px;font-weight:700;letter-spacing:.1em;color:#8a7d5f;padding-top:3px}
 .ph-status{text-align:center;margin-top:6px}
 .ph-status span{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;background:#e9dfc6;color:#14352a;border-radius:999px;padding:3px 9px;white-space:nowrap}
-.gv-cols{display:flex;justify-content:flex-end;gap:8px;padding:2px 16px 0;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7d95b0}
-.gv-cols span{flex:0 0 36px;text-align:center;white-space:nowrap}
-.gv-cols span:last-child{flex:0 0 46px}
-.gv-nums{display:flex;gap:8px;flex:0 0 auto;text-align:center}
-.gv-nums>div{flex:0 0 36px;text-align:center}
-.gv-nums>div:last-child{flex:0 0 46px}
-.gv-nums b{display:block;font-size:16px;font-weight:800;color:#1256a0;line-height:1.1}
-.gv-nums b.par{color:#ff6b4a}
-.gv-nums span{font-size:8.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#7d95b0;white-space:nowrap}
+.gv-cols{display:grid;grid-template-columns:30px minmax(0,1fr) 42px 54px;column-gap:7px;padding:2px 10px 0;font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7d95b0}
+.gv-cols span{text-align:center;white-space:nowrap;min-width:0}
+.gv-cols .gv-col-net{grid-column:3}
+.gv-cols .gv-col-par{grid-column:4}
+.gv-stat{text-align:center;min-width:0}
+.gv-stat b{display:block;font-size:16px;font-weight:800;color:#1256a0;line-height:1.1;text-align:center}
+.gv-stat b.par{color:#ff6b4a}
+.gv-stat span{display:block;font-size:8.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#7d95b0;white-space:nowrap;text-align:center}
 .th-dew .dw-head{padding:48px 18px 12px}
 .th-dew .dw-body{gap:7px;padding:9px 14px 0}
 .th-dew .dw-card{padding:8px 10px;gap:7px}
@@ -1915,18 +1914,18 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <div class="ph-body">
                 <div class="ph-toggle"><span class="on">Leaderboard</span><span>Projected</span></div>
                 <div class="ph-grid ph-ghead"><span>Team</span><span>MP</span><span>SF</span><span>PTS</span><span>Total</span></div>
-                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">1<sup>st</sup></span><span class="ph-tdot" style="background:#7a1f2b"></span><span><span class="ph-tname">Whitmore</span><span class="ph-tback">Leader</span></span></span><span>20</span><span>12</span><span>18</span><span>50</span></div>
-                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">2<sup>nd</sup></span><span class="ph-tdot" style="background:#274b73"></span><span><span class="ph-tname">Ashford</span><span class="ph-tback">10 back</span></span></span><span>15</span><span>10</span><span>15</span><span>40</span></div>
-                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">3<sup>rd</sup></span><span class="ph-tdot" style="background:#0c3b2e"></span><span><span class="ph-tname">Ellison</span><span class="ph-tback">19 back</span></span></span><span>10</span><span>9</span><span>12</span><span>31</span></div>
-                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">4<sup>th</sup></span><span class="ph-tdot" style="background:#b08d4f"></span><span><span class="ph-tname">Calloway</span><span class="ph-tback">28 back</span></span></span><span>5</span><span>7</span><span>10</span><span>22</span></div>
+                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">1<sup>st</sup></span><span class="ph-tdot" style="background:#1b6a43"></span><span><span class="ph-tname">Green</span><span class="ph-tback">Leader</span></span></span><span>20</span><span>12</span><span>18</span><span>50</span></div>
+                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">2<sup>nd</sup></span><span class="ph-tdot" style="background:#b08d4f"></span><span><span class="ph-tname">Gold</span><span class="ph-tback">10 back</span></span></span><span>15</span><span>10</span><span>15</span><span>40</span></div>
+                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">3<sup>rd</sup></span><span class="ph-tdot" style="background:#274b73"></span><span><span class="ph-tname">Navy</span><span class="ph-tback">19 back</span></span></span><span>10</span><span>9</span><span>12</span><span>31</span></div>
+                <div class="ph-grid ph-grow"><span class="ph-tcell"><span class="rk">4<sup>th</sup></span><span class="ph-tdot" style="background:#232323"></span><span><span class="ph-tname">Black</span><span class="ph-tback">28 back</span></span></span><span>5</span><span>7</span><span>10</span><span>22</span></div>
                 <div class="ph-legend">MP = Match Points · SF = Stableford · PTS = Scramble</div>
                 <div class="ph-mhead">Match Center · Round Two</div>
                 <div class="ph-match">
-                  <div class="ph-vs"><span class="ph-side"><span class="tm"><span class="ph-tdot" style="background:#7a1f2b;margin:0"></span>Whitmore</span><span class="pl">J. Whitmore · T. Ashe</span></span><span class="vs">VS</span><span class="ph-side right"><span class="tm">Ashford<span class="ph-tdot" style="background:#274b73;margin:0"></span></span><span class="pl">R. Ashford · M. Cole</span></span></div>
-                  <div class="ph-status"><span>Whitmore 2 UP · Thru 14</span></div>
+                  <div class="ph-vs"><span class="ph-side"><span class="tm"><span class="ph-tdot" style="background:#1b6a43;margin:0"></span>Green</span><span class="pl">Jack M. · Tom H.</span></span><span class="vs">VS</span><span class="ph-side right"><span class="tm">Gold<span class="ph-tdot" style="background:#b08d4f;margin:0"></span></span><span class="pl">Ryan S. · Matt C.</span></span></div>
+                  <div class="ph-status"><span>Green 2 UP · Thru 14</span></div>
                 </div>
                 <div class="ph-match">
-                  <div class="ph-vs"><span class="ph-side"><span class="tm"><span class="ph-tdot" style="background:#0c3b2e;margin:0"></span>Ellison</span><span class="pl">P. Ellison · S. Ward</span></span><span class="vs">VS</span><span class="ph-side right"><span class="tm">Calloway<span class="ph-tdot" style="background:#b08d4f;margin:0"></span></span><span class="pl">B. Calloway · H. Reed</span></span></div>
+                  <div class="ph-vs"><span class="ph-side"><span class="tm"><span class="ph-tdot" style="background:#274b73;margin:0"></span>Navy</span><span class="pl">Paul D. · Will G.</span></span><span class="vs">VS</span><span class="ph-side right"><span class="tm">Black<span class="ph-tdot" style="background:#232323;margin:0"></span></span><span class="pl">Ben K. · Hank R.</span></span></div>
                   <div class="ph-status"><span>All Square · Thru 11</span></div>
                 </div>
               </div>
@@ -1949,12 +1948,12 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               </div>
               <div class="gv-tabs"><span>Board</span><span class="on">Low Net</span><span>Donate</span></div>
               <div class="gv-body">
-                <div class="gv-cols" aria-hidden="true"><span>Net</span><span>To Par</span></div>
-                <div class="gv-card"><span class="gv-ava" style="background:#38a3d1">MW</span><div class="gv-who"><div class="nm">Marcus Webb</div><div class="sub">Gross 74 · Hcp 9</div></div><div class="gv-nums"><div><b>65</b><span>Net</span></div><div><b class="par">−7</b><span>To Par</span></div></div></div>
-                <div class="gv-card"><span class="gv-ava" style="background:#ff6b4a">DW</span><div class="gv-who"><div class="nm">Dana Whitfield</div><div class="sub">Gross 76 · Hcp 10</div></div><div class="gv-nums"><div><b>66</b><span>Net</span></div><div><b class="par">−6</b><span>To Par</span></div></div></div>
-                <div class="gv-card"><span class="gv-ava" style="background:#2fa37c">PR</span><div class="gv-who"><div class="nm">Priya Raman</div><div class="sub">Gross 78 · Hcp 11</div></div><div class="gv-nums"><div><b>67</b><span>Net</span></div><div><b class="par">−5</b><span>To Par</span></div></div></div>
-                <div class="gv-card"><span class="gv-ava" style="background:#7a5fd0">CB</span><div class="gv-who"><div class="nm">Cole Bennett</div><div class="sub">Gross 75 · Hcp 7</div></div><div class="gv-nums"><div><b>68</b><span>Net</span></div><div><b class="par">−4</b><span>To Par</span></div></div></div>
-                <div class="gv-card"><span class="gv-ava" style="background:#e9a13b">JT</span><div class="gv-who"><div class="nm">Jordan Tate</div><div class="sub">Gross 77 · Hcp 8</div></div><div class="gv-nums"><div><b>69</b><span>Net</span></div><div><b class="par">−3</b><span>To Par</span></div></div></div>
+                <div class="gv-cols" aria-hidden="true"><span class="gv-col-net">Net</span><span class="gv-col-par">To Par</span></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#38a3d1">MW</span><div class="gv-who"><div class="nm">Marcus Webb</div><div class="sub">Gross 74 · Hcp 9</div></div><div class="gv-stat"><b>65</b><span>Net</span></div><div class="gv-stat"><b class="par">−7</b><span>To Par</span></div></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#ff6b4a">DW</span><div class="gv-who"><div class="nm">Dan Whitfield</div><div class="sub">Gross 76 · Hcp 10</div></div><div class="gv-stat"><b>66</b><span>Net</span></div><div class="gv-stat"><b class="par">−6</b><span>To Par</span></div></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#2fa37c">PR</span><div class="gv-who"><div class="nm">Paul Raman</div><div class="sub">Gross 78 · Hcp 11</div></div><div class="gv-stat"><b>67</b><span>Net</span></div><div class="gv-stat"><b class="par">−5</b><span>To Par</span></div></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#7a5fd0">CB</span><div class="gv-who"><div class="nm">Cole Bennett</div><div class="sub">Gross 75 · Hcp 7</div></div><div class="gv-stat"><b>68</b><span>Net</span></div><div class="gv-stat"><b class="par">−4</b><span>To Par</span></div></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#e9a13b">JT</span><div class="gv-who"><div class="nm">Jake Tate</div><div class="sub">Gross 77 · Hcp 8</div></div><div class="gv-stat"><b>69</b><span>Net</span></div><div class="gv-stat"><b class="par">−3</b><span>To Par</span></div></div>
               </div>
               <div class="gv-foot">Every dollar stays local — thank you, Greenville</div>
             </div>
@@ -1976,7 +1975,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
               <div class="dw-body">
                 <div class="dw-holebar"><div><div class="h">Hole 7</div><div class="p">Par 4 · 385 yd</div></div><div class="nav" aria-hidden="true">‹ ›</div></div>
                 <div class="dw-card"><div><div class="nm">Ray Delgado</div><div class="sub">Early Birds · Hcp 12</div></div><div class="dw-step"><span class="b">−</span><span class="g">5</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>4</b></div></div>
-                <div class="dw-card"><div><div class="nm">Sam Whitaker</div><div class="sub">Early Birds · Hcp 8</div></div><div class="dw-step"><span class="b">−</span><span class="g">4</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>4</b></div></div>
+                <div class="dw-card"><div><div class="nm">Scott Whitaker</div><div class="sub">Early Birds · Hcp 8</div></div><div class="dw-step"><span class="b">−</span><span class="g">4</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>4</b></div></div>
                 <div class="dw-card"><div><div class="nm">Pete Kaminski</div><div class="sub">Dew Crew · Hcp 15</div></div><div class="dw-step"><span class="b">−</span><span class="g">6</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>5</b></div></div>
                 <div class="dw-card"><div><div class="nm">Lou Ferraro</div><div class="sub">Dew Crew · Hcp 10</div></div><div class="dw-step"><span class="b">−</span><span class="g">5</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>5</b></div></div>
                 <div class="dw-save">Save Scores</div>
@@ -2040,7 +2039,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                 <div class="dg-row"><div><div class="nm">T-Bone &amp; Sal</div><div class="sub">Owned by Doug</div></div><span class="dg-sold"><span>Sold</span><b>$145</b></span></div>
                 <div class="dg-row"><div><div class="nm">Kyle &amp; Kevin</div><div class="sub">The twins · Owned by Chad</div></div><span class="dg-sold"><span>Sold</span><b>$130</b></span></div>
                 <div class="dg-row"><div><div class="nm">Vegas Vic &amp; Lou</div><div class="sub">Owned by Mikey</div></div><span class="dg-sold"><span>Sold</span><b>$120</b></span></div>
-                <div class="dg-row"><div><div class="nm">Sam &amp; Pete</div><div class="sub">Owned by Sal</div></div><span class="dg-sold"><span>Sold</span><b>$105</b></span></div>
+                <div class="dg-row"><div><div class="nm">Steve &amp; Pete</div><div class="sub">Owned by Sal</div></div><span class="dg-sold"><span>Sold</span><b>$105</b></span></div>
               </div>
             </div>
           </div>
