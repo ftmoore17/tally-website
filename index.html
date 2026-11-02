@@ -10,7 +10,7 @@
 <title>Tally — Custom Scoring Apps for Golf Tournaments &amp; Weekends</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --green:#0c3b2e; --green-2:#0f4a39; --green-deep:#07271e;
@@ -530,6 +530,124 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .custom-asks{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 20px}
 .custom-ask{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 15px;font-size:14.5px;color:#eef4f0}
 
+/* ---------- Your Branding carousel ---------- */
+.yb-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 2px 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.yb-track::-webkit-scrollbar{display:none}
+.yb-slide{flex:0 0 min(322px,85vw);scroll-snap-align:center;display:flex;flex-direction:column}
+.yb-cap{text-align:center;margin:14px 8px 0}
+.yb-cap b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:18.5px;font-weight:800;line-height:1.2}
+.yb-cap span{color:var(--ink-soft);font-size:14px}
+.yb-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:4px}
+.yb-arrow{width:44px;height:44px;flex:0 0 44px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font-size:21px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0}
+.yb-arrow:hover{border-color:var(--ink-soft)}
+.yb-dots{display:flex;gap:8px;align-items:center}
+.yb-dot{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0;transition:transform .15s ease, background .15s ease}
+.yb-dot.active{background:var(--accent);transform:scale(1.3)}
+.yb-note{text-align:center;color:var(--ink-soft);font-size:14.5px;margin:18px auto 0;max-width:540px}
+
+/* Branding example phones — each screen is its own little design system */
+.bphone{background:#0b0e0c;border-radius:42px;padding:10px;box-shadow:0 24px 48px rgba(7,39,30,.22);position:relative}
+.bscreen{border-radius:33px;overflow:hidden;height:556px;display:flex;flex-direction:column;position:relative;text-align:left}
+.bnotch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:74px;height:20px;border-radius:999px;background:rgba(5,8,7,.92);z-index:6}
+
+/* 1 — Pinehurst Weekend: country-club traditional, deep green & gold, serif */
+.th-pine{background:#f6f1e5;color:#22392c;font-family:Georgia,"Times New Roman",serif}
+.ph-head{background:#14352a;color:#f3e9d2;text-align:center;padding:42px 16px 15px}
+.ph-crest{display:grid;place-items:center;margin-bottom:7px}
+.ph-name{font-family:"Playfair Display",Georgia,serif;font-size:26px;font-weight:700;letter-spacing:.16em;line-height:1.1}
+.ph-sub{font-size:10px;letter-spacing:.34em;color:#c9a86a;text-transform:uppercase;margin-top:6px}
+.ph-rule{width:118px;margin:11px auto 0;border-top:3px double #c9a86a}
+.ph-tabs{display:flex;justify-content:center;gap:24px;padding:12px 0 10px;border-bottom:1px solid #ddd2ba;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:#8a7d5f;background:#f6f1e5}
+.ph-tabs .on{color:#14352a;font-weight:700;box-shadow:inset 0 -2px 0 #c9a86a}
+.ph-body{padding:12px 22px 0;flex:1}
+.ph-cap{text-align:center;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#8a7d5f;margin-bottom:2px}
+.ph-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px dotted #c4b894}
+.ph-row .nm{font-family:"Playfair Display",Georgia,serif;font-size:16.5px;font-weight:600;white-space:nowrap}
+.ph-row .meta{font-size:11px;color:#8a7d5f;letter-spacing:.08em;white-space:nowrap}
+.ph-row .sc{font-family:"Playfair Display",Georgia,serif;font-weight:800;font-size:17px;color:#14352a;white-space:nowrap}
+.ph-row .sc small{font-size:10px;letter-spacing:.14em;color:#8a7d5f;font-weight:600}
+.ph-foot{text-align:center;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#8a7d5f;padding:10px 0 15px}
+
+/* 2 — Greenville Charity: bright navy & white, rounded friendly sans, coral accent */
+.th-gvl{background:#edf3fa;color:#173a5e;font-family:"Rubik","DM Sans",sans-serif}
+.gv-head{background:#1256a0;color:#fff;padding:40px 18px 16px;border-radius:0 0 24px 24px}
+.gv-logo{display:flex;gap:11px;align-items:center}
+.gv-mark{width:40px;height:40px;flex:0 0 40px;border-radius:13px;background:#fff;color:#1256a0;display:grid;place-items:center;font-weight:800;font-size:20px}
+.gv-name{font-size:17.5px;font-weight:700;line-height:1.18}
+.gv-name span{display:block;font-size:12px;font-weight:500;color:#bcd7f5;letter-spacing:.04em}
+.gv-raised{margin-top:13px;background:rgba(255,255,255,.16);border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:600;display:inline-flex;gap:7px;align-items:center}
+.gv-raised b{color:#ffd166}
+.gv-tabs{display:flex;gap:8px;padding:14px 16px 2px}
+.gv-tabs span{flex:1;text-align:center;padding:8px 0;border-radius:999px;background:#fff;font-weight:600;font-size:13px;color:#5a7595}
+.gv-tabs .on{background:#ff6b4a;color:#fff}
+.gv-body{padding:11px 14px 0;flex:1;display:flex;flex-direction:column;gap:9px}
+.gv-card{background:#fff;border-radius:16px;padding:11px 13px;display:flex;align-items:center;gap:11px;box-shadow:0 3px 10px rgba(18,86,160,.09)}
+.gv-ava{width:37px;height:37px;flex:0 0 37px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:12.5px}
+.gv-card .nm{font-weight:600;font-size:14.5px;line-height:1.2}
+.gv-card .sub{font-size:11.5px;color:#7d95b0}
+.gv-card .sc{margin-left:auto;font-weight:800;font-size:18px;color:#1256a0;white-space:nowrap}
+.gv-foot{text-align:center;font-size:12px;color:#7d95b0;padding:10px 0 15px}
+
+/* 3 — The Dewsweepers: sunrise gradient, chunky type, dawn-patrol crew */
+.th-dew{background:#e9f5f1;color:#0d3336;font-family:"DM Sans",sans-serif}
+.dw-head{background:linear-gradient(155deg,#ffb03a 0%,#ff6f61 52%,#0e7c86 135%);color:#fff;padding:42px 18px 15px;position:relative;overflow:hidden}
+.dw-sun{position:absolute;right:-26px;top:-30px;width:118px;height:118px;border-radius:50%;background:rgba(255,238,176,.9)}
+.dw-head-in{position:relative;z-index:1}
+.dw-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:31px;text-transform:uppercase;line-height:.96;letter-spacing:-.01em;text-shadow:0 2px 0 rgba(13,51,54,.25)}
+.dw-sub{font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;margin-top:7px;color:#ffe9c9}
+.dw-badge{display:inline-block;background:#0d3336;color:#ffd166;font-weight:800;font-size:11.5px;padding:5px 11px;border-radius:8px;transform:rotate(-3deg);margin-top:9px;letter-spacing:.07em}
+.dw-tabs{display:flex;gap:8px;padding:14px 16px 2px}
+.dw-tabs span{padding:8px 15px;border-radius:12px;border:2.5px solid #0d3336;font-weight:800;font-size:13px;background:#fff;color:#0d3336}
+.dw-tabs .on{background:#ff6f61;color:#fff;box-shadow:3px 3px 0 #0d3336}
+.dw-body{padding:12px 16px 0;flex:1;display:flex;flex-direction:column;gap:10px}
+.dw-card{background:#fff;border:2.5px solid #0d3336;border-radius:14px;box-shadow:4px 4px 0 #0d3336;padding:10px 13px;display:flex;align-items:center;gap:11px}
+.dw-rank{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:23px;color:#ff6f61;flex:0 0 26px}
+.dw-card .nm{font-weight:800;font-size:15px;line-height:1.2}
+.dw-card .sub{font-size:11.5px;color:#5f7a7c;font-weight:600}
+.dw-card .sc{margin-left:auto;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;white-space:nowrap}
+.dw-foot{text-align:center;font-weight:800;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#0e7c86;padding:10px 0 15px}
+
+/* 4 — Nestlé Purina Invitational: crisp red & white, checkerboard nod, formal corporate */
+.th-pur{background:#f5f5f6;color:#1c1c1e;font-family:"DM Sans",sans-serif}
+.pu-check{height:13px;flex:0 0 13px;background:repeating-conic-gradient(#d22630 0% 25%,#ffffff 0% 50%);background-size:13px 13px}
+.pu-head{background:#fff;padding:30px 18px 12px;border-bottom:3px solid #d22630}
+.pu-kicker{font-size:10px;font-weight:700;letter-spacing:.32em;color:#d22630;text-transform:uppercase}
+.pu-name{font-size:24px;font-weight:800;letter-spacing:-.01em;text-transform:uppercase;margin-top:3px;line-height:1.1}
+.pu-sub{font-size:11.5px;color:#6d6d72;letter-spacing:.24em;text-transform:uppercase;margin-top:4px}
+.pu-tabs{display:flex;gap:8px;padding:14px 18px 0}
+.pu-tabs span{padding:7px 12px;border:1.5px solid #c9c9cd;border-radius:3px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#48484a;background:#fff}
+.pu-tabs .on{background:#d22630;border-color:#d22630;color:#fff}
+.pu-body{padding:10px 18px 0;flex:1}
+.pu-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.pu-table th{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8e8e93;text-align:left;padding:7px 4px;border-bottom:2px solid #1c1c1e}
+.pu-table th.num,.pu-table td.num{text-align:right}
+.pu-table td{padding:11px 4px;border-bottom:1px solid #e2e2e5;font-weight:600;white-space:nowrap}
+.pu-table td.num{font-variant-numeric:tabular-nums;font-weight:700}
+.pu-table tr.lead td.num{color:#d22630}
+.pu-foot{text-align:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8e8e93;padding:10px 0 14px}
+
+/* 5 — Doug's Bachelor Party: near-black, neon Vegas, bold condensed */
+.th-doug{background:#0c0c12;color:#f2f2f7;font-family:"DM Sans",sans-serif}
+.dg-head{padding:36px 18px 10px;text-align:center}
+.dg-bulbs{display:flex;justify-content:center;gap:10px;margin-bottom:10px}
+.dg-bulbs i{width:7px;height:7px;border-radius:50%;background:#ff2e88;box-shadow:0 0 8px #ff2e88}
+.dg-bulbs i:nth-child(3n+2){background:#3dff8f;box-shadow:0 0 8px #3dff8f}
+.dg-bulbs i:nth-child(3n){background:#ffd60a;box-shadow:0 0 8px #ffd60a}
+.dg-name{font-family:"Oswald",sans-serif;font-weight:700;font-size:34px;text-transform:uppercase;letter-spacing:.05em;line-height:1;color:#ff2e88;text-shadow:0 0 14px rgba(255,46,136,.75),0 0 36px rgba(255,46,136,.4)}
+.dg-sub{font-family:"Oswald",sans-serif;font-weight:600;font-size:15px;letter-spacing:.44em;text-transform:uppercase;color:#3dff8f;text-shadow:0 0 10px rgba(61,255,143,.55);margin-top:5px;padding-left:.44em}
+.dg-meta{font-size:11px;color:#9a9ab0;letter-spacing:.2em;text-transform:uppercase;margin-top:8px}
+.dg-tabs{display:flex;gap:8px;padding:8px 16px 2px}
+.dg-tabs span{flex:1;text-align:center;padding:8px 0;border-radius:10px;border:1.5px solid #2c2c3a;font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.14em;font-size:12px;color:#9a9ab0;text-transform:uppercase}
+.dg-tabs .on{border-color:#3dff8f;color:#3dff8f;box-shadow:0 0 10px rgba(61,255,143,.3)}
+.dg-body{padding:10px 16px 0;flex:1;display:flex;flex-direction:column;gap:7px}
+.dg-row{background:#16161f;border:1px solid #262633;border-radius:12px;padding:9px 13px;display:flex;align-items:center;gap:10px}
+.dg-row .nm{font-family:"Oswald",sans-serif;font-weight:600;font-size:15.5px;letter-spacing:.05em;text-transform:uppercase;line-height:1.15}
+.dg-row .sub{font-size:11px;color:#9a9ab0}
+.dg-chip{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.1em;background:#ff2e88;color:#fff;border-radius:5px;padding:2px 6px;text-transform:uppercase;vertical-align:2px;margin-left:6px}
+.dg-row .sc{margin-left:auto;font-family:"Oswald",sans-serif;font-weight:700;font-size:20px;color:#3dff8f;white-space:nowrap}
+.dg-row.lead .sc{color:#ff2e88;text-shadow:0 0 10px rgba(255,46,136,.5)}
+.dg-cta{margin:auto 16px 16px;background:#3dff8f;color:#06130b;font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.15em;text-transform:uppercase;text-align:center;padding:11px;border-radius:10px;font-size:13px}
+
 /* FAQ */
 .faq{max-width:760px}
 details{border-bottom:1px solid var(--line);padding:6px 0}
@@ -933,6 +1051,154 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
       <div class="custom-band">
         <h2>Other scoring apps give you a template. <span style="color:var(--accent)">Tally builds yours.</span></h2>
       </div>
+    </div>
+  </section>
+
+  <!-- YOUR BRANDING -->
+  <section id="branding" style="padding-top:40px" data-view="home">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Your branding</span>
+        <h2>Your Branding</h2>
+        <p>Every Tally app is designed from scratch around the group playing it — their name, their colors, their whole look, right down to the shape of the buttons. Five examples, no two&nbsp;alike.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="yb-track" id="yb-track" role="region" aria-label="Example app designs — swipe or use the arrows to browse">
+
+        <div class="yb-slide">
+          <div class="bphone" aria-label="Example app screen for Pinehurst Weekend">
+            <div class="bscreen th-pine">
+              <div class="bnotch" aria-hidden="true"></div>
+              <div class="ph-head">
+                <div class="ph-crest"><svg width="32" height="36" viewBox="0 0 34 38" fill="none" aria-hidden="true"><path d="M17 2 31 6v12c0 9-6 14.5-14 18C9 32.5 3 27 3 18V6Z" stroke="#c9a86a" stroke-width="1.6"/><path d="M13.5 26V11" stroke="#c9a86a" stroke-width="1.8" stroke-linecap="round"/><path d="M15 11.5 23.5 14 15 16.7Z" fill="#c9a86a"/></svg></div>
+                <div class="ph-name">PINEHURST</div>
+                <div class="ph-sub">Weekend · Est. 2019</div>
+                <div class="ph-rule"></div>
+              </div>
+              <div class="ph-tabs"><span class="on">Leaderboard</span><span>Matches</span><span>Scoring</span></div>
+              <div class="ph-body">
+                <div class="ph-cap">Saturday · Round Two · Course No. 2</div>
+                <div class="ph-row"><span class="nm">Team Whitmore</span><span class="meta">THRU 14</span><span class="sc">−6</span></div>
+                <div class="ph-row"><span class="nm">Team Ashford</span><span class="meta">THRU 14</span><span class="sc">−4</span></div>
+                <div class="ph-row"><span class="nm">Team Ellison</span><span class="meta">THRU 13</span><span class="sc">−2</span></div>
+                <div class="ph-row"><span class="nm">Team Calloway</span><span class="meta">THRU 13</span><span class="sc">E</span></div>
+                <div class="ph-row"><span class="nm">Team Prescott</span><span class="meta">THRU 12</span><span class="sc">+2</span></div>
+              </div>
+              <div class="ph-foot">Pinehurst · North Carolina</div>
+            </div>
+          </div>
+          <p class="yb-cap"><b>Pinehurst Weekend</b><span>Classic &amp; traditional</span></p>
+        </div>
+
+        <div class="yb-slide">
+          <div class="bphone" aria-label="Example app screen for the Greenville Charity Golf Tournament">
+            <div class="bscreen th-gvl">
+              <div class="bnotch" aria-hidden="true"></div>
+              <div class="gv-head">
+                <div class="gv-logo">
+                  <span class="gv-mark">G</span>
+                  <div class="gv-name">Greenville Charity<span>Golf Tournament · 12th Annual</span></div>
+                </div>
+                <div class="gv-raised"><span>Raised so far</span><b>$48,250</b></div>
+              </div>
+              <div class="gv-tabs"><span class="on">Board</span><span>Teams</span><span>Donate</span></div>
+              <div class="gv-body">
+                <div class="gv-card"><span class="gv-ava" style="background:#38a3d1">FC</span><div><div class="nm">First Citizens</div><div class="sub">Flight A · Thru 15</div></div><span class="sc">−9</span></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#ff6b4a">UW</span><div><div class="nm">United Way Crew</div><div class="sub">Flight A · Thru 15</div></div><span class="sc">−7</span></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#2fa37c">GH</span><div><div class="nm">Greenville Health</div><div class="sub">Flight B · Thru 14</div></div><span class="sc">−6</span></div>
+                <div class="gv-card"><span class="gv-ava" style="background:#7a5fd0">HW</span><div><div class="nm">Team Hopewell</div><div class="sub">Flight B · Thru 14</div></div><span class="sc">−4</span></div>
+              </div>
+              <div class="gv-foot">Every dollar stays local — thank you, Greenville</div>
+            </div>
+          </div>
+          <p class="yb-cap"><b>Greenville Charity Golf Tournament</b><span>Charity outing</span></p>
+        </div>
+
+        <div class="yb-slide">
+          <div class="bphone" aria-label="Example app screen for The Dewsweepers">
+            <div class="bscreen th-dew">
+              <div class="bnotch" aria-hidden="true"></div>
+              <div class="dw-head">
+                <div class="dw-sun" aria-hidden="true"></div>
+                <div class="dw-head-in">
+                  <div class="dw-name">The<br>Dewsweepers</div>
+                  <div class="dw-sub">Dawn patrol · Saturday league</div>
+                  <span class="dw-badge">FIRST TEE 6:12 AM</span>
+                </div>
+              </div>
+              <div class="dw-tabs"><span class="on">Board</span><span>Matches</span><span>Skins</span></div>
+              <div class="dw-body">
+                <div class="dw-card"><span class="dw-rank">1</span><div><div class="nm">Early Birds</div><div class="sub">Thru 12 · Two birdies deep</div></div><span class="sc">−5</span></div>
+                <div class="dw-card"><span class="dw-rank">2</span><div><div class="nm">Dew Crew</div><div class="sub">Thru 12 · Right there</div></div><span class="sc">−3</span></div>
+                <div class="dw-card"><span class="dw-rank">3</span><div><div class="nm">Cart Path Kids</div><div class="sub">Thru 11 · Coffee's kicking in</div></div><span class="sc">−1</span></div>
+                <div class="dw-card"><span class="dw-rank">4</span><div><div class="nm">Sun Chasers</div><div class="sub">Thru 11 · Still waking up</div></div><span class="sc">+2</span></div>
+              </div>
+              <div class="dw-foot">Last place buys the coffee</div>
+            </div>
+          </div>
+          <p class="yb-cap"><b>The Dewsweepers</b><span>Weekend crew</span></p>
+        </div>
+
+        <div class="yb-slide">
+          <div class="bphone" aria-label="Example app screen for the Nestlé Purina Invitational">
+            <div class="bscreen th-pur">
+              <div class="bnotch" aria-hidden="true"></div>
+              <div class="pu-check" aria-hidden="true"></div>
+              <div class="pu-head">
+                <div class="pu-kicker">Official Invitational</div>
+                <div class="pu-name">Nestlé Purina</div>
+                <div class="pu-sub">Invitational · Round 2 of 3</div>
+              </div>
+              <div class="pu-tabs"><span class="on">Standings</span><span>Matches</span><span>Players</span></div>
+              <div class="pu-body">
+                <table class="pu-table">
+                  <tr><th>Division</th><th class="num">R1</th><th class="num">R2</th><th class="num">Total</th></tr>
+                  <tr class="lead"><td>Pro Plan</td><td class="num">66</td><td class="num">65</td><td class="num">−11</td></tr>
+                  <tr><td>Field Sales</td><td class="num">68</td><td class="num">66</td><td class="num">−9</td></tr>
+                  <tr><td>St. Louis HQ</td><td class="num">67</td><td class="num">68</td><td class="num">−8</td></tr>
+                  <tr><td>Veterinary Sales</td><td class="num">69</td><td class="num">68</td><td class="num">−6</td></tr>
+                  <tr><td>R&amp;D</td><td class="num">70</td><td class="num">68</td><td class="num">−5</td></tr>
+                </table>
+              </div>
+              <div class="pu-foot">Final round · Sunday · 8:00 AM shotgun</div>
+              <div class="pu-check" aria-hidden="true"></div>
+            </div>
+          </div>
+          <p class="yb-cap"><b>The Nestlé Purina Invitational</b><span>Corporate invitational</span></p>
+        </div>
+
+        <div class="yb-slide">
+          <div class="bphone" aria-label="Example app screen for Doug's Bachelor Party">
+            <div class="bscreen th-doug">
+              <div class="bnotch" aria-hidden="true"></div>
+              <div class="dg-head">
+                <div class="dg-bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="dg-name">Doug's</div>
+                <div class="dg-sub">Bachelor Party</div>
+                <div class="dg-meta">Las Vegas · 12 guys · 2 days</div>
+              </div>
+              <div class="dg-tabs"><span class="on">Board</span><span>Matches</span><span>Bets</span></div>
+              <div class="dg-body">
+                <div class="dg-row lead"><div><div class="nm">Doug<span class="dg-chip">Groom</span></div><div class="sub">Thru 13 · Playing out of his mind</div></div><span class="sc">−1</span></div>
+                <div class="dg-row"><div><div class="nm">Mikey</div><div class="sub">Best man · Thru 13</div></div><span class="sc">E</span></div>
+                <div class="dg-row"><div><div class="nm">Big Russ</div><div class="sub">Thru 12 · Two lost balls</div></div><span class="sc">+3</span></div>
+                <div class="dg-row"><div><div class="nm">Chad</div><div class="sub">Thru 12 · Cart girl's favorite</div></div><span class="sc">+5</span></div>
+                <div class="dg-row"><div><div class="nm">T-Bone</div><div class="sub">Thru 11 · Here for the pool</div></div><span class="sc">+8</span></div>
+              </div>
+              <div class="dg-cta">Day 2 · Pool after the round</div>
+            </div>
+          </div>
+          <p class="yb-cap"><b>Doug's Bachelor Party</b><span>Bachelor party</span></p>
+        </div>
+
+      </div>
+      <div class="yb-controls">
+        <button type="button" class="yb-arrow" id="yb-prev" aria-label="Previous example">‹</button>
+        <div class="yb-dots" id="yb-dots"></div>
+        <button type="button" class="yb-arrow" id="yb-next" aria-label="Next example">›</button>
+      </div>
+      <p class="yb-note">All five are example designs. Yours starts from a blank page — with your group's name, colors, and logo up&nbsp;top.</p>
     </div>
   </section>
 
@@ -2221,6 +2487,54 @@ document.getElementById('quote-form').addEventListener('submit', function(e){
     btn.textContent = originalText;
   });
 });
+
+/* Your Branding carousel — native swipe with snap, arrows and dots */
+(function(){
+  var track = document.getElementById('yb-track');
+  if (!track) return;
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.yb-slide'));
+  var dotsWrap = document.getElementById('yb-dots');
+  var names = ['Pinehurst Weekend', 'Greenville Charity Golf Tournament', 'The Dewsweepers', 'The Nestlé Purina Invitational', "Doug's Bachelor Party"];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function slideLeft(s){
+    return s.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+  }
+  function goTo(i){
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    var s = slides[i];
+    var left = slideLeft(s) - (track.clientWidth - s.offsetWidth) / 2;
+    track.scrollTo({ left: left, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+  function current(){
+    var center = track.scrollLeft + track.clientWidth / 2, best = 0, bd = Infinity;
+    slides.forEach(function(s, i){
+      var c = slideLeft(s) + s.offsetWidth / 2, d = Math.abs(c - center);
+      if (d < bd) { bd = d; best = i; }
+    });
+    return best;
+  }
+  var dots = slides.map(function(s, i){
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'yb-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Show example: ' + names[i]);
+    d.addEventListener('click', function(){ goTo(i); });
+    dotsWrap.appendChild(d);
+    return d;
+  });
+  var ticking = false;
+  track.addEventListener('scroll', function(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var idx = current();
+      dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+      ticking = false;
+    });
+  }, { passive: true });
+  document.getElementById('yb-prev').addEventListener('click', function(){ goTo(current() - 1); });
+  document.getElementById('yb-next').addEventListener('click', function(){ goTo(current() + 1); });
+})();
 </script>
 </body>
 </html>
