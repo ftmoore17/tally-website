@@ -8,6 +8,13 @@
 <link rel="icon" type="image/png" href="/apple-touch-icon.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <title>Tally — Custom Scoring Apps for Golf Tournaments &amp; Weekends</title>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "z7lueg2zbz");
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -571,12 +578,12 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 
 /* 2 — Greenville Charity: bright navy & white, rounded friendly sans, coral accent */
 .th-gvl{background:#edf3fa;color:#173a5e;font-family:"Rubik","DM Sans",sans-serif}
-.gv-head{background:#1256a0;color:#fff;padding:30px 16px 12px;border-radius:0 0 20px 20px}
-.gv-logo{display:flex;gap:10px;align-items:center}
+.gv-head{background:#1256a0;color:#fff;padding:30px 16px 12px;border-radius:0 0 20px 20px;display:flex;flex-direction:column;align-items:center}
+.gv-logo{display:flex;gap:10px;align-items:center;align-self:flex-start}
 .gv-mark{width:38px;height:38px;flex:0 0 38px;border-radius:12px;background:#fff;color:#1256a0;display:grid;place-items:center;font-weight:800;font-size:19px}
 .gv-name{font-size:16.5px;font-weight:700;line-height:1.18}
 .gv-name span{display:block;font-size:11.5px;font-weight:500;color:#bcd7f5;letter-spacing:.03em}
-.gv-raised{margin-top:10px;background:rgba(255,255,255,.16);border-radius:999px;padding:6px 11px;font-size:12px;font-weight:600;display:inline-flex;gap:7px;align-items:center}
+.gv-raised{margin:10px auto 0;margin-left:auto;margin-right:auto;align-self:center;background:rgba(255,255,255,.16);border-radius:999px;padding:6px 11px;font-size:12px;font-weight:600;display:flex;width:fit-content;gap:7px;align-items:center;justify-content:center;text-align:center}
 .gv-raised b{color:#ffd166}
 .gv-tabs{display:flex;gap:7px;padding:11px 14px 0}
 .gv-tabs span{flex:1;text-align:center;padding:7px 0;border-radius:999px;background:#fff;font-weight:600;font-size:12.5px;color:#5a7595;white-space:nowrap}
@@ -594,12 +601,12 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .th-dew{background:#e9f5f1;color:#0d3336;font-family:"DM Sans",sans-serif}
 .dw-head{background:linear-gradient(155deg,#ffb03a 0%,#ff6f61 52%,#0e7c86 135%);color:#fff;padding:48px 18px 12px;position:relative;overflow:hidden}
 .dw-sun{position:absolute;right:-26px;top:-30px;width:118px;height:118px;border-radius:50%;background:rgba(255,238,176,.9)}
-.dw-head-in{position:relative;z-index:1}
-.dw-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:28px;text-transform:uppercase;line-height:1.14;letter-spacing:-.01em;text-shadow:0 2px 0 rgba(13,51,54,.25)}
+.dw-head-in{position:relative;z-index:1;text-align:center}
+.dw-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:28px;text-transform:uppercase;line-height:1.14;letter-spacing:-.01em;text-shadow:0 2px 0 rgba(13,51,54,.25);text-align:center}
 .dw-sub{font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-top:6px;color:#ffe9c9}
 .dw-badge{display:inline-block;background:#0d3336;color:#ffd166;font-weight:800;font-size:11px;padding:4px 10px;border-radius:8px;transform:rotate(-3deg);margin-top:8px;letter-spacing:.07em}
-.dw-tabs{display:flex;gap:7px;padding:11px 14px 0}
-.dw-tabs span{padding:7px 12px;border-radius:11px;border:2px solid #0d3336;font-weight:800;font-size:12.5px;background:#fff;color:#0d3336;white-space:nowrap}
+.dw-tabs{display:flex;gap:6px;padding:11px 14px 0}
+.dw-tabs span{flex:1;text-align:center;padding:7px 4px;border-radius:11px;border:2px solid #0d3336;font-weight:800;font-size:12px;background:#fff;color:#0d3336;white-space:nowrap}
 .dw-tabs .on{background:#ff6f61;color:#fff;box-shadow:3px 3px 0 #0d3336}
 .dw-body{padding:12px 16px 0;flex:1;display:flex;flex-direction:column;gap:10px}
 .dw-card{background:#fff;border:2px solid #0d3336;border-radius:13px;box-shadow:3px 3px 0 #0d3336;padding:10px 13px;display:flex;align-items:center;gap:11px}
@@ -695,9 +702,12 @@ table.calc-table tr.bidder-row.last td{border-bottom:1px solid #edf1ed;padding-b
 .gv-stat b{display:block;font-size:16px;font-weight:800;color:#1256a0;line-height:1.1;text-align:center}
 .gv-stat b.par{color:#ff6b4a}
 .gv-stat span{display:block;font-size:8.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#7d95b0;white-space:nowrap;text-align:center}
-.th-dew .dw-head{padding:48px 18px 12px}
-.th-dew .dw-body{gap:7px;padding:9px 14px 0}
-.th-dew .dw-card{padding:8px 10px;gap:7px}
+.th-dew .dw-head{padding:24px 18px 9px;text-align:center}
+.th-dew .dw-head-in{width:100%;text-align:center}
+.th-dew .dw-name{width:100%;text-align:center;margin:0 auto;font-size:26px;line-height:1.08}
+.th-dew .dw-body{gap:6px;padding:8px 14px 18px}
+.th-dew .dw-save{margin-bottom:2px}
+.th-dew .dw-card{padding:7px 10px;gap:7px}
 .dw-holebar{display:flex;align-items:center;justify-content:space-between;background:#0d3336;color:#fff;border:2px solid #0d3336;border-radius:13px;padding:8px 12px}
 .dw-holebar .h{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px;text-transform:uppercase;line-height:1}
 .dw-holebar .p{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#ffd166;margin-top:3px}
@@ -1936,6 +1946,56 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
         </div>
 
         <div class="yb-slide">
+          <div class="bphone" aria-label="Example app screen for The Dewsweepers, showing the scoring page">
+            <div class="bscreen th-dew">
+              <div class="bnotch" aria-hidden="true"></div>
+              <div class="dw-head">
+                <div class="dw-sun" aria-hidden="true"></div>
+                <div class="dw-head-in">
+                  <div class="dw-name">The<br>Dewsweepers</div>
+                </div>
+              </div>
+              <div class="dw-tabs"><span>Board</span><span class="on">Scoring</span><span>Skins</span><span>Admin</span></div>
+              <div class="dw-body">
+                <div class="dw-holebar"><div><div class="h">Hole 7</div><div class="p">Par 4 · 385 yd</div></div><div class="nav" aria-hidden="true">‹ ›</div></div>
+                <div class="dw-card"><div><div class="nm">Ray Delgado</div><div class="sub">Early Birds · Hcp 12</div></div><div class="dw-step"><span class="b">−</span><span class="g">5</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>4</b></div></div>
+                <div class="dw-card"><div><div class="nm">Scott Whitaker</div><div class="sub">Early Birds · Hcp 8</div></div><div class="dw-step"><span class="b">−</span><span class="g">4</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>4</b></div></div>
+                <div class="dw-card"><div><div class="nm">Pete Kaminski</div><div class="sub">Dew Crew · Hcp 15</div></div><div class="dw-step"><span class="b">−</span><span class="g">6</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>5</b></div></div>
+                <div class="dw-card"><div><div class="nm">Lou Ferraro</div><div class="sub">Dew Crew · Hcp 10</div></div><div class="dw-step"><span class="b">−</span><span class="g">5</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>5</b></div></div>
+                <div class="dw-save">Save Scores</div>
+              </div>
+            </div>
+          </div>
+          <p class="yb-cap"><b>The Dewsweepers</b><span>Scoring Page · Weekend&nbsp;crew</span></p>
+        </div>
+
+        <div class="yb-slide">
+          <div class="bphone" aria-label="Example app screen for Doug's Bachelor Party, showing the Calcutta auction board">
+            <div class="bscreen th-doug">
+              <div class="bnotch" aria-hidden="true"></div>
+              <div class="dg-head">
+                <div class="dg-bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="dg-name">Doug's</div>
+                <div class="dg-sub">Bachelor Party</div>
+                <div class="dg-meta">Las Vegas · 12 guys · 2 days</div>
+              </div>
+              <div class="dg-tabs"><span>Board</span><span>Matches</span><span class="on">Calcutta</span></div>
+              <div class="dg-body">
+                <div class="dg-pot"><div class="dg-pot-top"><span>Calcutta Pool</span><b>$840</b></div><div class="dg-pot-split"><span>Payout&nbsp; <b>1st 50% · 2nd 30% · 3rd 20%</b></span><span>All paid</span></div></div>
+                <div class="dg-cols" aria-hidden="true"><span>Team</span><span>Sold</span></div>
+                <div class="dg-row lead"><div><div class="nm">Doug &amp; Mikey<span class="dg-chip">Groom's team</span></div><div class="sub">Owned by Big Russ</div></div><span class="dg-sold"><span>Sold</span><b>$180</b></span></div>
+                <div class="dg-row"><div><div class="nm">Big Russ &amp; Chad</div><div class="sub">Owned by T-Bone</div></div><span class="dg-sold"><span>Sold</span><b>$160</b></span></div>
+                <div class="dg-row"><div><div class="nm">T-Bone &amp; Sal</div><div class="sub">Owned by Doug</div></div><span class="dg-sold"><span>Sold</span><b>$145</b></span></div>
+                <div class="dg-row"><div><div class="nm">Kyle &amp; Kevin</div><div class="sub">The twins · Owned by Chad</div></div><span class="dg-sold"><span>Sold</span><b>$130</b></span></div>
+                <div class="dg-row"><div><div class="nm">Vegas Vic &amp; Lou</div><div class="sub">Owned by Mikey</div></div><span class="dg-sold"><span>Sold</span><b>$120</b></span></div>
+                <div class="dg-row"><div><div class="nm">Steve &amp; Pete</div><div class="sub">Owned by Sal</div></div><span class="dg-sold"><span>Sold</span><b>$105</b></span></div>
+              </div>
+            </div>
+          </div>
+          <p class="yb-cap"><b>Doug's Bachelor Party</b><span>Calcutta · Bachelor&nbsp;party</span></p>
+        </div>
+
+        <div class="yb-slide">
           <div class="bphone" aria-label="Example app screen for the Greenville Charity Golf Tournament, showing the low net leaderboard">
             <div class="bscreen th-gvl">
               <div class="bnotch" aria-hidden="true"></div>
@@ -1944,7 +2004,7 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
                   <span class="gv-mark">G</span>
                   <div class="gv-name">Greenville Charity<span>Golf Tournament · 12th Annual</span></div>
                 </div>
-                <div class="gv-raised"><span>Raised so far</span><b>$48,250</b></div>
+                <div class="gv-raised"><span>RAISED SO FAR</span><b>$48,250</b></div>
               </div>
               <div class="gv-tabs"><span>Board</span><span class="on">Low Net</span><span>Donate</span></div>
               <div class="gv-body">
@@ -1959,30 +2019,6 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
             </div>
           </div>
           <p class="yb-cap"><b>Greenville Charity Golf Tournament</b><span>Low Net Leaderboard · Charity&nbsp;outing</span></p>
-        </div>
-
-        <div class="yb-slide">
-          <div class="bphone" aria-label="Example app screen for The Dewsweepers, showing the scoring page">
-            <div class="bscreen th-dew">
-              <div class="bnotch" aria-hidden="true"></div>
-              <div class="dw-head">
-                <div class="dw-sun" aria-hidden="true"></div>
-                <div class="dw-head-in">
-                  <div class="dw-name">The<br>Dewsweepers</div>
-                </div>
-              </div>
-              <div class="dw-tabs"><span>Board</span><span class="on">Scoring</span><span>Skins</span></div>
-              <div class="dw-body">
-                <div class="dw-holebar"><div><div class="h">Hole 7</div><div class="p">Par 4 · 385 yd</div></div><div class="nav" aria-hidden="true">‹ ›</div></div>
-                <div class="dw-card"><div><div class="nm">Ray Delgado</div><div class="sub">Early Birds · Hcp 12</div></div><div class="dw-step"><span class="b">−</span><span class="g">5</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>4</b></div></div>
-                <div class="dw-card"><div><div class="nm">Scott Whitaker</div><div class="sub">Early Birds · Hcp 8</div></div><div class="dw-step"><span class="b">−</span><span class="g">4</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>4</b></div></div>
-                <div class="dw-card"><div><div class="nm">Pete Kaminski</div><div class="sub">Dew Crew · Hcp 15</div></div><div class="dw-step"><span class="b">−</span><span class="g">6</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>5</b></div></div>
-                <div class="dw-card"><div><div class="nm">Lou Ferraro</div><div class="sub">Dew Crew · Hcp 10</div></div><div class="dw-step"><span class="b">−</span><span class="g">5</span><span class="b">+</span></div><div class="dw-net"><span>Net</span><b>5</b></div></div>
-                <div class="dw-save">Save Scores</div>
-              </div>
-            </div>
-          </div>
-          <p class="yb-cap"><b>The Dewsweepers</b><span>Scoring Page · Weekend&nbsp;crew</span></p>
         </div>
 
         <div class="yb-slide">
@@ -2019,33 +2055,6 @@ footer a{color:var(--accent);font-weight:600;text-decoration:none}
           </div>
           <p class="yb-cap"><b>The Nestlé Purina Invitational</b><span>Match Center · Corporate&nbsp;invitational</span></p>
         </div>
-
-        <div class="yb-slide">
-          <div class="bphone" aria-label="Example app screen for Doug's Bachelor Party, showing the Calcutta auction board">
-            <div class="bscreen th-doug">
-              <div class="bnotch" aria-hidden="true"></div>
-              <div class="dg-head">
-                <div class="dg-bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="dg-name">Doug's</div>
-                <div class="dg-sub">Bachelor Party</div>
-                <div class="dg-meta">Las Vegas · 12 guys · 2 days</div>
-              </div>
-              <div class="dg-tabs"><span>Board</span><span>Matches</span><span class="on">Calcutta</span></div>
-              <div class="dg-body">
-                <div class="dg-pot"><div class="dg-pot-top"><span>Calcutta Pool</span><b>$840</b></div><div class="dg-pot-split"><span>Payout&nbsp; <b>1st 50% · 2nd 30% · 3rd 20%</b></span><span>All paid</span></div></div>
-                <div class="dg-cols" aria-hidden="true"><span>Team</span><span>Sold</span></div>
-                <div class="dg-row lead"><div><div class="nm">Doug &amp; Mikey<span class="dg-chip">Groom's team</span></div><div class="sub">Owned by Big Russ</div></div><span class="dg-sold"><span>Sold</span><b>$180</b></span></div>
-                <div class="dg-row"><div><div class="nm">Big Russ &amp; Chad</div><div class="sub">Owned by T-Bone</div></div><span class="dg-sold"><span>Sold</span><b>$160</b></span></div>
-                <div class="dg-row"><div><div class="nm">T-Bone &amp; Sal</div><div class="sub">Owned by Doug</div></div><span class="dg-sold"><span>Sold</span><b>$145</b></span></div>
-                <div class="dg-row"><div><div class="nm">Kyle &amp; Kevin</div><div class="sub">The twins · Owned by Chad</div></div><span class="dg-sold"><span>Sold</span><b>$130</b></span></div>
-                <div class="dg-row"><div><div class="nm">Vegas Vic &amp; Lou</div><div class="sub">Owned by Mikey</div></div><span class="dg-sold"><span>Sold</span><b>$120</b></span></div>
-                <div class="dg-row"><div><div class="nm">Steve &amp; Pete</div><div class="sub">Owned by Sal</div></div><span class="dg-sold"><span>Sold</span><b>$105</b></span></div>
-              </div>
-            </div>
-          </div>
-          <p class="yb-cap"><b>Doug's Bachelor Party</b><span>Calcutta · Bachelor&nbsp;party</span></p>
-        </div>
-
       </div>
       <div class="yb-controls">
         <button type="button" class="yb-arrow" id="yb-prev" aria-label="Previous example">‹</button>
@@ -2603,7 +2612,7 @@ document.getElementById('quote-form').addEventListener('submit', function(e){
   if (!track) return;
   var slides = Array.prototype.slice.call(track.querySelectorAll('.yb-slide'));
   var dotsWrap = document.getElementById('yb-dots');
-  var names = ['Pinehurst Weekend', 'Greenville Charity Golf Tournament', 'The Dewsweepers', 'The Nestlé Purina Invitational', "Doug's Bachelor Party"];
+  var names = ['Pinehurst Weekend', 'The Dewsweepers', "Doug's Bachelor Party", 'Greenville Charity Golf Tournament', 'The Nestlé Purina Invitational'];
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function slideLeft(s){
     return s.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
